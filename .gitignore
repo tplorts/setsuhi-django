@@ -51,6 +51,7 @@ docs/_build/
 
 # emacs backup files
 *~
+\#*\#
 
 # virtual environment
 venv
