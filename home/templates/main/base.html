@@ -50,11 +50,13 @@
 
 
     {% block multilingual %}
-    <div class="ml-toggle fixed-bottom-left">
-      <span class="ml-indicator"></span>
-      <a class="ml-option selected" lang="en">English</a>
-      <a class="ml-option" lang="ja">日本語</a>
-    </div>
+      {% comment %}
+        <div class="ml-toggle fixed-bottom-left">
+          <span class="ml-indicator"></span>
+          <a class="ml-option selected" lang="en">English</a>
+          <a class="ml-option" lang="ja">日本語</a>
+        </div>
+      {% endcomment %}
     {% endblock multilingual %}
 
 
