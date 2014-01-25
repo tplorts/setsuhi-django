@@ -11,7 +11,23 @@
 
     {# <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" /> #}
 
+    {% block thirdparty_styles %}
+      <link rel="stylesheet" type="text/css"
+            href="{% static 'third/styles/normalize.css' %}" />
+      <link rel="stylesheet" type="text/css"
+            href="{% static 'third/styles/bootstrap.min.css' %}" />
+    {% endblock thirdparty_styles %}
+
     {% block default_styles %}
+      <!-- My stylesheets.  Start with the simple browser assumption -->
+      <link rel="stylesheet/less" type="text/css"
+            href="{% static 'main/styles/universal.less' %}" />
+      <link rel="stylesheet/less" type="text/css"
+            media="screen and (min-device-width:320px)"
+            href="{% static 'main/styles/overrides-320.less' %}" />
+      <link rel="stylesheet/less" type="text/css"
+            media="screen and (min-device-width:768px) and (min-width:768px), print, projection"
+            href="{% static 'main/styles/overrides-768.less' %}" />
     {% endblock default_styles %}
 
 
