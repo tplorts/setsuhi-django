@@ -2,6 +2,17 @@
 
 {% load staticfiles  %}
 
+{% block body_class %} hundred-percent {% endblock %}
+
 {% block main_content %}
+<div id="main-navigation">
+  <div class="navigation-button">バイオ</div>
+  <div class="navigation-button">作品</div>
+  <div class="navigation-button">商品</div>
+  <div class="navigation-button">連絡</div>
+  <div class="navigation-button">ブログ&raquo;</div>
+</div>
+
+<img src="{% static 'main/images/seal/1-large.png' %}" />
 {% endblock main_content %}
 

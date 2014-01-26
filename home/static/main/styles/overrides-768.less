@@ -1,2 +1,35 @@
-nothing {
+
+#main-navigation {
+
+    @nav-width: 200px;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: @nav-width;
+    background-color: darkgreen;
+    text-align: center;
+
+    .navigation-button {
+        @bsize: 100px;
+        @fsize: 24px;
+
+        background-color: darkmagenta;
+        width: @bsize;
+        height: @bsize;
+        border-radius: @bsize;
+        text-align: center;
+        line-height: 1;
+//        padding: (@bsize - 48px) / 2      0;
+        margin: 1em   (@nav-width - @bsize)/2;
+        font-size: @fsize;
+        padding: (@bsize - @fsize)/2   0;
+        color: khaki;
+
+
+        &:hover {
+            background-color: magenta;
+        }
+    }
 }
