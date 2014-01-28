@@ -87,6 +87,11 @@
       {% endblock super_content %}
     </div>
 
+    {% block thirdparty_postscripts %}
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery-1.10.2.min.js' %}">
+      </script>
+    {% endblock thirdparty_postscripts %}
 
     {% block default_postscripts %}
     {% endblock default_postscripts %}

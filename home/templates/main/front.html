@@ -2,17 +2,22 @@
 
 {% load staticfiles  %}
 
-{% block body_class %} hundred-percent {% endblock %}
+{% block body_class %}black{% endblock %}
 
 {% block main_content %}
+<div id="left-pane"></div>
 <div id="main-navigation">
-  <div class="navigation-button">バイオ</div>
-  <div class="navigation-button">作品</div>
-  <div class="navigation-button">商品</div>
-  <div class="navigation-button">連絡</div>
-  <div class="navigation-button">ブログ&raquo;</div>
+  <div id="navigation-fadeout"></div>
+  <div class="navigation-button expand-step-0" id="nb1">バイオ</div>
+  <div class="navigation-button expand-step-0" id="nb2">作品</div>
+  <div class="navigation-button expand-step-0" id="nb3">商品</div>
+  <div class="navigation-button expand-step-0" id="nb4">連絡</div>
+  <div class="navigation-button expand-step-0" id="nb5">ブログ&raquo;</div>
 </div>
-
-<img src="{% static 'main/images/seal/1-large.png' %}" />
+{#<img src="{% static 'main/images/seal/1-large.png' %}" />#}
 {% endblock main_content %}
 
+{% block postscripts %}
+<script type="text/javascript"
+        src="{% static 'main/scripts/buttons.js' %}"></script>
+{% endblock postscripts %}
