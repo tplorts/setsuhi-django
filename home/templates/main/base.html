@@ -9,7 +9,7 @@
 
     {% load staticfiles %}
 
-    {# <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" /> #}
+    <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
 
     {% block thirdparty_styles %}
       <link rel="stylesheet" type="text/css"
@@ -59,13 +59,6 @@
 
 
     {% block multilingual %}
-      {% comment %}
-        <div class="ml-toggle fixed-bottom-left">
-          <span class="ml-indicator"></span>
-          <a class="ml-option selected" lang="en">English</a>
-          <a class="ml-option" lang="ja">日本語</a>
-        </div>
-      {% endcomment %}
     {% endblock multilingual %}
 
 
