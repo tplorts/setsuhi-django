@@ -3,8 +3,9 @@
 @import (less) "blob-button.less";
 
 
-@nav-color: #500050;
-@nav-width: 144px;
+@side-dock-width: 144px;
+@side-dock-bg: #500050;
+@side-dock-fg: white;
 
 @meishi-average-color: #562987;
 
@@ -12,26 +13,43 @@
 @bsize: 100px;
 
 
-
-#main-navigation {
-
+.side-dock( @width: @side-dock-width, 
+            @bg: @side-dock-bg,
+            @fg: @side-dock-fg ) 
+{
     position: fixed;
-    right: 0;
     top: 0;
     bottom: 0;
-    width: @nav-width;
-    background-color: @nav-color;
-    text-align: center;
+    width: @width;
+    background-color: @bg;
+    color: @fg;
+}
 
-    .box-shadow( -5px, 0, 15px, 0.5 );
+.dock-shadow( @x ) {
+    .box-shadow( @x, 0, 15px, 0.5 );
+}
+
+#left-dock {
+    .side-dock;
+    left: 0;
+    .dock-shadow( 5px );
+    text-align: center;
+}
+
+#main-navigation {
+    .side-dock;
+    right: 0;
+    text-align: center;
 
     .navigation-button {
         .blob-button( @bsize, 20px );
-        margin: 1em   (@nav-width - @bsize)/2;
+        margin: 1em   (@side-dock-width - @bsize)/2;
     }
 
-
+    .dock-shadow( -5px );
 }
+
+
 
 .meishi-bg {
     background: url('/static/main/images/meishi-texture-piece.png');
