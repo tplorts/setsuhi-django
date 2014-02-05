@@ -13,6 +13,10 @@
 @bsize: 100px;
 
 
+#main-content {
+    padding: 0 @side-dock-width;
+}
+
 .side-dock( @width: @side-dock-width, 
             @bg: @side-dock-bg,
             @fg: @side-dock-fg ) 
@@ -45,7 +49,15 @@
         -webkit-filter: invert();
         filter: invert();
     }
-    
+
+    #seal-div {
+        img {
+            width: 100%;
+            padding: 30px;
+            
+            -webkit-filter: invert() saturate(2);
+        }
+    }
 }
 
 #main-navigation {
