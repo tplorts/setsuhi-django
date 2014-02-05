@@ -20,6 +20,8 @@
 
     {% block default_styles %}
       <link rel="stylesheet/less" type="text/css"
+            href="{% static 'main/styles/multilingual.less' %}" />
+      <link rel="stylesheet/less" type="text/css"
             href="{% static 'main/styles/styles.less' %}" />
     {% endblock default_styles %}
 
@@ -99,11 +101,16 @@
       <script type="text/javascript"
               src="{% static 'third/scripts/jquery-1.10.2.min.js' %}">
       </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery.cookie.js' %}">
+      </script>
     {% endblock thirdparty_postscripts %}
 
     {% block default_postscripts %}
       <script type="text/javascript"
               src="{% static 'main/scripts/blob-button.js' %}"></script>
+      <script type="text/javascript"
+              src="{% static 'main/scripts/multilingual.js' %}"></script>
       <script type="text/javascript"
               src="{% static 'main/scripts/main.js' %}"></script>
     {% endblock default_postscripts %}

@@ -1,10 +1,20 @@
 {% extends "main/base.html" %}
-{% load staticfiles  %}
+{% load staticfiles multilingual %}
 
 
 {% block main_content %}
 <div>
   <div class="tyle">
+    {% multilingual %}
+      {% mlpart "en" %}
+        [1] Saepe et multum hoc mecum cogitavi, bonine an mali plus attulerit hominibus et civitatibus copia dicendi ac summum eloquentiae studium. Nam cum et nostrae rei publicae detrimenta considero et maximarum civitatum veteres animo calamitates colligo, non minimam video per disertissimos homines invectam partem incommodorum; cum autem res ab nostra memoria propter vetustatem remotas ex litterarum monumentis repetere instituo, multas urbes constitutas, plurima bella restincta, firmissimas societates, sanctissimas amicitias intellego cum animi ratione tum facilius eloquentia comparatas.<br>
+        Ac me quidem diu cogitantem ratio ipsa in hanc potissimum sententiam ducit, ut existimem sapientiam sine eloquentia parum prodesse civitatibus, eloquentiam vero sine sapientia nimium obesse plerumque, prodesse numquam. Quare si quis omissis rectissimis atque honestissimis studiis rationis et officii consumit omnem operam in exercitatione dicendi, is inutilis sibi, perniciosus patriae civis alitur; qui vero ita sese armat eloquentia, ut non oppugnare commoda patriae, sed pro his propugnare possit, is mihi vir et suis et publicis rationibus utilissimus atque amicissimus civis fore videtur.
+      {% endmlpart %}
+      {% mlpart "ja" %}
+        [1] Saepe et multum hoc mecum cogitavi, bonine an mali plus attulerit hominibus et civitatibus copia dicendi ac summum eloquentiae studium. Nam cum et nostrae rei publicae detrimenta considero et maximarum civitatum veteres animo calamitates colligo, non minimam video per disertissimos homines invectam partem incommodorum; cum autem res ab nostra memoria propter vetustatem remotas ex litterarum monumentis repetere instituo, multas urbes constitutas, plurima bella restincta, firmissimas societates, sanctissimas amicitias intellego cum animi ratione tum facilius eloquentia comparatas.<br>
+        Ac me quidem diu cogitantem ratio ipsa in hanc potissimum sententiam ducit, ut existimem sapientiam sine eloquentia parum prodesse civitatibus, eloquentiam vero sine sapientia nimium obesse plerumque, prodesse numquam. Quare si quis omissis rectissimis atque honestissimis studiis rationis et officii consumit omnem operam in exercitatione dicendi, is inutilis sibi, perniciosus patriae civis alitur; qui vero ita sese armat eloquentia, ut non oppugnare commoda patriae, sed pro his propugnare possit, is mihi vir et suis et publicis rationibus utilissimus atque amicissimus civis fore videtur.
+      {% endmlpart %}
+    {% endmultilingual %}
   </div>
   <hr>
   <div class="tyle">
