@@ -60,14 +60,14 @@ function hoverHandler( button ) {
 }
 
 
+(function( $ ){
+    $.fn.smoothHover = function() {
+        $(this).hover( function(event) {
+            hoverHandler( $(this) ).expand();
+        }, function(event) {
+            hoverHandler( $(this) ).contract();
+        } );
+    }; 
+})( jQuery );
 
-enter = function(event) {
-    hoverHandler( $(this) ).expand();
-}
-
-exit = function(event) {
-    hoverHandler( $(this) ).contract();
-}
-
-$(".navigation-button").hover( enter, exit );
 
