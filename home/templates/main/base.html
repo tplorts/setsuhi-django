@@ -57,9 +57,13 @@
       {% block super_content %}
 
         <div id="left-dock">
-          <span class="vertical-text">
+          <div id="signature-div">
+            <img src="{% static 'main/images/signature-transparent-small.png' %}" />
+          </div>
+
+          <div class="vertical-text">
             書道家白石雪妃
-          </span>
+          </div>
 
           {% block multilingual %}
             <div id="ml-titles">
