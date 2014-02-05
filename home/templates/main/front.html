@@ -1,29 +1,7 @@
 {% extends "main/base.html" %}
-
 {% load staticfiles  %}
 
 
-
 {% block main_content %}
-<div id="left-dock">
-  <span class="vertical-text">
-    書道家白石雪妃
-  </span>
-</div>
-<div id="main-navigation" class="">
-  <div class="navigation-button" id="nb1">バイオ</div>
-  <div class="navigation-button" id="nb2">作品</div>
-  <div class="navigation-button" id="nb3">商品</div>
-  <div class="navigation-button" id="nb4">連絡</div>
-  <div class="navigation-button" id="nb5">ブログ&raquo;</div>
-</div>
-
 
 {% endblock main_content %}
-
-{% block postscripts %}
-<script type="text/javascript"
-        src="{% static 'main/scripts/blob-button.js' %}"></script>
-<script type="text/javascript"
-        src="{% static 'main/scripts/main.js' %}"></script>
-{% endblock postscripts %}

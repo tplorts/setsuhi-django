@@ -53,23 +53,37 @@
         </p>
         <![endif]-->
 
-    <div id="ml-titles">
-    </div>
-
-
-
-    {% block multilingual %}
-    {% endblock multilingual %}
-
-
     <div id="super-content">
       {% block super_content %}
-      <div id="top-content">
-        {% block top_content %}{% endblock %}
-      </div>
-      <div id="main-content">
-        {% block main_content %}{% endblock %}
-      </div>
+
+        <div id="left-dock">
+          <span class="vertical-text">
+            書道家白石雪妃
+          </span>
+
+          {% block multilingual %}
+            <div id="ml-titles">
+            </div>
+          {% endblock multilingual %}
+        </div>
+
+        <div id="main-navigation" class="">
+          <div class="navigation-button" id="nb1">バイオ</div>
+          <div class="navigation-button" id="nb2">作品</div>
+          <div class="navigation-button" id="nb3">商品</div>
+          <div class="navigation-button" id="nb4">連絡</div>
+          <div class="navigation-button" id="nb5">ブログ&raquo;</div>
+        </div>
+
+
+        <div id="top-content">
+          {% block top_content %}{% endblock %}
+        </div>
+
+        <div id="main-content">
+          {% block main_content %}{% endblock %}
+        </div>
+
       {% endblock super_content %}
     </div>
 
@@ -80,6 +94,10 @@
     {% endblock thirdparty_postscripts %}
 
     {% block default_postscripts %}
+      <script type="text/javascript"
+              src="{% static 'main/scripts/blob-button.js' %}"></script>
+      <script type="text/javascript"
+              src="{% static 'main/scripts/main.js' %}"></script>
     {% endblock default_postscripts %}
 
     
