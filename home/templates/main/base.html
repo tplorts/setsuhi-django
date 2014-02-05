@@ -76,12 +76,10 @@
             </div>
             <div class="ml-widget">
               <div class="btn-group">
-                <a class="btn ml-language"
-                   lang="en">
+                <a class="btn ml-language" lang="en">
                   English
                 </a>
-                <a class="btn ml-language"
-                   lang="ja">
+                <a class="btn ml-language" lang="ja">
                   日本語
                 </a>
               </div>
@@ -89,12 +87,22 @@
           {% endblock multilingual %}
         </div>
 
-        <div id="main-navigation" class="">
-          <div class="navigation-button" id="nb1">バイオ</div>
-          <div class="navigation-button" id="nb2">作品</div>
-          <div class="navigation-button" id="nb3">商品</div>
-          <div class="navigation-button" id="nb4">連絡</div>
-          <div class="navigation-button" id="nb5">ブログ&raquo;</div>
+        <div id="main-navigation">
+          <div class="boxi">
+            <span>About</span>
+          </div>
+          <div class="boxi">
+            <span>作品</span>
+          </div>
+          <div class="boxi">
+            <span>商品</span>
+          </div>
+          <div class="boxi">
+            <span>連絡</span>
+          </div>
+          <div class="boxi">
+            <span>Blog</span>
+          </div>
         </div>
 
 
@@ -119,8 +127,6 @@
     {% endblock thirdparty_postscripts %}
 
     {% block default_postscripts %}
-      <script type="text/javascript"
-              src="{% static 'main/scripts/blob-button.js' %}"></script>
       <script type="text/javascript"
               src="{% static 'main/scripts/multilingual.js' %}"></script>
       <script type="text/javascript"

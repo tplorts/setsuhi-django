@@ -1,4 +1,4 @@
-$(".navigation-button").smoothHover();
+//$(".navigation-button").smoothHover();
 
 (function( $ ){
     $.fn.insertBreaks = function() {
