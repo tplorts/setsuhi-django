@@ -14,8 +14,16 @@
 
 
 #main-content {
-    padding: 0 @side-dock-width;
+    padding: 0  (@side-dock-width + 25px);
 }
+
+.tyle {
+//    .box-shadow( 0, 2px, 5px, 0.8 );
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
 
 .side-dock( @width: @side-dock-width, 
             @bg: @side-dock-bg,
@@ -55,7 +63,7 @@
             width: 100%;
             padding: 30px;
             
-            -webkit-filter: invert() saturate(2);
+            -webkit-filter: brightness(2);
         }
     }
 }
