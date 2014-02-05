@@ -17,7 +17,7 @@
 .button-gradient( @p, @a, @o ) {
     .round-gradient( rgba(@p*255, @p*255, @p*255, @a), 
                      transparent, @o );
-    color: rgb( (1 - @a)*255, (1 - @a)*255, (1 - @a)*255 );
+    color: rgb( (1 - @a/2)*255, (1 - @a)*255, (1 - @a/2)*255 );
 }
 
 .expand-step {
