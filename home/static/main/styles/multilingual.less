@@ -1,39 +1,20 @@
-@import (less) "generic.less";
-
-@ml-bg-color: white;
-@ml-color: black;
-
 
 .ml-widget {
     position: fixed;
     left: 0;
     bottom: 0;
-    padding: 6px 12px 8px 12px;
-    z-index: 10;
+    margin: 10px;
 
-    background-color: @ml-bg-color;
+    .btn {
+        padding: 2px 8px;
+    }
 
     .ml-language {
-        margin-right: 1em;
-        cursor: pointer;
-        color: @ml-color;
-        
-        &:last-of-type {
-            margin-right: 0;
+        &.active {
+            background-color: #800080;
         }
     }
-
-
-    .ml-active-indicator {
-        margin: -2px -7px;
-        border: 2px solid @ml-color;
-        border-radius: 6px;
-        position: absolute;
-        z-index: -1;
-    }
-
 }
-
 
 #ml-titles {
     display: none;

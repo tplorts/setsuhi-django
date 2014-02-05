@@ -1,5 +1,4 @@
 mlWidget = $(".ml-widget");
-mlIndicator = mlWidget.find(".ml-active-indicator");
 
 (function( $ ){
    $.fn.mlFindLocal = function( languageCode ) {
@@ -24,31 +23,14 @@ function setTitleLanguage( languageCode ) {
 }
 
 
-function moveIndicator( lang, animated ) {
-    langButton = mlButton( lang );
-    if( !langButton ) return;
-
-    newProperties = {
-        left: langButton.position().left + "px", 
-        width: (langButton.width() + 14) + "px",
-        height: (langButton.height() + 8) + "px"
-    };
-    if( animated ) {
-        mlIndicator.animate(newProperties, 600);
-    } else {
-        mlIndicator.css( newProperties );
-    }
-
-    mlWidget.find(".selected").removeClass("selected");
-    langButton.addClass("selected");
-}
-
 
 function setLanguage( lang, animated ) {
     langButton = mlButton( lang );
     if( !langButton ) return;
 
-    moveIndicator( lang, animated );
+    mlWidget.find(".ml-language.active").removeClass("active");
+    langButton.addClass("active");
+    
     setTitleLanguage(lang);
 
     $.removeCookie("ml-language-selection");
@@ -87,9 +69,6 @@ priorSelection = $.cookie("ml-language-selection");
 if( priorSelection ) {
     langButton = mlButton( priorSelection );
     if( langButton ) {
-        moveIndicator( priorSelection, false );
         setTitleLanguage( priorSelection );
-    } else {
-        $.removeCookie("ml-language-selection");
     }
 }
