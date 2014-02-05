@@ -56,18 +56,54 @@
         -webkit-filter: invert();
         filter: invert();
     }
+}
 
-    .ml-widget {
-        position: absolute;
-        bottom: 0;
+
+.ml-widget {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+
+    .ml-btn-group {
         width: 100%;
-        padding: 0 30px 15px;
+    }
 
-        .btn {
-            transition: all .2 ease-in;
+    .ml-language {
+        text-align: left;
+        background-color: antiquewhite;
+        transition: all 0.1s ease-in;
+        padding: 4px 8px 4px;
+
+        &:hover {
+            background-color: silver;
+        }
+
+        img {
+            border: 1px solid gray;
+            .grayscale;
+            transition: all 0.4s ease-in;
+        }
+        .active-indicator {
+            opacity: 0;
+            transition: all 0.4s ease-in;
+        }
+        &.active {
+            img {
+                .grayscale(0);
+            }
+            .active-indicator {
+                opacity: 1;
+            }
+        }
+        
+        // The image of Union Jack is 5px shorter than the others
+        &[lang='en'] img {
+            margin: 2.5px 0;
         }
     }
 }
+
 
 #right-dock {
     .side-dock;
