@@ -67,19 +67,16 @@
             書道家白石雪妃
           </div>
 
-          <div id="seal-div">
-            <img src="{% static 'main/images/seal/1-transparent-small.png' %}" />
-          </div>
 
           {% block multilingual %}
             <div id="ml-titles">
             </div>
             <div class="ml-widget">
-              <div class="btn-group">
-                <a class="btn ml-language" lang="en">
+              <div class="btn-group-vertical">
+                <a class="btn btn-default ml-language" lang="en">
                   English
                 </a>
-                <a class="btn ml-language" lang="ja">
+                <a class="btn btn-default ml-language" lang="ja">
                   日本語
                 </a>
               </div>
@@ -106,6 +103,10 @@
             </div>
           </div>
 
+          <div id="seal-div">
+            <img id="seal" src="{% static 'main/images/seal/1-white-transparent-small.png' %}" />
+          </div>
+          
         </div>
 
         <div id="top-content">

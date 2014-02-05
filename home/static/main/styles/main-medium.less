@@ -57,12 +57,14 @@
         filter: invert();
     }
 
-    #seal-div {
-        img {
-            width: 100%;
-            padding: 30px;
-            
-            -webkit-filter: brightness(2);
+    .ml-widget {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 0 30px 15px;
+
+        .btn {
+            transition: all .2 ease-in;
         }
     }
 }
@@ -102,4 +104,15 @@
         color: @side-dock-bg;
     }
     transition: all 0.2s ease-in;
+}
+
+
+#seal-div {
+    position: absolute;
+    bottom: 0;
+
+    #seal {
+        width: 100%;
+        padding: 0 30px 15px;
+    }
 }
