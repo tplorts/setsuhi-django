@@ -1,0 +1,42 @@
+@import (less) "gradient.less";
+@import (less) "generic.less";
+
+
+.blob-button( @bsize, @fsize ) {
+    cursor: pointer;
+    width: @bsize;
+    height: @bsize;
+    border-radius: @bsize;
+    text-align: center;
+    line-height: 1;
+    font-size: @fsize;
+    padding: (@bsize - @fsize)/2   0;
+    border: 2px solid silver;
+}
+
+.button-gradient( @p, @a, @o ) {
+    .round-gradient( rgba(@p*255, @p*255, @p*255, @a), 
+                     transparent, @o );
+    color: rgb( (1 - @a)*255, (1 - @a)*255, (1 - @a)*255 );
+}
+
+.expand-step {
+    &-0 {
+        .button-gradient(0.65, 0.1, 53%);
+    }
+    &-1 {
+        .button-gradient(0.66, 0.2, 54%);
+    }
+    &-2 {
+        .button-gradient(0.68, 0.4, 56%);
+    }
+    &-3 {
+        .button-gradient(0.70, 0.6, 60%);
+    }
+    &-4 {
+        .button-gradient(0.72, 0.8, 62%);
+    }
+    &-5 {
+        .button-gradient(0.73, 0.9, 63%);
+    }
+}

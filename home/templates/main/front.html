@@ -2,19 +2,19 @@
 
 {% load staticfiles  %}
 
-{% block body_class %}black{% endblock %}
+
 
 {% block main_content %}
 <div id="left-pane"></div>
-<div id="main-navigation">
-  <div id="navigation-fadeout"></div>
+<div id="main-navigation" class="">
   <div class="navigation-button expand-step-0" id="nb1">バイオ</div>
   <div class="navigation-button expand-step-0" id="nb2">作品</div>
   <div class="navigation-button expand-step-0" id="nb3">商品</div>
   <div class="navigation-button expand-step-0" id="nb4">連絡</div>
   <div class="navigation-button expand-step-0" id="nb5">ブログ&raquo;</div>
 </div>
-{#<img src="{% static 'main/images/seal/1-large.png' %}" />#}
+
+
 {% endblock main_content %}
 
 {% block postscripts %}

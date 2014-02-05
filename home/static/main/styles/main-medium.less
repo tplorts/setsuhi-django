@@ -1,16 +1,17 @@
 @import (less) "gradient.less";
+@import (less) "generic.less";
+@import (less) "blob-button.less";
 
-@nav-color: #000030;
+
+@nav-color: #500050;
 @nav-width: 144px;
-@fadeout-width: 16px;
 
-@button-color: #500050;
+@meishi-average-color: #562987;
+
+@button-color: #f0f0f0;
 @bsize: 100px;
-@fsize: 24px;
 
-.button-gradient( @p, @o ) {
-    .round-gradient( rgb(@p*255, 0, @p*255), transparent, @o );
-}
+
 
 #main-navigation {
 
@@ -22,47 +23,16 @@
     background-color: @nav-color;
     text-align: center;
 
-    #navigation-fadeout {
-        .gradient-left(@nav-color, transparent, 50%);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: @fadeout-width;
-        margin-left: -@fadeout-width;
-    }
+    .box-shadow( -5px, 0, 15px, 0.5 );
 
     .navigation-button {
-
-        width: @bsize;
-        height: @bsize;
-        border-radius: @bsize;
-        text-align: center;
-        line-height: 1;
+        .blob-button( @bsize, 20px );
         margin: 1em   (@nav-width - @bsize)/2;
-        font-size: @fsize;
-        padding: (@bsize - @fsize)/2   0;
-        color: silver;
     }
+
+
 }
 
-
-.expand-step {
-    &-0 {
-        .button-gradient(0.25, 53%);
-    }
-    &-1 {
-        .button-gradient(0.26, 54%);
-    }
-    &-2 {
-        .button-gradient(0.28, 56%);
-    }
-    &-3 {
-        .button-gradient(0.30, 60%);
-    }
-    &-4 {
-        .button-gradient(0.32, 62%);
-    }
-    &-5 {
-        .button-gradient(0.33, 63%);
-    }
+.meishi-bg {
+    background: url('/static/main/images/meishi-texture-piece.png');
 }
