@@ -19,3 +19,6 @@ def view_with_ml(request, view_name, context={}):
 
 def front(q):
     return view_with_ml(q, 'front')
+
+def about(q):
+    return view_with_ml(q, 'pages/about')
