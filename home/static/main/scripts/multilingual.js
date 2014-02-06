@@ -2,7 +2,7 @@ mlWidget = $(".ml-widget");
 
 (function( $ ){
    $.fn.mlFindLocal = function( languageCode ) {
-       return this.find("[lang='" + languageCode + "']");
+       return this.find(">[lang='" + languageCode + "']");
    }; 
 })( jQuery );
 
