@@ -7,7 +7,7 @@
     <meta name="description" content="{% block description %}{% endblock %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% load staticfiles %}
+    {% load staticfiles multilingual %}
 
     <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
 
@@ -67,9 +67,29 @@
             <img src="{% static 'main/images/signature-transparent-small.png' %}" />
           </div>
 
-          <div class="vertical-text">
-            書道家白石雪妃
-          </div>
+          {% multilingual %}
+            {% mlpart "ja" %}
+              <div class="vertical-text font-32">
+                書道家白石雪妃
+              </div>
+            {% endmlpart %}
+            {% mlpart "en" %}
+              <div class="pad-x-10">
+                <div class="left semibold font-30">
+                  <div style="letter-spacing: 2.8px;">
+                    Setsuhi
+                  </div>
+                  <div>
+                    Shiraishi
+                  </div>
+                </div>
+                <div class="right italic font-22">
+                  Japanese<br>
+                  Calligrapher
+                </div>        
+              </div>
+            {% endmlpart %}
+          {% endmultilingual %}
 
 
           {% block multilingual %}
