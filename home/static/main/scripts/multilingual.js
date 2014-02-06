@@ -23,15 +23,18 @@ function setTitleLanguage( languageCode ) {
 }
 
 
+function indicateActive( langButton ) {
+    mlWidget.find(".ml-language.active").removeClass("active");
+    langButton.addClass("active");
+}
+
 
 function setLanguage( lang, animated ) {
     langButton = mlButton( lang );
     if( !langButton ) return;
 
-    mlWidget.find(".ml-language.active").removeClass("active");
-    langButton.addClass("active");
-    
     setTitleLanguage(lang);
+    indicateActive( langButton );
 
     $.removeCookie("ml-language-selection");
     $.cookie("ml-language-selection", lang, {path: '/', expires: 3650});
@@ -70,5 +73,6 @@ if( priorSelection ) {
     langButton = mlButton( priorSelection );
     if( langButton ) {
         setTitleLanguage( priorSelection );
+        indicateActive( langButton );
     }
 }
