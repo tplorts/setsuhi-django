@@ -25,10 +25,10 @@ people = {
     "Sakaiki": sakaiki_url,
     "日本代表新ユニフォーム": "http://adidas.jp/jfa/",
     "Saideigama": "http://saideigama.com/index_eng.html",
-    "彩泥窯": "http://saideigama.com/",
-    "縁": en_url,
-    "〜en〜縁": en_url,
-    "縁 (&ldquo;en&rdquo;)": en_url,
+    "彩泥窯": "http://saideigama.com/taiken_tepure_syodo_saport.html",
+#    "縁": en_url,
+#    "〜en〜縁": en_url,
+#    "縁 (&ldquo;en&rdquo;)": en_url,
 };
 
 
