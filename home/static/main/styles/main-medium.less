@@ -53,12 +53,18 @@
     font-size: 30px;
     line-height: 1.2;
 
-    #signature-div img {
+    #signature-div {
         width: 100%;
-        padding: 15px;
-
-        -webkit-filter: invert();
-        filter: invert();
+        padding: 10px;
+        
+        #signature {
+            width: 100%;
+            transition: all 0.2s ease-in;
+            .filter( invert() );
+            &:hover {
+                .filter( initial );
+            }
+        }
     }
 }
 
@@ -153,9 +159,14 @@
     position: absolute;
     bottom: 0;
     z-index: -1;
+    padding: 0 30px 15px;
 
     #seal {
         width: 100%;
-        padding: 0 30px 15px;
+
+        transition: all 0.25s ease-in;
+        &:hover {
+            .filter( invert() );
+        }        
     }
 }
