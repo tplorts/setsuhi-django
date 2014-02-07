@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-{% load staticfiles multilingual %}
+{% load staticfiles multilingual link %}
 
 {% block main_content %}
 
@@ -13,21 +13,22 @@
         書道を総合芸術として昇華させる世界観は高く評価されている。<br>
         フランス、ＮＹなど海外でも積極的に活動し、<br>
         生演奏との融合から生まれるライブパフォーマンスは世界中で多くのファンを魅了している。<br>
-        2014ＦＩＦＡワールドカップ　サッカー日本代表新ユニフォームのコンセプト「円陣」揮毫。<br>
+        2014ＦＩＦＡワールドカップ　サッカー{% link "日本代表新ユニフォーム" %}のコンセプト「円陣」揮毫。<br>
         ダイナースクラブ銀座ラウンジ、<br>
-        マンダリンオリエンタル東京（Fissller圧力鍋発売60周年イベント）、<br>
-        大英博物館で揮毫、London improvisers orchestraと共演。<br>
+        マンダリンオリエンタル東京（Fissler圧力鍋発売60周年イベント）、<br>
+        大英博物館で揮毫、{% link "London Improvisers Orchestra" %}と共演。<br>
         パリでアートフェア・個展、NYで個展・Jazz clubライブ出演、ワークショップを開催。<br>
-        マリアシュナイダーオーケストラのJay Anderson, Frank Kinbrough, ジャズホルニストのAdam Unsworthと共演。<br>
-        世界的古筝奏者：姜小青CDジャケット制作。
+        マリアシュナイダーオーケストラの{% link "Jay Anderson" %}, {% link "Frank Kinbrough" %}, 
+        ジャズホルニストの{% link "Adam Unsworth" %}と共演。<br>
+        世界的古筝奏者：{% link "姜小青" %}CDジャケット制作。
       </p>
       <p>
         自身が手掛ける書とアクセサリーのコラボブランド〜en〜縁は、<br>
         渋谷ヒカリエやアベノハルカス近鉄本店など、現在静岡伊勢丹にて常設されている。<br>
-        四谷三丁目喫茶茶会記書道サロン主宰、青山書道教室講師。
+        四谷三丁目{% link "喫茶茶会記" %}書道サロン主宰、青山書道教室講師。
       </p>
       <p>
-        電子書籍雑誌　Vasco da Gama 連載中
+        電子書籍雑誌 {% link "Vasco da Gama" %} 連載中
       </p>
     {% endmlpart %}
     {% mlpart "en" %}
@@ -48,23 +49,23 @@
         the Mandarin Oriental Hotel Tokyo
         (at the 60th anniversary event of the launch of Fissler’s pressure cookers),
         and the British Museum in London.
-        She also held a joint performance with the London Improvisers Orchestra,
+        She also held a joint performance with the {% link "London Improvisers Orchestra" %},
         participated in an art fair in Paris,
         and held personal exhibitions in both Paris and New York.
         Also in New York, Setsuhi conducted a calligraphy workshop and
-        performed in both a jazz club and an art gallery with Jay Anderson and
-        Frank Kinbrough of the Maria Schneider Orchestra as
-        well as jazz horn player Adam Unsworth.
+        performed in both a jazz club and an art gallery with {% link "Jay Anderson" %} and
+        {% link "Frank Kinbrough" %} of the Maria Schneider Orchestra as
+        well as jazz horn player {% link "Adam Unsworth" %}.
       </p>
       <p>
         In addition, Setsuhi calligraphed the title on a CD cover
-        for Jiang Xiao-Qing, a world-famous player of the
+        for {% link "Jiang Xiao-Qing" %}, a world-famous player of the
         traditional Chinese &ldquo;guzheng&rdquo; string instrument.
       </p>
       <p>
-        Setsuhi collaborates with accessory designer RYONA to create
-        縁 (&ldquo;en&rdquo;), their unique brand of calligraphic accessories.
-        The 縁 (&ldquo;en&rdquo;) brand is sold at limited-time
+        Setsuhi collaborates with accessory designer {% link "RYONA" %} to create
+        {% link "縁" %} (&ldquo;en&rdquo;), their unique brand of calligraphic accessories.
+        The {% link "縁" %} (&ldquo;en&rdquo;) brand is sold at limited-time
         stores at the Shibuya Hikarie in Tokyo and the
         Abeno Harukas Kintetsu Main Store in Osaka,
         and is now permanently sold at the Shizuoka Isetan
@@ -72,9 +73,9 @@
       </p>
       <p>
         Futhermore, Setsuhi has hosted the calligraphy salon at
-        the art space and cafeteria Sakaiki in Shinjuku, Tokyo and
-        is a lecturer at the Aoyama Calligraphy School in Shibuya, Tokyo.
-        She also writes for the digital magazine, Vasco da Gama.
+        the art space and cafeteria {% link "Sakaiki" %} in Shinjuku, Tokyo and
+        is a lecturer at the {% link "Aoyama Calligraphy School" %} in Shibuya, Tokyo.
+        She also writes for the digital magazine, {% link "Vasco da Gama" %}.
       </p>
     {% endmlpart %}
   {% endmultilingual %}

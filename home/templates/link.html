@@ -1,0 +1,1 @@
+{% if url == None %}{{ name }}{% else %}<a {% if newWindow %}target="_blank"{% endif %} href="{{ url }}"><span {% if lang != None %}lang="{{lang}}"{% endif %}>{{ name }}</span></a>{% endif %}
