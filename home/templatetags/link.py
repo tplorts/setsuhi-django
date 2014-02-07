@@ -5,23 +5,32 @@ from django import template
 
 register = template.Library()
 
+
+en_url = "http://ja.wikipedia.org/wiki/%E7%B8%81"
+sakaiki_url = "http://sakaiki.modalbeats.com/"
+jiang_url = "http://jiang-xiaoqing.xii.jp/"
+
 people = {
     "Jay Anderson": "http://www.jayandersonbass.com/",
     "Frank Kinbrough": "http://home.earthlink.net/~fkimbrough/",
     "Adam Unsworth": "http://adamunsworth.net/",
     "London Improvisers Orchestra": "http://www.londonimprovisersorchestra.co.uk/",
     "Vasco da Gama": "http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Ddigital-text&field-keywords=magellan+japan+vasco+da+gama",
-    "Jiang Xiao-Qing": "http://jiang-xiaoqing.xii.jp/",
-    "姜小青":  "http://jiang-xiaoqing.xii.jp/",
+    "Jiang Xiao-Qing": jiang_url,
+    "姜小青":  jiang_url,
     "Fissler": "http://www.fissler.com/",
-    "Ryona": "http://ryona.jp",
-    "喫茶茶会記": "http://sakaiki.modalbeats.com/",
-    "茶会記": "http://sakaiki.modalbeats.com/",
-    "Sakaiki": "http://sakaiki.modalbeats.com/",
+    "RYONA": "http://ryona.jp",
+    "喫茶茶会記": sakaiki_url,
+    "茶会記": sakaiki_url,
+    "Sakaiki": sakaiki_url,
     "日本代表新ユニフォーム": "http://adidas.jp/jfa/",
     "Saideigama": "http://saideigama.com/index_eng.html",
     "彩泥窯": "http://saideigama.com/",
+    "縁": en_url,
+    "〜en〜縁": en_url,
+    "縁 (&ldquo;en&rdquo;)": en_url,
 };
+
 
 #@register.inclusion_tag('link.html')
 @register.simple_tag
