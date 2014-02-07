@@ -22,3 +22,12 @@ def front(q):
 
 def about(q):
     return view_with_ml(q, 'pages/about')
+
+def media(q):
+    return view_with_ml(q, 'pages/media')
+
+def lessons(q):
+    return view_with_ml(q, 'pages/lessons')
+
+def contact(q):
+    return view_with_ml(q, 'pages/contact')
