@@ -2,14 +2,20 @@ from django import template
 
 register = template.Library()
 
-ML_CONTEXT_KEY = "ml_active_language"
+
+@register.assignment_tag(takes_context=True)
+def class_for_language(context, lang):
+    if context["ml_active_language"] == lang:
+        return "ml-on"
+    else:
+        return "ml-off"
+
+
 
 @register.inclusion_tag('tags/multilingual.html', takes_context=True)
 def ml(context, *args, **kwargs):
-    return {
-        'multilingual_text': kwargs,
-        'selected_language': context[ML_CONTEXT_KEY]
-    }
+    context["multilingual_text"] = kwargs
+    return context
 
 
 @register.tag
@@ -53,8 +59,5 @@ class MultilingualPartNode(template.Node):
     def render(self, context):
         output = self.nodelist.render(context)
         l = self.language_code
-        if l == context[ML_CONTEXT_KEY]:
-            c = "ml-on"
-        else:
-            c = "ml-off"
+        c = class_for_language( context, l )
         return '<div lang="'+l+'" class="'+c+'">' + output + '</div>'
