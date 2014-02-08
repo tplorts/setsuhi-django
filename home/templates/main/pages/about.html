@@ -1,13 +1,16 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual link %}
+{% load staticfiles multilingual link okiphoto %}
 
 {% block main_content %}
 <div class="container">
   <div id="bio">
-    <!--  <h2>{% ml en="Bio" ja="バイオ" %}</h2> -->
 
-    <div class="image-right">
-      <img src="{% static 'main/images/profile1.jpg' %}" />
+    {# Might we want some sort of title at the top of this page? #}
+    {# Perhaps just a section navigator is good. #}
+    {# <h2>{% ml en="Bio" ja="バイオ" %}</h2> #}
+
+    <div class="float-right right-align">
+      {% okiphoto "/static/main/images/profile1.jpg" %}
     </div>
 
     {% multilingual %}
@@ -126,8 +129,8 @@
   <div id="activities">
     <h2>{% ml en="Activity" ja="活動" %}</h2>
 
-    <div class="image-right">
-      <img src="{% static 'main/images/profile2.jpg' %}" />
+    <div class="float-right right-align">
+      {% okiphoto "/static/main/images/profile2.jpg" %}
     </div>
 
     {% multilingual %}
@@ -208,8 +211,8 @@
 
     {% endmultilingual %}
 
-    <div class="image-right">
-      <img src="{% static 'main/images/profile3.jpg' %}" />
+    <div class="float-right right-align">
+      {% okiphoto "/static/main/images/profile3.jpg" %}
     </div>
 
     {% multilingual %}
@@ -313,8 +316,8 @@
 
     {% endmultilingual %}
 
-    <div class="image-right">
-      <img src="{% static 'main/images/profile4.jpg' %}" />
+    <div class="float-right right-align">
+      {% okiphoto "/static/main/images/profile4.jpg" %}
     </div>
 
     {% multilingual %}
