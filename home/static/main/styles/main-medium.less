@@ -6,6 +6,8 @@
 @side-dock-bg: #500050;
 @side-dock-fg: white;
 
+@content-side-padding: 15px;
+
 @meishi-average-color: #562987;
 
 @button-color: #f0f0f0;
@@ -17,12 +19,10 @@
 }
 
 #main-content {
-    padding: 0  (@side-dock-width + 25px);
+    padding: 30px  (@side-dock-width + @content-side-padding);
 }
 
 .tyle {
-//    .box-shadow( 0, 2px, 5px, 0.8 );
-    padding: 10px;
     margin: 10px 0;
     border-radius: 3px;
 }
