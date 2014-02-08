@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual email_obfuscator %}
+{% load staticfiles multilingual %}
 
 {% block main_content %}
 <div class="container">
@@ -35,13 +35,14 @@
       レッスン日の変更は１週間前まで、以降はキャンセル料１０００円をいただきま
       す。<br>
       まずは、ご希望やご不明な点など、お気軽にお問い合わせください。<br>
-      {{ "setsuhi@modalbeats.com"|obfuscate_mailto }}　白石雪妃
+      setsuhi@modalbeats.com　白石雪妃
     </p>
 
   </div>
 
 
   <hr class="section-separator">
+
 
   <div id="omotesando-lessons">
     <h3>{% ml ja="表参道書道教室" en="Omotesand&#333; Calligraphy Lessons" %}</h3>
