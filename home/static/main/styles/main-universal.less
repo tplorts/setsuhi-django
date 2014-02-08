@@ -1,12 +1,15 @@
-body {
+.opensans {
     font-family: 'Open Sans', sans-serif;
 }
 
-.condensed {
+.opensans-condensed {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
 span, div {
+    &[lang='en'] {
+        .opensans;
+    }
     &[lang='ja'] {
         font-family: 'TakaoMincho';
     }
