@@ -4,7 +4,7 @@ register = template.Library()
 
 ML_CONTEXT_KEY = "ml_active_language"
 
-@register.inclusion_tag('multilingual.html', takes_context=True)
+@register.inclusion_tag('tags/multilingual.html', takes_context=True)
 def ml(context, *args, **kwargs):
     return {
         'multilingual_text': kwargs,

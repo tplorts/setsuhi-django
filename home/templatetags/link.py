@@ -32,7 +32,12 @@ people = {
 };
 
 
-#@register.inclusion_tag('link.html')
+# I would rather use the inclusion tag style rather than
+# (as it is now) a simple tag but a space is always inserted
+# immediately after what is rendered, and that will not do
+# for these links..
+
+#@register.inclusion_tag('tags/link.html')
 @register.simple_tag
 def link( name, lang=None ):
 #    if( name not in people ):
