@@ -53,14 +53,16 @@ def link( name, lang=None ):
     
     if( name in english_addresses ):
         lang = "en"
+        addresses = english_addresses
     elif( name in japanese_addresses ):
         lang = "ja"
+        addresses = japanese_addresses
     else:
         return name
 
     a = "<a "
     target = "target=\"_blank\" "
-    href = "href=\"" + people[name] + "\" "
+    href = "href=\"" + addresses[name] + "\" "
     _a = "</a>"
 
     span = "<span "
