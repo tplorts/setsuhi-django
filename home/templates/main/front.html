@@ -6,27 +6,35 @@
 
 {% block main_content %}
 <div class="container full-width no-padding">
+
+  <div class="tyle-header">
+    <h1>{%ml en="Recent News" ja="最近ニュース" %}</h1>
+  </div>
+  <div class="tyle-section">
   <div class="tyle">
     <div class="tyle-slideshow float-left full-height">
       {% photocarousel "p0" "/static/main/images/p0" "8" %}
     </div>
     <div class="tyle-text">
-      {% multilingual %}
-        {% mlpart "en" %}
-          [1] Saepe et multum hoc mecum cogitavi, bonine an mali plus attulerit hominibus et civitatibus copia dicendi ac summum eloquentiae studium. Nam cum et nostrae rei publicae detrimenta considero et maximarum civitatum veteres animo calamitates colligo, non minimam video per disertissimos homines invectam partem incommodorum; cum autem res ab nostra memoria propter vetustatem remotas ex litterarum monumentis repetere instituo, multas urbes constitutas, plurima bella restincta, firmissimas societates, sanctissimas amicitias intellego cum animi ratione tum facilius eloquentia comparatas.
-        {% endmlpart %}
-        {% mlpart "ja" %}
-          [ 1 ]多くの場合、私の心の中にこの質問の多くは、男性にして雄弁の最上位の供給の都市に話し、多くの悪のための流暢かどうか。私は災害にも私たちの心の中で最も重要な状態の状態の古代の災害を考えるとするため、わずかな不便の部分を通って私が見ることができる最も雄弁な人を紹介していない：それが原因で自分の年齢の私たち自身のメモリ内で見つかった繰り返すように、リモートからの文字の墓から逮捕する際には、多くの都市が設立され、多くの戦いなので、反応を停止させ、最も近いしている社会、そして意図的かつ雄弁によってより簡単に、最も神聖な友情。
-        {% endmlpart %}
-      {% endmultilingual %}
+        {% multilingual %}
+          {% mlpart "en" %}
+            [1] Saepe et multum hoc mecum cogitavi, bonine an mali plus attulerit hominibus et civitatibus copia dicendi ac summum eloquentiae studium. Nam cum et nostrae rei publicae detrimenta considero et maximarum civitatum veteres animo calamitates colligo, non minimam video per disertissimos homines invectam partem incommodorum; cum autem res ab nostra memoria propter vetustatem remotas ex litterarum monumentis repetere instituo, multas urbes constitutas, plurima bella restincta, firmissimas societates, sanctissimas amicitias intellego cum animi ratione tum facilius eloquentia comparatas.
+          {% endmlpart %}
+          {% mlpart "ja" %}
+            [ 1 ]多くの場合、私の心の中にこの質問の多くは、男性にして雄弁の最上位の供給の都市に話し、多くの悪のための流暢かどうか。私は災害にも私たちの心の中で最も重要な状態の状態の古代の災害を考えるとするため、わずかな不便の部分を通って私が見ることができる最も雄弁な人を紹介していない：それが原因で自分の年齢の私たち自身のメモリ内で見つかった繰り返すように、リモートからの文字の墓から逮捕する際には、多くの都市が設立され、多くの戦いなので、反応を停止させ、最も近いしている社会、そして意図的かつ雄弁によってより簡単に、最も神聖な友情。
+          {% endmlpart %}
+        {% endmultilingual %}
+      </div>
     </div>
+
+    <div class="tyle">
+      [2] Ac si volumus huius rei, quae vocatur eloquentia, sive artis sive studii sive exercitationis cuiusdam sive facultatis ab natura profectae considerare principium, reperiemus id ex honestissimis causis natum atque optimis rationibus profectum.<br>
+      Nam fuit quoddam tempus, cum in agris homines passim bestiarum modo vagabantur et sibi victu fero vitam propagabant nec ratione animi quicquam, sed pleraque viribus corporis administrabant, nondum divinae religionis, non humani officii ratio colebatur, nemo nuptias viderat legitimas, non certos quisquam aspexerat liberos, non, ius aequabile quid utilitatis haberet, acceperat. Ita propter errorem atque inscientiam caeca ac temeraria dominatrix animi cupiditas ad se explendam viribus corporis abutebatur, perniciosissimis satellitibus.
+      Quo tempore quidam magnus videlicet vir et sapiens cognovit, quae materia esset et quanta ad maximas res opportunitas in animis inesset hominum, si quis eam posset elicere et praecipiendo meliorem reddere; qui dispersos homines in agros et in tectis silvestribus abditos ratione quadam conpulit unum in locum et congregavit et eos in unam quamque rem inducens utilem atque honestam primo propter insolentiam reclamantes, deinde propter rationem atque orationem studiosius audientes ex feris et inmanibus mites reddidit et mansuetos.<br>
+    </div>
+
   </div>
 
-  <div class="tyle">
-    [2] Ac si volumus huius rei, quae vocatur eloquentia, sive artis sive studii sive exercitationis cuiusdam sive facultatis ab natura profectae considerare principium, reperiemus id ex honestissimis causis natum atque optimis rationibus profectum.<br>
-    Nam fuit quoddam tempus, cum in agris homines passim bestiarum modo vagabantur et sibi victu fero vitam propagabant nec ratione animi quicquam, sed pleraque viribus corporis administrabant, nondum divinae religionis, non humani officii ratio colebatur, nemo nuptias viderat legitimas, non certos quisquam aspexerat liberos, non, ius aequabile quid utilitatis haberet, acceperat. Ita propter errorem atque inscientiam caeca ac temeraria dominatrix animi cupiditas ad se explendam viribus corporis abutebatur, perniciosissimis satellitibus.
-    Quo tempore quidam magnus videlicet vir et sapiens cognovit, quae materia esset et quanta ad maximas res opportunitas in animis inesset hominum, si quis eam posset elicere et praecipiendo meliorem reddere; qui dispersos homines in agros et in tectis silvestribus abditos ratione quadam conpulit unum in locum et congregavit et eos in unam quamque rem inducens utilem atque honestam primo propter insolentiam reclamantes, deinde propter rationem atque orationem studiosius audientes ex feris et inmanibus mites reddidit et mansuetos.<br>
-  </div>
 
   <div class="tyle">
     [3] Ac mihi quidem hoc nec tacita videtur nec inops dicendi sapientia perficere potuisse, ut homines a consuetudine subito converteret et ad diversas rationes vitae traduceret.<br>
