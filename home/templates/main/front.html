@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual %}
+{% load staticfiles multilingual photocarousel %}
 
 {% block body_class %}half-black{% endblock %}
 
@@ -7,6 +7,8 @@
 {% block main_content %}
 <div class="container full-width no-padding">
   <div class="tyle">
+    {% photocarousel "p0" "/static/main/images/p0" %}
+
     {% multilingual %}
       {% mlpart "en" %}
         [1] Saepe et multum hoc mecum cogitavi, bonine an mali plus attulerit hominibus et civitatibus copia dicendi ac summum eloquentiae studium. Nam cum et nostrae rei publicae detrimenta considero et maximarum civitatum veteres animo calamitates colligo, non minimam video per disertissimos homines invectam partem incommodorum; cum autem res ab nostra memoria propter vetustatem remotas ex litterarum monumentis repetere instituo, multas urbes constitutas, plurima bella restincta, firmissimas societates, sanctissimas amicitias intellego cum animi ratione tum facilius eloquentia comparatas.<br>
