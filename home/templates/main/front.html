@@ -7,7 +7,9 @@
 {% block main_content %}
 <div class="container full-width no-padding">
   <div class="tyle">
-    {% photocarousel "p0" "/static/main/images/p0" %}
+    <div class="tyle-slideshow float-left full-height">
+      {% photocarousel "p0" "/static/main/images/p0" %}
+    </div>
 
     {% multilingual %}
       {% mlpart "en" %}

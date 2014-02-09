@@ -1,14 +1,12 @@
 @import (less) "gradient.less";
 @import (less) "generic.less";
-
+@import (less) "colors.less";
 
 @side-dock-width: 144px;
-@side-dock-bg: #500050;
+@side-dock-bg: @setsuhi-murasaki;
 @side-dock-fg: white;
 
 @content-side-padding: 15px;
-
-@meishi-average-color: #562987;
 
 @button-color: #f0f0f0;
 @button-size: 70px;
@@ -23,6 +21,44 @@
     padding: 15px 30px;
     margin-top: 40px;
     margin-bottom: 40px;
+    height: 20em;
+
+    .tyle-slideshow {
+        width: 33%;
+        max-width: 400px;
+        min-width: 200px;
+        padding-bottom: 25px;
+        
+        .carousel {
+            height: 100%;
+            .carousel-inner {
+                overflow: hidden;
+                height: 100%;
+                img {
+                    .fit-image;
+                    .center-image;
+                }
+            }
+
+            .carousel-control {
+                background-image: none;
+            }
+        }
+        .carousel-indicators {
+            margin-bottom: -50px;
+            li {
+                width: 14px;
+                height: 14px;
+                margin: 2px;
+                border: none;
+                background-color: @soft-black;
+                &.active {
+                    background-color: @setsuhi-murasaki;
+                }
+                transition: all 0.1s linear;
+            }
+        }
+    }
 }
 
 
