@@ -32,7 +32,9 @@
     }
 
     .tyle-text {
-        padding-left: 20px;
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0.5em;
+        }
     }
 
     .tyle-slideshow {
@@ -40,7 +42,11 @@
         max-width: 400px;
         min-width: 200px;
         padding-bottom: 25px;
-        
+
+        &.float-left {
+            margin-right: 15px;
+        }
+
         .carousel {
             height: 100%;
             .carousel-inner {
@@ -67,7 +73,7 @@
                 &.active {
                     background-color: @setsuhi-murasaki;
                 }
-                transition: all 0.1s linear;
+//                transition: all 0.1s linear;
             }
         }
     }
@@ -127,7 +133,7 @@
 
     .ml-language {
         text-align: left;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: @soft-black;
         color: silver;
         border-color: black;
         transition: all 0.1s ease-in;
