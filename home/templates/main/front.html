@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual photocarousel %}
+{% load staticfiles multilingual photocarousel link %}
 
 {% block body_class %}half-black{% endblock %}
 
@@ -8,7 +8,7 @@
 <div class="container full-width no-padding">
 
   <div class="tyle-header">
-    <h1>{%ml en="Recent News" ja="最近ニュース" %}</h1>
+    <h1>Recent News</h1>
   </div>
   <div class="tyle-section">
     <div class="tyle">
@@ -31,7 +31,8 @@
               various places around the Adidas Group's office.
               For more on the concept behind 
               <span lang="ja">&ldquo;円陣&rdquo;</span>
-              please check out Adidas's website.
+              please check out Adidas's 
+              {% link "article about the jersey" %}.
             </p>
           {% endmlpart %}
           {% mlpart "ja" %}

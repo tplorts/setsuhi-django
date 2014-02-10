@@ -9,6 +9,8 @@ register = template.Library()
 en_url = "http://ja.wikipedia.org/wiki/%E7%B8%81"
 sakaiki_url = "http://sakaiki.modalbeats.com/"
 jiang_url = "http://jiang-xiaoqing.xii.jp/"
+adidas_article = "http://news.adidas.com/GLOBAL/Latest-News/adidas-presents-the-Japanese-federation-kit-for-2014-FIFA-World-Cup-Brazil-/s/006665d3-f880-4b36-b1a1-ee07f37a3805#.UvhZ4j03Srs.link"
+
 
 # If the display name is in Roman characters, I want the
 # English font used.  Even if the link appears in a
@@ -25,6 +27,8 @@ english_addresses = {
     "Sakaiki": sakaiki_url,
     "Saideigama": "http://saideigama.com/index_eng.html",
 #    "縁 (&ldquo;en&rdquo;)": en_url,
+    "article about the jersey": adidas_article,
+
 };
 japanese_addresses = {
     "姜小青":  jiang_url,
