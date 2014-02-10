@@ -10,62 +10,57 @@
   <div class="tyle-header">
     <h1>Recent News</h1>
   </div>
+
   <div class="tyle-section">
     <div class="tyle">
-      <div class="tyle-slideshow float-left full-height">
-        {% photocarousel "p0" "/static/main/images/p0" "6" %}
-      </div>
-      <div class="tyle-text">
-        <h3>{% ml en="&ldquo;ENJIN&rdquo;" ja="「円陣」" %}</h3>
-        {% multilingual %}
-          {% mlpart "en" %}
-            <p>
-              Setsuhi recently had the honor of calligraphing the
-              emblem to appear on the jerseys of Japan's National
-              Football Team for the 2014 FIFA World Cup in Brazil!
-              The emblem is the word <span lang="ja">円陣</span>
-              (&ldquo;enjin&rdquo;), meaning &ldquo;huddle&rdquo;.
-              In these photographs: the official jersey with the 
-              emblem on its left sleeve; employees at the Adidas Group
-              form an enjin; and the enjin emblem can be seen in
-              various places around the Adidas Group's office.
-              For more on the concept behind 
-              <span lang="ja">&ldquo;円陣&rdquo;</span>
-              please check out Adidas's 
-              {% link "article about the jersey" %}.
-            </p>
-          {% endmlpart %}
-          {% mlpart "ja" %}
-            <p>
-              2014　ＦＩＦＡ　サッカーワールドカップ
-              日本代表　新ユニフォームのコンセプト
-              「円陣」を揮毫させていただきました！
-              アダィダスグループの社員の方々が
-              円陣を組んで一致団結した「円陣式」です。
-              社員の方から写真をシェアしていただきました。
-            </p>
-          {% endmlpart %}
-        {% endmultilingual %}
-      </div>
-    </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="tyle-slideshow full-height">
+            {% photocarousel "p0" "/static/main/images/p0" "6" %}
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="tyle-text">
+            <h3>{% ml en="&ldquo;ENJIN&rdquo;" ja="「円陣」" %}</h3>
+            {% multilingual %}
+              {% mlpart "en" %}
+                <p>
+                  Setsuhi recently had the honor of calligraphing the
+                  emblem to appear on the jerseys of Japan's National
+                  Football Team for the 2014 FIFA World Cup in Brazil!
+                  The emblem is the word <span lang="ja">円陣</span>
+                  (&ldquo;enjin&rdquo;), meaning &ldquo;huddle&rdquo;.
+                  In these photographs: the official jersey with the 
+                  emblem on its left sleeve; employees at the Adidas Group
+                  form an enjin; and the enjin emblem can be seen in
+                  various places around the Adidas Group's office.
+                  For more on the concept behind 
+                  <span lang="ja">&ldquo;円陣&rdquo;</span>
+                  please check out Adidas's 
+                  {% link "article about the jersey" %}.
+                </p>
+              {% endmlpart %}
+              {% mlpart "ja" %}
+                <p>
+                  2014　ＦＩＦＡ　サッカーワールドカップ
+                  日本代表　新ユニフォームのコンセプト
+                  「円陣」を揮毫させていただきました！
+                  アダィダスグループの社員の方々が
+                  円陣を組んで一致団結した「円陣式」です。
+                  社員の方から写真をシェアしていただきました。
+                </p>
+              {% endmlpart %}
+            {% endmultilingual %}
+          </div> <!-- end .tyle-text -->
+        </div> <!-- end .col -->
+      </div> <!-- end .row -->
+    </div> <!-- end .tyle -->
 
     <div class="tyle">
+    </div> <!-- end .tyle -->
 
-    </div>
-
-  </div>
+  </div> <!-- end .tyle-section -->
 
 
-  <div class="tyle">
-    [3] Ac mihi quidem hoc nec tacita videtur nec inops dicendi sapientia perficere potuisse, ut homines a consuetudine subito converteret et ad diversas rationes vitae traduceret.<br>
-    Age vero urbibus constitutis, ut fidem colere et iustitiam retinere discerent et aliis parere sua voluntate consuescerent ac non modo labores excipiendos communis commodi causa, sed etiam vitam amittendam existimarent, qui tandem fieri potuit, nisi homines ea, quae ratione invenissent, eloquentia persuadere potuissent? Profecto nemo nisi gravi ac suavi commotus oratione, cum viribus plurimum posset, ad ius voluisset sine vi descendere, ut inter quos posset excellere, cum iis se pateretur aequari et sua voluntate a iucundissima consuetudine recederet, quae praesertim iam naturae vim optineret propter vetustatem.<br>
-    Ac primo quidem sic et nata et progressa longius eloquentia videtur et item postea maximis in rebus pacis et belli cum summis hominum utilitatibus esse versata; postquam vero commoditas quaedam, prava virtutis imitatrix, sine ratione officii dicendi copiam consecuta est, tum ingenio freta malitia pervertere urbes et vitas hominum labefactare assuevit.<br>
-    Atque huius quoque exordium mali, quoniam principium boni diximus, explicemus.<br>
-  </div>
-
-  <div class="tyle">
-    [4] Veri simillimum mihi videtur quodam tempore neque in publicis rebus infantes et insipientes homines solitos esse versari nec vero ad privatas causas magnos ac disertos homines accedere, sed cum a summis viris maximae res administrarentur, arbitror alios fuisse non incallidos homines, qui ad parvas controversias privatorum accederent. Quibus in controversiis cum saepe a mendacio contra verum stare homines consuescerent, dicendi assiduitas induit audaciam, ut necessario superiores illi propter iniurias civium resistere audacibus et opitulari suis quisque necessariis cogeretur. Itaque cum in dicendo saepe par, nonnumquam etiam superior visus esset is, qui omisso studio sapientiae nihil sibi praeter eloquentiam comparasset, fiebat, ut et multitudinis et suo iudicio dignus, qui rem publicam gereret, videretur. Hinc nimirum non iniuria, cum ad gubernacula rei publicae temerarii atque audaces homines accesserant, maxima ac miserrima naufragia fiebant. Quibus rebus tantum odii atque invidiae suscepit eloquentia, ut homines ingeniosissimi, quasi ex aliqua turbida tempestate in portum, sic ex seditiosa ac tumultuosa vita se in studium aliquod traderent quietum.<br>
-    Quare mihi videntur postea cetera studia recta atque honesta per otium concelebrata ab optimis enituisse, hoc vero a plerisque eorum desertum obsolevisse tempore, quo multo vehementius erat retinendum et studiosius ad augendum.
-  </div>
-</div>
+</div> <!-- end .container -->
 {% endblock main_content %}
