@@ -1,5 +1,5 @@
 
-<div id="{{carousel_id}}" class="carousel slide" data-ride="carousel" data-interval="8000">
+<div id="{{carousel_id}}" class="carousel slide full-height" data-ride="carousel" data-interval="8000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     {% for ph in photos %}
@@ -13,7 +13,7 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+  <div class="carousel-inner full-height">
     {% for ph in photos %}
       <div class="item {% if forloop.counter0 == 0 %}active{%endif%}">
         <img src="{{photo_path}}/{{ph}}" />
