@@ -18,6 +18,7 @@ adidas_article = "http://news.adidas.com/GLOBAL/Latest-News/adidas-presents-the-
 english_addresses = {
     "Jay Anderson": "http://www.jayandersonbass.com/",
     "Frank Kinbrough": "http://home.earthlink.net/~fkimbrough/",
+    "Maria Schneider": "http://www.mariaschneider.com/",
     "Adam Unsworth": "http://adamunsworth.net/",
     "London Improvisers Orchestra": "http://www.londonimprovisersorchestra.co.uk/",
     "Vasco da Gama": "http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Ddigital-text&field-keywords=magellan+japan+vasco+da+gama",
@@ -31,6 +32,7 @@ english_addresses = {
     "JZ Brat": "http://www.jzbrat.com/",
 };
 japanese_addresses = {
+    "マリアシュナイダー": "http://www.mariaschneider.com/",
     "姜小青":  jiang_url,
     "喫茶茶会記": sakaiki_url,
     "茶会記": sakaiki_url,
