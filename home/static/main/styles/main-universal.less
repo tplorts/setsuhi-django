@@ -14,22 +14,14 @@
     font-family: 'TakaoMincho';
 }
 
-span, div {
-    &[lang='en'] {
-        .opensans;
-    }
-    &[lang='ja'] {
-        .takao;
-    }
+[lang="ja"] {
+    font-family: 'TakaoMincho' !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: serif;
     span, div {
         font-family: inherit !important;
-        &[lang='ja'] {
-            font-family: 'TakaoMincho' !important;
-        }
     }
 }
 
