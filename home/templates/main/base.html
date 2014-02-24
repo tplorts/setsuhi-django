@@ -70,7 +70,7 @@
     <div id="super-content">
       {% block super_content %}
 
-        <div id="left-dock">
+        <div id="left-dock" class="hidden-xs">
           <div id="signature-div">
             <a href="{% url 'front' %}">
               <img id="signature" src="{% static 'main/images/signature-transparent-small.png' %}" />
@@ -124,7 +124,7 @@
           {% endblock multilingual %}
         </div>
 
-        <div id="right-dock">
+        <div id="right-dock" class="hidden-xs">
           <div id="main-navigation">
 
             {% for view_name, english, japanese in nav_list %}
