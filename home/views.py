@@ -13,7 +13,7 @@ def ml_selection(request):
 
 def view_with_ml(request, view_name, context={}):
     context[ML_CONTEXT_KEY] = ml_selection(request)
-    context['present_view_name'] = view_name
+    context['present_view_name'] = view_name.split("/")[-1]
     return render(request, 'main/'+view_name+'.html', context)
 
 
