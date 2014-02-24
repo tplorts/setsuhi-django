@@ -1,4 +1,17 @@
-@import (less) "generic.less"
+@import (less) "generic.less";
+@import (less) "colors.less";
+
+@side-dock-width: 144px;
+@side-dock-bg: @setsuhi-murasaki;
+@side-dock-fg: white;
+
+@content-side-padding: 15px;
+
+@button-color: #f0f0f0;
+@button-size: 70px;
+
+
+
 
 
 .section-separator {
@@ -9,3 +22,159 @@
 .photo-theca {
     margin: 1em;
 }
+
+
+
+//===================================
+// SIDE DOCKS
+
+
+
+.side-dock( @width: @side-dock-width, 
+            @bg: @side-dock-bg,
+            @fg: @side-dock-fg ) 
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: @width;
+    background-color: @bg;
+    color: @fg;
+}
+
+.dock-shadow( @x ) {
+    .box-shadow( @x, 0, 15px, 0.5 );
+}
+
+#left-dock {
+    .side-dock;
+    left: 0;
+    .dock-shadow( 5px );
+    text-align: center;
+
+    font-size: 30px;
+    line-height: 1.2;
+
+    #signature-div {
+        width: 100%;
+        padding: 25px;
+        
+        #signature {
+            width: 100%;
+            transition: all 0.2s ease-in;
+            .filter( invert() );
+            &:hover {
+                .filter( initial );
+            }
+        }
+    }
+}
+
+
+.ml-widget {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+
+    .ml-btn-group {
+        width: 100%;
+    }
+
+    .ml-language {
+        text-align: left;
+        background-color: @soft-black;
+        color: silver;
+        border-color: black;
+        transition: all 0.1s ease-in;
+        padding: 4px 8px 4px;
+
+        &:hover {
+            background-color: silver;
+            color: black;
+        }
+
+        img {
+            .grayscale;
+            transition: all 0.4s ease-in;
+        }
+        .active-indicator {
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
+        &.active {
+            img {
+                .grayscale(0);
+            }
+            .active-indicator {
+                opacity: 1;
+            }
+        }
+        
+        // The image of Union Jack is 5px shorter than the others
+        &[lang='en'] img {
+            margin: 2.5px 0;
+        }
+    }
+}
+
+
+#right-dock {
+    .side-dock;
+    .dock-shadow( -5px );
+    right: 0;
+    text-align: center;
+
+    .navlink-wrapper {
+        // The only way I found to center them is manually
+        margin: 1em (@side-dock-width - @button-size)/2;
+    }
+}
+
+.boxi {
+    width: @button-size;
+    height: @button-size;
+
+    border: 2px solid white;
+    color: white;
+
+    // This places the content at the bottom right
+    position: relative;
+    .boxi-br {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 3px;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+        color: @side-dock-bg;
+    }
+    transition: all 0.2s ease-in;
+}
+
+
+#seal-div {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 30px 15px;
+
+    #seal {
+        width: 100%;
+
+        transition: all 0.25s ease-in;
+        &:hover {
+            .filter( invert() );
+        }        
+    }
+}
+
+// Accomodate for the side docks
+#main-content {
+    padding: 0 @side-dock-width;
+}
+

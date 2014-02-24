@@ -1,4 +1,5 @@
-@import (less) "generic.less"
+@import (less) "generic.less";
+@import (less) "colors.less";
 
 
 .opensans {
@@ -33,8 +34,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.tyle-header {
+    margin: 0 30px;
+}
+
 .tyle {
-    margin: 10px 0;
+    background-color: white;
+    padding: 15px 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .tyle-text {
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0.5em;
+        }
+    }
+
+    .tyle-slideshow {
+        padding-bottom: 25px;
+
+        .carousel {
+            .carousel-inner {
+                img {
+                    .fit-image;
+                    .center-image;
+                }
+            }
+
+            .carousel-control {
+                background-image: none;
+            }
+        }
+        .carousel-indicators {
+            margin-bottom: -50px;
+            li {
+                width: 14px;
+                height: 14px;
+                margin: 2px;
+                border: none;
+                background-color: @soft-black;
+                &.active {
+                    background-color: @setsuhi-murasaki;
+                }
+            }
+        }
+    }
 }
 
 
