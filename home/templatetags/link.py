@@ -28,7 +28,7 @@ english_addresses = {
     "Saideigama": "http://saideigama.com/index_eng.html",
 #    "縁 (&ldquo;en&rdquo;)": en_url,
     "article about the jersey": adidas_article,
-    "JZ Brat": "http://www.jzbrat.com/"
+    "JZ Brat": "http://www.jzbrat.com/",
 };
 japanese_addresses = {
     "姜小青":  jiang_url,
