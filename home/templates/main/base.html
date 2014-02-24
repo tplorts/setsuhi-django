@@ -127,53 +127,18 @@
         <div id="right-dock">
           <div id="main-navigation">
 
-            <div class="navlink-wrapper">
-              <a href="{% url 'about' %}">
-                <div class="boxi">
-                  <div class="boxi-br">
-                    {% ml en="About" ja="紹介" %}
+            {% for view_name, english, japanese in nav_list %}
+              <div class="navlink-wrapper">
+                <a href="{% url view_name %}">
+                  <div class="boxi">
+                    <div class="boxi-br">
+                      {% ml en=english ja=japanese %}
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-{% comment %}
-            <div class="navlink-wrapper">
-              <a href="{% url 'works' %}">
-                <div class="boxi">
-                  <div class="boxi-br">
-                    {% ml ja="制作" en="Works" %}
-                  </div>
-                </div>
-              </a>
-            </div>
-{% endcomment %}
-            <div class="navlink-wrapper">
-              <a href="{% url 'media' %}">
-                <div class="boxi">
-                  <div class="boxi-br">
-                    {% ml ja="画像" en="Media" %}
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="navlink-wrapper">
-              <a href="{% url 'lessons' %}">
-                <div class="boxi">
-                  <div class="boxi-br">
-                    {% ml ja="教室" en="Lessons" %}
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="navlink-wrapper">
-              <a href="{% url 'contact' %}">
-                <div class="boxi">
-                  <div class="boxi-br">
-                    {% ml ja="連絡" en="Contact" %}
-                  </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
+            {% endfor %}
+
             <div class="navlink-wrapper">
               <a target="_blank" href="http://setsuhi.blogspot.jp/">
                 <div class="boxi">
