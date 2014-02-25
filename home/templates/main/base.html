@@ -25,14 +25,10 @@
 
     {% block thirdparty_styles %}
       <link rel="stylesheet" type="text/css"
-            href="{% static 'third/styles/normalize.css' %}" />
-      <link rel="stylesheet" type="text/css"
             href="{% static 'third/styles/bootstrap.min.css' %}" />
     {% endblock thirdparty_styles %}
 
     {% block default_styles %}
-      <link rel="stylesheet/less" type="text/css"
-            href="{% static 'main/styles/multilingual.less' %}" />
       <link rel="stylesheet/less" type="text/css"
             href="{% static 'main/styles/styles.less' %}" />
     {% endblock default_styles %}
