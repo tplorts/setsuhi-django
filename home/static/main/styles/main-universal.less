@@ -42,6 +42,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+// I don't know why bootstrap didn't make these
+// full width in the first place.
+.carousel-indicators {
+    width: 100%;
+    margin-left: -50%;
+}
+
+
 .tyle-header {
     margin: 0 30px;
 }
@@ -93,5 +101,36 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+
+
+#main-content {
+    padding-top: 52px; // mobile navbar
+}
+
+
+.navbar-setsuhi {
+
+    background-color: @setsuhi-murasaki;
+    
+    a {
+        color: white !important;
+        &:hover {
+            color: rgb(150, 60, 100) !important;
+        }
+    }
+
+    .ml-mobile-widget {
+        position: absolute;
+        right: 74px;
+        margin: (50px - 22px) / 2   20px;
+        
+        a {
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
 
 

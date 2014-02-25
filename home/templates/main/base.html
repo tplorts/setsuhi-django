@@ -67,7 +67,7 @@
       {% block super_content %}
 
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs" role="navigation">
+        <div class="navbar navbar-default navbar-setsuhi navbar-fixed-top visible-xs" role="navigation">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -79,21 +79,19 @@
               <a class="navbar-brand" href="{% url 'front' %}">
                 {% ml ja="書道家白石雪妃" en="Setsuhi Shiraishi, Japanese Calligrapher" %}
               </a>
+              <div class="ml-widget ml-mobile-widget">
+                <a class="ml-language" lang="ja">
+                  <img src="{% static 'main/images/flags/ja-small.png' %}" />
+                  日本語
+                </a>
+                <a class="ml-language" lang="en">
+                  <img src="{% static 'main/images/flags/en-small.png' %}" />
+                  English
+                </a>
+              </div>
             </div>
             <div class="navbar-collapse collapse" style="height: 1px;">
               <ul class="nav navbar-nav">
-                <li>
-                  <div class="ml-widget ml-mobile-widget">
-                      <a class="ml-language" lang="ja">
-                        <img src="{% static 'main/images/flags/ja-small.png' %}" />
-                        日本語
-                      </a>
-                      <a class="ml-language" lang="en">
-                        <img src="{% static 'main/images/flags/en-small.png' %}" />
-                        English
-                      </a>
-                  </div>
-                </li>
                 {% for view_name, english, japanese in nav_list %}
                   <li>
                     <a href="{% url view_name %}">
