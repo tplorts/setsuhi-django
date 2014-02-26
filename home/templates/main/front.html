@@ -16,7 +16,8 @@
       <div class="row">
         <div class="col-sm-7 col-md-4">
           <div class="tyle-slideshow" id="enjin-slideshow">
-            {% photocarousel "p0" "/static/main/images/p0" "6" %}
+            {% static 'main/images/p0' as p0_path %}
+            {% photocarousel "p0" p0_path "6" %}
           </div>
         </div>
         <div class="col-sm-5 col-md-8">
