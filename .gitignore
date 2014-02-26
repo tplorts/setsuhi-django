@@ -59,3 +59,7 @@ venv
 
 #?
 staticfiles
+
+# Keeping large media data in AWS S3 and
+# I do not want it inside the repository
+media
