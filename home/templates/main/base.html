@@ -9,7 +9,23 @@
 
     {% load staticfiles multilingual %}
 
-    <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
+    <!-- ================== ICONS ================== -->
+    <link rel="apple-touch-icon-precomposed" href="{% static 'media/icons/setsuhi-inverted-152.png' %}">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="{% static 'media/icons/setsuhi-inverted-144.png' %}">
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'media/icons/setsuhi-inverted-152.png' %}">
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'media/icons/setsuhi-inverted-144.png' %}">
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'media/icons/setsuhi-inverted-120.png' %}">
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'media/icons/setsuhi-inverted-114.png' %}">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'media/icons/setsuhi-inverted-72.png' %}">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="{% static 'media/icons/setsuhi-inverted-57.png' %}">
+
 
     <!-- FONTS -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,800,700,600|Open+Sans+Condensed:300,700,300italic" rel="stylesheet" type="text/css">
