@@ -275,6 +275,7 @@ h6 div {
   .ml-widget .ml-language .active-indicator {
     opacity: 0;
     transition: opacity 0.4s ease-in;
+    font-family: serif !important;
   }
   .ml-widget .ml-language.active img {
     -webkit-filter: grayscale(0);
