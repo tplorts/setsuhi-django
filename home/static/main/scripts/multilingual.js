@@ -69,13 +69,14 @@ mlWidget.find(".ml-language").click( function() {
 
 
 priorSelection = $.cookie("ml-language-selection");
-if( priorSelection ) {
-    langButton = mlButton( priorSelection );
+if( !priorSelection ) {
+    priorSelection = "ja";
+}
+langButton = mlButton( priorSelection );
 
-    // We take the presence of a button for a particular language
-    // to mean that this website has that language available.
-    // Therefore, only set to that language if it's available.
-    if( langButton ) {
-        setLanguage( priorSelection, false );
-    }
+// We take the presence of a button for a particular language
+// to mean that this website has that language available.
+// Therefore, only set to that language if it's available.
+if( langButton ) {
+    setLanguage( priorSelection, false );
 }
