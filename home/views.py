@@ -16,7 +16,7 @@ def ml_selection(request):
     if ML_COOKIE_NAME in request.COOKIES:
         lang = request.COOKIES[ML_COOKIE_NAME]
     else:
-        lang = "en"
+        lang = "ja"
     return lang
 
 
