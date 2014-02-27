@@ -10,23 +10,23 @@
     {% load staticfiles multilingual %}
 
     <!-- ================== ICONS ================== -->
-    <link rel="apple-touch-icon-precomposed" href="{% static 'media/icons/setsuhi-inverted-152.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'main/icons/setsuhi-inverted-152.png' %}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="{% static 'media/icons/setsuhi-inverted-144.png' %}">
+    <meta name="msapplication-TileImage" content="{% static 'main/icons/setsuhi-inverted-144.png' %}">
     <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'media/icons/setsuhi-inverted-152.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'main/icons/setsuhi-inverted-152.png' %}">
     <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'media/icons/setsuhi-inverted-144.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'main/icons/setsuhi-inverted-144.png' %}">
     <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'media/icons/setsuhi-inverted-120.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'main/icons/setsuhi-inverted-120.png' %}">
     <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'media/icons/setsuhi-inverted-114.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'main/icons/setsuhi-inverted-114.png' %}">
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'media/icons/setsuhi-inverted-72.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'main/icons/setsuhi-inverted-72.png' %}">
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="{% static 'media/icons/setsuhi-inverted-57.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'main/icons/setsuhi-inverted-57.png' %}">
     <!-- And for the rest of us -->
-    <link rel="icon" sizes="32x32" href="{% static 'media/icons/setsuhi-inverted-32.png' %}">
+    <link rel="icon" sizes="32x32" href="{% static 'main/icons/setsuhi-inverted-32.png' %}">
 
 
     <!-- FONTS -->
@@ -47,7 +47,7 @@
     {% endblock thirdparty_styles %}
 
     {% block default_styles %}
-      <link rel="stylesheet" type="text/css" href="{% static 'main/styles/styles.css' %}" />
+      <link rel="stylesheet/less" type="text/css" href="{% static 'main/styles/styles.less' %}" />
     {% endblock default_styles %}
 
 
@@ -55,6 +55,20 @@
 
     
     {% block default_prescripts %}
+      <script>
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/0.0.0.0:5000/"
+        };
+      </script>
+      <script src="{%static 'third/scripts/less-1.6.1.min.js'%}">
+      </script>
     {% endblock default_prescripts %}
 
     {% block prescripts %}{% endblock %}
