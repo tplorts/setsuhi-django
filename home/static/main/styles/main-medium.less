@@ -2,7 +2,15 @@
 @import (less) "cover-grid.less";
 
 
+@description-area-height: 100px;
+
 #photo-collection-grid {
     .cover-grid( 3 );
+
+    // Accounting for the description area below
+    margin-bottom: @description-area-height;
 }
 
+#collection-description-area {
+    height: @description-area-height;
+}

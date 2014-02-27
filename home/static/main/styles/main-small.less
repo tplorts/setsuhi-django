@@ -183,8 +183,31 @@
 }
 
 
-
+@description-area-height: 140px;
 
 #photo-collection-grid {
     .cover-grid( 2 );
+
+    // No longer mobile, so again hide the
+    // adjacent texts and go with the fixed area.
+    .collection-description {
+        display: none;
+    }
+
+    // Accounting for the description area below
+    margin-bottom: @description-area-height;
+}
+
+#collection-description-area {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: @description-area-height;
+    background-color: rgba(255,255,255, 0.95);
+    border-top: 1px solid @setsuhi-murasaki;
+
+    margin-left: @side-dock-width;
+    margin-right: @side-dock-width;
 }

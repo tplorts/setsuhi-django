@@ -10,6 +10,8 @@
     padding-left: @space / 2;
     padding-bottom: @space / 2;
 
+    @item-width: (100% - (@columns+1)*@space) / @columns;
+
     a {
         &:hover {
             text-decoration: none;
@@ -18,8 +20,13 @@
 
     .cover-image {
         border: 1px solid black;
-        margin: @space / 2;
-        width: ( (100% - (@columns+1)*@space) / @columns );
+        width: @item-width;
         height: auto;
+        margin: @space / 2;
     }
+
+}
+
+.collection-description {
+    display: none;
 }
