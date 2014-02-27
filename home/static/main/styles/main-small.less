@@ -1,5 +1,7 @@
 @import (less) "generic.less";
 @import (less) "colors.less";
+@import (less) "cover-grid.less";
+
 
 @side-dock-width: 144px;
 @side-dock-bg: @setsuhi-murasaki;
@@ -180,3 +182,9 @@
     padding: 0 @side-dock-width;
 }
 
+
+
+
+#photo-collection-grid {
+    .cover-grid( 2 );
+}
