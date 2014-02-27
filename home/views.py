@@ -28,24 +28,29 @@ def ml_selection(request):
     return lang
 
 
-def view_with_ml(request, view_name, context={}):
-    context["nav_list"] = nav_list
+def multilingual_context( request, context={} ):
     context[ML_CONTEXT_KEY] = ml_selection(request)
+    return context
+
+
+def render_view(request, view_name, context={}):
+    context = multilingual_context( request, context )
+    context["nav_list"] = nav_list    
     context['present_view_name'] = view_name.split("/")[-1]
     return render(request, 'main/'+view_name+'.html', context)
 
 
 def front(q):
-    return view_with_ml(q, 'front')
+    return render_view(q, 'front')
 
 def about(q):
-    return view_with_ml(q, 'pages/about')
+    return render_view(q, 'pages/about')
 
 def media(q):
-    return view_with_ml(q, 'pages/media')
+    return render_view(q, 'pages/media')
 
 def lessons(q):
-    return view_with_ml(q, 'pages/lessons')
+    return render_view(q, 'pages/lessons')
 
 def contact(q):
-    return view_with_ml(q, 'pages/contact')
+    return render_view(q, 'pages/contact')
