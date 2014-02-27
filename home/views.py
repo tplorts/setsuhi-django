@@ -5,12 +5,20 @@ from django.shortcuts import render
 ML_COOKIE_NAME = "ml-language-selection"
 ML_CONTEXT_KEY = "ml_active_language"
 
+
+# This list defines which navigation items will
+# appear in the right-hand dock, and the order
+# in which they appear, top-to-bottom.
+# Each element has three parts:
+#   ("view name", "English label", "Japanese label")
 nav_list = (
     ("about", "About", "紹介"),
     ("media", "Media", "画像"),
     ("lessons", "Lessons", "教室"),
     ("contact", "Contact", "連絡"),    
 )
+
+
 
 def ml_selection(request):
     if ML_COOKIE_NAME in request.COOKIES:
