@@ -8,9 +8,10 @@
 <div id="photo-collection-grid">
   {% for x in "01230123" %}
     <a href="#">
-      <img class="cover-image" src="{% static 'main/images/profile1.jpg' %}" />
+      <img class="cover-image" src="{% static 'main/images/profile1.jpg' %}"
+           id="grid-image-{{forloop.counter}}" />
 
-      <div class="collection-description item-{{forloop.counter}}">
+      <div class="collection-description">
         Description for item {{forloop.counter}}
       </div>
 
@@ -21,10 +22,18 @@
 
 <div id="collection-description-area">
   {% for x in "01230123" %}
-    <div class="collection-description item-{{forloop.counter}}">
+    <div class="collection-description" id="description-{{forloop.counter}}">
       Description for item {{forloop.counter}}
     </div>
   {% endfor %}
 </div>
 
 {% endblock main_content %}
+
+
+{% block postscripts %}
+<script type="text/javascript"
+        src="{% static 'main/scripts/cover-grid.js' %}"></script>
+{% endblock %}
+
+
