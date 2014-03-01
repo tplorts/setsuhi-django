@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
+from django.http import Http404
+
+import phota
+
 
 ML_COOKIE_NAME = "ml-language-selection"
 ML_CONTEXT_KEY = "ml_active_language"
@@ -47,10 +51,17 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def media(q):
-    return render_view(q, 'pages/media')
+    c = {"phota_names": phota.names}
+    return render_view(q, 'pages/media', c)
 
 def lessons(q):
     return render_view(q, 'pages/lessons')
 
 def contact(q):
     return render_view(q, 'pages/contact')
+
+
+def photum(q, photum_name):
+    if photum_name not in phota.names:
+        raise Http404
+    return render_view(q, 'pages/photum')

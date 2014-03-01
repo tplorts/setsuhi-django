@@ -1,12 +1,12 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual s3photoset %}
+{% load staticfiles multilingual %}
 
 {% block main_content %}
 
 {# % s3photoset "2009-01-24 雪妃　撮影大木/web用" % #}
 
 <div id="photo-collection-grid">
-  {% for x in "01230123" %}
+  {% for name in phota_names %}
     <a href="#">
       <img class="cover-image" src="{% static 'main/images/profile1.jpg' %}"
            id="grid-image-{{forloop.counter}}" />
@@ -21,9 +21,10 @@
 
 
 <div id="collection-description-area">
-  {% for x in "01230123" %}
+  {% for name in phota_names %}
     <div class="collection-description" id="description-{{forloop.counter}}">
-      Description for item {{forloop.counter}}
+      Description for item {{forloop.counter}}:
+      {{name}}
     </div>
   {% endfor %}
 </div>
