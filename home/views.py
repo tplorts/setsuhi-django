@@ -61,7 +61,9 @@ def contact(q):
     return render_view(q, 'pages/contact')
 
 
-def photum(q, photum_name):
-    if photum_name not in phota.names:
+def photum(q, photum_index):
+    photum_index = int(photum_index)
+    if photum_index >= len(phota.names):
         raise Http404
-    return render_view(q, 'pages/photum')
+    c = {"photum_name": phota.names[photum_index]}
+    return render_view(q, 'pages/photum', c)
