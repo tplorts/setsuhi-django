@@ -1,16 +1,16 @@
 @import (less) "generic.less";
-@import (less) "cover-grid.less";
+@import (less) "phota-grid.less";
 
 
-@description-area-height: 100px;
+@brief-area-height: 100px;
 
-#photo-collection-grid {
-    .cover-grid( 3 );
+.phota-grid {
+    .phota-grid-of( 3 );
 
-    // Accounting for the description area below
-    margin-bottom: @description-area-height;
+    // Accounting for the brief area below
+    margin-bottom: @brief-area-height;
 }
 
-#collection-description-area {
-    height: @description-area-height;
+#photum-brief-area {
+    height: @brief-area-height;
 }

@@ -3,28 +3,25 @@
 
 {% block main_content %}
 
-{# % s3photoset "2009-01-24 雪妃　撮影大木/web用" % #}
 
-<div id="photo-collection-grid">
+<div class="phota-grid">
   {% for name in phota_names %}
     <a href="#">
-      <img class="cover-image" src="{% static 'main/images/profile1.jpg' %}"
-           id="grid-image-{{forloop.counter}}" />
-
-      <div class="collection-description">
-        Description for item {{forloop.counter}}
-      </div>
-
+      <img class="photum-cover"
+           src="{% static 'main/images/profile1.jpg' %}"
+           id="photum-cover-{{forloop.counter}}" />
     </a>
+    <div class="photum-caption">
+      <h5>{{ name }}</h5>
+    </div>
   {% endfor %}
 </div>
 
 
-<div id="collection-description-area">
+<div id="photum-brief-area">
   {% for name in phota_names %}
-    <div class="collection-description" id="description-{{forloop.counter}}">
-      Description for item {{forloop.counter}}:
-      {{name}}
+    <div class="photum-brief" id="photum-brief-{{forloop.counter}}">
+      <h5>{{ name }}</h5>
     </div>
   {% endfor %}
 </div>
@@ -34,7 +31,7 @@
 
 {% block postscripts %}
 <script type="text/javascript"
-        src="{% static 'main/scripts/cover-grid.js' %}"></script>
+        src="{% static 'main/scripts/photum-grid.js' %}"></script>
 {% endblock %}
 
 

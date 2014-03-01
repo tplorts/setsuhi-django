@@ -205,6 +205,38 @@ h6 div {
 .navbar-setsuhi .ml-mobile-widget a:hover {
   text-decoration: none;
 }
+.phota-grid {
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+}
+.phota-grid a:hover {
+  text-decoration: none;
+}
+.phota-grid .stretchy-image-item {
+  border: 1px solid black;
+  width: 92%;
+  height: auto;
+  margin: 2%;
+}
+.phota-grid .photum-cover {
+  border: 1px solid black;
+  width: 92%;
+  height: auto;
+  margin: 2%;
+}
+.photum-caption {
+  display: block;
+}
+#photum-brief-area {
+  display: none;
+}
+.photum-brief {
+  display: none;
+}
+.photum-brief.active {
+  display: block;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .section-separator {
@@ -341,6 +373,90 @@ h6 div {
   #main-content {
     padding: 0 144px;
   }
+  .phota-grid {
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 140px;
+  }
+  .phota-grid a:hover {
+    text-decoration: none;
+  }
+  .phota-grid .stretchy-image-item {
+    border: 1px solid black;
+    width: 44%;
+    height: auto;
+    margin: 2%;
+  }
+  .phota-grid .photum-cover {
+    border: 1px solid black;
+    width: 44%;
+    height: auto;
+    margin: 2%;
+  }
+  .phota-grid .photum-caption {
+    display: none;
+  }
+  #photum-brief-area {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid #400050;
+    margin-left: 144px;
+    margin-right: 144px;
+  }
 }
 /* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .phota-grid {
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 100px;
+  }
+  .phota-grid a:hover {
+    text-decoration: none;
+  }
+  .phota-grid .stretchy-image-item {
+    border: 1px solid black;
+    width: 28%;
+    height: auto;
+    margin: 2%;
+  }
+  .phota-grid .photum-cover {
+    border: 1px solid black;
+    width: 28%;
+    height: auto;
+    margin: 2%;
+  }
+  #photum-brief-area {
+    height: 100px;
+  }
+}
 /* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .phota-grid {
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+  }
+  .phota-grid a:hover {
+    text-decoration: none;
+  }
+  .phota-grid .stretchy-image-item {
+    border: 1px solid black;
+    width: 20%;
+    height: auto;
+    margin: 2%;
+  }
+  .phota-grid .photum-cover {
+    border: 1px solid black;
+    width: 20%;
+    height: auto;
+    margin: 2%;
+  }
+}

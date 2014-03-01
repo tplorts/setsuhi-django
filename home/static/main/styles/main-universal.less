@@ -1,6 +1,6 @@
 @import (less) "generic.less";
 @import (less) "colors.less";
-@import (less) "cover-grid.less";
+@import (less) "phota-grid.less";
 
 
 .opensans {
@@ -143,19 +143,24 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-#photo-collection-grid {
-    .cover-grid( 1 );
-
-    // We won't have the fixed description area
-    // on mobile so we need to have each
-    // piece of associated text underneath each
-    // cover photo.
-    .collection-description {
-        display: block;
-    }
-
+.phota-grid {
+    .phota-grid-of( 1 );
 }
 
-#collection-description-area {
+// We won't have the fixed description area
+// on mobile so we need to have each
+// piece of associated text underneath each
+// cover photo.
+.photum-caption {
+    display: block;
+}
+#photum-brief-area {
     display: none;
+}
+
+.photum-brief {
+    display: none;
+    &.active {
+        display: block;
+    }
 }
