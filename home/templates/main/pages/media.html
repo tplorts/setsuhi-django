@@ -15,22 +15,24 @@
       <h4>{{ name }}</h4>
     </div>
   {% endfor %}
-</div>
+</div><!--/.phota-grid-->
 
 
-<div id="photum-brief-area">
-  {% for name in phota_names %}
-    <div class="photum-brief" id="photum-brief-{{forloop.counter}}">
-      <h4>{{ name }}</h4>
-      <p>
-        オーダー制作開始【命名書・インテリア書作品
-        （カフェ・レストラン・ショップ・ ご自宅用など)
-        表札・おしながき（(Menu Book) ・ウエルカムボード・看板
-        （ショップ・各種イベン ト）・名刺ロゴなど筆文字全般】
-      </p>
-    </div>
-  {% endfor %}
-</div>
+<div id="photum-brief-frame">
+  <div id="photum-brief-area">
+    {% for name in phota_names %}
+      <div class="photum-brief" id="photum-brief-{{forloop.counter}}">
+        <h4>{{ name }}</h4>
+        <p>
+          オーダー制作開始【命名書・インテリア書作品
+          （カフェ・レストラン・ショップ・ ご自宅用など)
+          表札・おしながき（(Menu Book) ・ウエルカムボード・看板
+          （ショップ・各種イベン ト）・名刺ロゴなど筆文字全般】
+        </p>
+      </div><!--/.photum-brief-->
+    {% endfor %}
+  </div><!--/#photum-brief-area-->
+</div><!--/#photum-brief-frame-->
 
 {% endblock main_content %}
 
