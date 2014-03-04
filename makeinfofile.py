@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 import codecs
 import json
-import phota
 import time
+from home import phota
+
 
 dateformat = "%Y-%m-%d"
 
@@ -20,6 +21,6 @@ for photumname in phota.names:
         "cover": None,
     }
 
-infofile = codecs.open("info.json", "w", encoding="utf-8")
+infofile = codecs.open("phota.json", "w", encoding="utf-8")
 json.dump(info, infofile, indent=2)
 infofile.close()
