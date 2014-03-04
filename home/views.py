@@ -51,7 +51,7 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def media(q):
-    c = {"phota_names": phota.names}
+    c = {"phota": phota.photatouse}
     return render_view(q, 'pages/media', c)
 
 def lessons(q):
@@ -63,7 +63,7 @@ def contact(q):
 
 def photum(q, photum_index):
     photum_index = int(photum_index)
-    if photum_index >= len(phota.names):
+    if photum_index >= len(phota.photatouse):
         raise Http404
-    c = {"photum_name": phota.names[photum_index]}
+    c = {"photum": phota.photatouse[photum_index]}
     return render_view(q, 'pages/photum', c)

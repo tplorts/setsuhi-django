@@ -5,14 +5,14 @@
 
 
 <div class="phota-grid">
-  {% for name in phota_names %}
+  {% for photum in phota %}
     <a href="{% url 'photum' forloop.counter0 %}">
       <img class="photum-cover"
-           src="{% static 'main/images/profile1.jpg' %}"
+           src="{{ photum.cover_url }}"
            id="photum-cover-{{forloop.counter}}" />
     </a>
     <div class="photum-caption">
-      <h4>{{ name }}</h4>
+      <h4>{{ phtoum.folder }}</h4>
     </div>
   {% endfor %}
 </div><!--/.phota-grid-->
@@ -20,9 +20,9 @@
 
 <div id="photum-brief-frame">
   <div id="photum-brief-area">
-    {% for name in phota_names %}
+    {% for photum in phota %}
       <div class="photum-brief" id="photum-brief-{{forloop.counter}}">
-        <h4>{{ name }}</h4>
+        <h4>{{ photum.folder }}</h4>
         <p>
           オーダー制作開始【命名書・インテリア書作品
           （カフェ・レストラン・ショップ・ ご自宅用など)
