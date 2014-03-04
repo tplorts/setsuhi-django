@@ -31,8 +31,12 @@
   </div><!--/explantion-->
 
   <div>
-    
+    <form>
+      <div id="summernote-contact"></div>
+    </form>
   </div><!--/contact form-->
+
+  <hr>
 
   <div>
     <p>
@@ -46,3 +50,15 @@
 
 </div><!--/.container-->
 {% endblock main_content %}
+
+
+{% block postscripts %}
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#summernote-contact').summernote({
+      height: 250,
+      focus: true
+    });
+  });
+</script>
+{% endblock %}

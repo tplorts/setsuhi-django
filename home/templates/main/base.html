@@ -44,10 +44,15 @@
     {% block thirdparty_styles %}
       <link rel="stylesheet" type="text/css"
             href="{% static 'third/styles/bootstrap.min.css' %}" />
+      <link rel="stylesheet" type="text/css"
+            href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css"
+            href="{% static 'third/styles/summernote.css' %}" />
     {% endblock thirdparty_styles %}
 
     {% block default_styles %}
-      <link rel="stylesheet/less" type="text/css" href="{% static 'main/styles/styles.less' %}" />
+      <link rel="stylesheet/less" type="text/css" 
+            href="{% static 'main/styles/styles.less' %}" />
     {% endblock default_styles %}
 
 
@@ -236,6 +241,9 @@
       </script>
       <script type="text/javascript"
               src="{% static 'third/scripts/jquery.cookie.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/summernote.min.js' %}">
       </script>
     {% endblock thirdparty_postscripts %}
 
