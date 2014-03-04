@@ -7,22 +7,24 @@
     {% multilingual %}
       {% mlpart "ja" %}
         <p>
-          命名書・ウエルカムボード・書作品の各オーダー <br>
-          イベント・ライブパフォーマンス・ワークショップの出演依頼 <br>
-          enアクセサリー　iPhoneケース　ポストカードなどのご注文 <br>
-          体験レッスンのお申込み <br>
-          <br>
-          こちらからお気軽にご連絡くださいませ。<br>
+          <ul>
+            <li>命名書・ウエルカムボード・書作品の各オーダー </li>
+            <li>イベント・ライブパフォーマンス・ワークショップの出演依頼 </li>
+            <li>enアクセサリー　iPhoneケース　ポストカードなどのご注文 </li>
+            <li>体験レッスンのお申込み </li>
+          </ul>
+          こちらからお気軽にご連絡くださいませ。
         </p>
       {% endmlpart %}
       {% mlpart "en" %}
         <p>
-          Birth names | Welcome boards | Special order works <br>
-          Events | Live performances | Workshops <br> 
-          en Accesories, iPhone cases, Postcards, etc. <br>
-          Applying for calligraphy lessons <br>
-          <br>
-          Please feel free to contact me with the below form. <br>
+          <ul>
+            <li>Birth names | Welcome boards | Special order works </li>
+            <li>Events | Live performances | Workshops </li>
+            <li>en Accesories, iPhone cases, Postcards, etc. </li>
+            <li>Applying for calligraphy lessons </li>
+          </ul>
+          Please feel free to contact me with the below form.
         </p>
       {% endmlpart %}
     {% endmultilingual %}
@@ -33,26 +35,13 @@
   </div><!--/contact form-->
 
   <div>
-    {% multilingual %}
-      {% mlpart "ja" %}
-        <p>
-          こちらのアドレスからもお問い合わせいただけます。 <br>
-          {{ "shiraishi.setsuhi@gmail.com"|obfuscate_mailto }} <br>
-          返信に少々お時間がかかることもございますのでご了承ください。 <br>
-          <br>
-          白石雪妃
-        </p>
-      {% endmlpart %}
-      {% mlpart "en" %}
-        <p>
-          For those who would prefer to use email, feel free to reach me at this address. <br>
-          {{ "shiraishi.setsuhi@gmail.com"|obfuscate_mailto }} <br>
-          Please note that it can take some time for me to respond. <br>
-          <br>
-          Setsuhi Shiraishi
-        </p>
-      {% endmlpart %}
-    {% endmultilingual %}
+    <p>
+      {% ml ja="こちらのアドレスからもお問い合わせいただけます。" en="For those who would prefer to use email, feel free to reach me at this address." %} <br>
+      {{ "shiraishi.setsuhi@gmail.com"|obfuscate_mailto }} <br>
+      {% ml ja="返信に少々お時間がかかることもございますのでご了承ください。" en="Please note that it can take some time for me to respond." %} <br>
+      <br>
+      {% ml ja="白石雪妃" en="Setsuhi Shiraishi" %}
+    </p>
   </div><!--/email-->
 
 </div><!--/.container-->
