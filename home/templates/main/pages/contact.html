@@ -41,6 +41,7 @@
       </p>
     {% else %}
       <form action="{% url 'contact' %}" method="POST">
+        {% csrf_token %}
 
         <div class="row">
           <div class="col-sm-4 col-md-3 field-label-column">
