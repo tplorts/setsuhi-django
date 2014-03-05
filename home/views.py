@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import Http404
+from django import forms
 
 import phota
 
@@ -44,6 +45,7 @@ def render_view(request, view_name, context={}):
     return render(request, 'main/'+view_name+'.html', context)
 
 
+
 def front(q):
     return render_view(q, 'front')
 
@@ -57,8 +59,30 @@ def media(q):
 def lessons(q):
     return render_view(q, 'pages/lessons')
 
-def contact(q):
-    return render_view(q, 'pages/contact')
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField()
+    email_address = forms.EmailField()
+    telephone_number = forms.CharField()
+    message = forms.CharField()
+
+def contact(request):
+    did_send_message = False
+    if request.method == 'POST': # If the form has been submitted...
+        form = ContactForm(request.POST) # A form bound to the POST data
+        if form.is_valid(): # All validation rules pass
+            # Process the data in form.cleaned_data
+            # ...
+            did_send_message = True
+    else:
+        form = ContactForm() # An unbound form
+
+    return render_view(request, 'pages/contact', {
+        'form': form,
+        'did_send_message': did_send_message,
+    })
+
 
 
 def photum(q, photum_index):
