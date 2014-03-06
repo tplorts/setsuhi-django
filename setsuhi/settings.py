@@ -89,11 +89,12 @@ STATIC_URL = S3_STATIC_URL
 
 
 # Email settings
-
+# Used for sending Setsuhi an email message when people
+# fill out the inquiry form.
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'shiraishi.setsuhi+sentfromsite@gmail.com'
-EMAIL_HOST_PASSWORD = 'wrong'
+EMAIL_HOST_USER = 'setsuhi.inquiries@gmail.com'
+EMAIL_HOST_PASSWORD = 'shoD0-ka'
 EMAIL_PORT = 587
 
 
