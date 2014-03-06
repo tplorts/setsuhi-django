@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import Http404
 from django import forms
+from django.core.mail import EmailMessage
 
 import phota
 
@@ -64,7 +65,7 @@ def lessons(q):
 class ContactForm(forms.Form):
     name = forms.CharField()
     email_address = forms.EmailField()
-    telephone_number = forms.CharField()
+    telephone_number = forms.CharField(required=False)
     message = forms.CharField()
 
 def contact(request):
@@ -73,7 +74,18 @@ def contact(request):
         form = ContactForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
-            # ...
+            name = form.cleaned_data["name"]
+            phone = form.cleaned_data["telephone_number"]
+            subject = name + "からのお問い合わせ"
+            sender = form.cleaned_data["email_address"]
+            contact_info = "\n\nメアド："+sender + "\n電話番号："+phone
+            body = form.cleaned_data["message"] + contact_info
+            sendto = "shiraishi.setsuhi+inquiry@gmail.com"
+
+            email = EmailMessage(subject, body, to=[sendto],
+                                 headers = {'Reply-To': sender})
+            email.send(fail_silently=False)
+
             did_send_message = True
     else:
         form = ContactForm() # An unbound form
