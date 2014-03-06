@@ -43,6 +43,8 @@
       <form action="{% url 'contact' %}" method="POST">
         {% csrf_token %}
 
+        {{ form.non_field_errors }}
+
         <div class="row">
           <div class="col-sm-4 col-md-3 field-label-column">
             <label for="id_name">
@@ -50,9 +52,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
-            <input name="name" id="id_name" 
-                   type="text" class="text-input"
-                   placeholder="お名前" autocomplete="off" />
+            {{ form.name }}
           </div>
         </div><!--/Name row-->
 
@@ -63,9 +63,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
-            <input name="email_address" id="id_email_address"
-                   type="text" class="text-input email-input"
-                   placeholder="メアド" autocomplete="on" />
+            {{ form.email_address }}
           </div>
         </div><!--/Email row-->
 
@@ -76,9 +74,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
-            <input name="telephone_number" id="id_telephone_number"
-                   type="text" class="text-input"
-                   placeholder="お電話番号" autocomplete="on" />
+            {{ form.telephone_number }}
             <span class="text-muted">
               {% ml ja="（任意）" en="(optional)" %}
             </span>
