@@ -89,7 +89,7 @@
           </div>
           <div class="col-sm-8 col-md-9">
             <textarea name="message" id="id_message"
-                      placeholder="お問い合わせ内容"></textarea>
+                      placeholder="お問い合わせ内容">{{ form.message.value|default_if_none:"" }}</textarea>
           </div>
         </div><!--/Message row-->
 
