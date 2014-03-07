@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django import forms
 from django.core.mail import EmailMessage
 
@@ -69,8 +69,11 @@ class ContactForm(forms.Form):
     message = forms.CharField()
 
 def contact(request):
-    did_send_message = False
-    if request.method == 'POST': # If the form has been submitted...
+    form = None
+    sent_message = False
+    if "sent" in request.path:
+        sent_message = True
+    elif request.method == 'POST': # If the form has been submitted...
         form = ContactForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
@@ -86,13 +89,13 @@ def contact(request):
                                  headers = {'Reply-To': sender})
             email.send(fail_silently=False)
 
-            did_send_message = True
+            return HttpResponseRedirect('sent/') # Redirect after POST
     else:
         form = ContactForm() # An unbound form
 
     return render_view(request, 'pages/contact', {
         'form': form,
-        'did_send_message': did_send_message,
+        'sent_message': sent_message,
     })
 
 

@@ -3,43 +3,53 @@
 
 {% block main_content %}
 <div class="container full-width">
+
   <div>
-    {% multilingual %}
-      {% mlpart "ja" %}
-        <p>
-          <ul>
+    <h2>{% ml ja="お問い合わせ" en="Inquiries" %}</h2>
+  </div>
+
+  {% if sent_message %}
+
+  <div id="thank-you-message">
+    <p>
+      Thank you for taking the time to contact me.  I will 
+      be in touch with you as soon as possible.
+    </p>
+    <p>
+      Setsuhi Shiraishi
+    </p>
+  </div>
+
+  {% else %}
+
+  <div>
+    <p>
+      <ul>
+        {% multilingual %}
+          {% mlpart "ja" %}
             <li>命名書・ウエルカムボード・書作品の各オーダー </li>
             <li>イベント・ライブパフォーマンス・ワークショップの出演依頼 </li>
             <li>enアクセサリー　iPhoneケース　ポストカードなどのご注文 </li>
             <li>体験レッスンのお申込み </li>
-          </ul>
-          こちらからお気軽にご連絡くださいませ。
-        </p>
-      {% endmlpart %}
-      {% mlpart "en" %}
-        <p>
-          <ul>
+          {% endmlpart %}
+          {% mlpart "en" %}
             <li>Birth names | Welcome boards | Special order works </li>
             <li>Events | Live performances | Workshops </li>
             <li>en Accesories, iPhone cases, Postcards, etc. </li>
             <li>Applying for calligraphy lessons </li>
-          </ul>
-          Please feel free to contact me with the below form.
-        </p>
-      {% endmlpart %}
-    {% endmultilingual %}
+          {% endmlpart %}
+        {% endmultilingual %}
+      </ul>
+    </p>
   </div><!--/explantion-->
 
+  <div>
+    <p>
+      {% ml ja="こちらからお気軽にご連絡くださいませ。" en="Please feel free to contact me with the below form." %}
+    </p>
+  </div>
+
   <div id="contact-form-wrapper">
-    {% if did_send_message %}
-      <p>
-        Thank you for taking the time to contact me.  I will 
-        be in touch with you as soon as possible.
-      </p>
-      <p>
-        Setsuhi Shiraishi
-      </p>
-    {% else %}
       <form action="{% url 'contact' %}" method="POST">
         {% csrf_token %}
 
@@ -103,8 +113,8 @@
         </div><!--/Submit row-->
 
       </form>
-    {% endif %} {# end: if did send message #}
   </div><!--/contact form-->
+  {% endif %} {# end: if did send message #}
 
   <hr>
 
