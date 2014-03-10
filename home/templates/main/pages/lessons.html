@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual %}
+{% load staticfiles multilingual link %}
 
 {% block main_content %}
 <div class="container full-width">
@@ -21,17 +21,17 @@
 
     <ul class="rounded-square-list">
       <li>
-        四谷3丁目喫茶茶会記書道サロンhttp://sakaiki.modalbeats.com/  <br>
+        四谷3丁目 {% link "喫茶茶会記" %} 書道サロン <br>
         毎月第一、第四木曜日　(於)茶会記Sroom <br>
         (時間)午後3時半～、午後5時～、午後6時半～、午後8時～ <br>
         ＋お茶デザートつき
       </li>
       <li>
-        表参道教室でも同じく開講中（お茶デザートはつきません）
-        http://saideigama.com/syozaichi.html  
-        第１．３の月・火曜
-        ・月曜・・・17：00－18：00、18：05－19：05、19：10－20：10
-        ・火曜・・・11：00－12：00
+        表参道教室でも同じく開講中（お茶デザートはつきません）<br>
+        http://saideigama.com/syozaichi.html  <br>
+        第１・３の月・火曜 <br>
+        ・月曜・・・【17:00 － 18:00】、【18:05 － 19:05】、【19:10－20:10】<br>
+        ・火曜・・・【11:00 － 12:00】
       </li>
     </ul>
 
