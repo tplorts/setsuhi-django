@@ -201,8 +201,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .rounded-square-list {
     > li {
+        list-style-type: none;
+
         &:before {
             content: "▢";
+            margin-left: -1.4em;
         }
     }
 }
