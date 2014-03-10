@@ -19,6 +19,10 @@
     font-family: 'TakaoMincho' !important;
 }
 
+[lang="en"] {
+    font-family: sans-serif !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: serif;
     span, div {
@@ -184,3 +188,22 @@ h1, h2, h3, h4, h5, h6 {
         height: 150px;
     }
 }
+
+
+
+
+
+.alphabet-list {
+    > li {
+        list-style-type: upper-alpha;
+    }
+}
+
+.rounded-square-list {
+    > li {
+        &:before {
+            content: "▢";
+        }
+    }
+}
+
