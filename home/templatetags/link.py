@@ -36,8 +36,11 @@ japanese_addresses = {
     "姜小青":  jiang_url,
     "喫茶茶会記": sakaiki_url,
     "茶会記": sakaiki_url,
+    "綜合藝術茶房 喫茶茶会記": sakaiki_url,
     "日本代表新ユニフォーム": "http://adidas.jp/jfa/",
-    "彩泥窯": "http://saideigama.com/taiken_tepure_syodo_saport.html",
+    "彩泥窯": "http://saideigama.com/",
+    "彩泥窯の表参道工房": "http://saideigama.com/syozaichi.html",
+    "書道サポート": "http://saideigama.com/taiken_tepure_syodo_saport.html",
 #    "縁": en_url,
 #    "〜en〜縁": en_url,
 };
