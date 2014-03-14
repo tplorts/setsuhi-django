@@ -3,14 +3,14 @@
 @import (less) "phota-grid.less";
 
 
-@side-dock-width: 144px;
+@side-dock-width: 100px;
 @side-dock-bg: @setsuhi-murasaki;
 @side-dock-fg: white;
 
 @content-side-padding: 15px;
 
 @button-color: #f0f0f0;
-@button-size: 70px;
+@button-size: 64px;
 
 
 
@@ -58,9 +58,7 @@
     .side-dock;
     left: 0;
     .dock-shadow( 5px );
-    text-align: center;
 
-    font-size: 30px;
     line-height: 1.2;
 
     #signature-div {
@@ -90,17 +88,12 @@
     }
 
     .ml-language {
-        text-align: left;
+        text-align: center;
         background-color: @soft-black;
         color: silver;
         border-color: black;
         transition: all 0.1s ease-in;
         padding: 4px 8px 4px;
-
-        &:hover {
-            background-color: silver;
-            color: black;
-        }
 
         img {
             .grayscale;
@@ -112,12 +105,20 @@
             font-family: serif !important;
         }
         &.active {
+            background-color: gray;
+            font-weight: bold;
+            color: @setsuhi-murasaki;
             img {
                 .grayscale(0);
             }
             .active-indicator {
                 opacity: 1;
             }
+        }
+
+        &:hover {
+            background-color: silver;
+            color: black;
         }
         
         // The image of Union Jack is 5px shorter than the others
