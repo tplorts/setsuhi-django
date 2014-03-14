@@ -6,6 +6,7 @@ from django import template
 register = template.Library()
 
 
+yokkun_url = "http://yoshiyukioki.com/"
 en_url = "http://ja.wikipedia.org/wiki/%E7%B8%81"
 sakaiki_url = "http://sakaiki.modalbeats.com/"
 jiang_url = "http://jiang-xiaoqing.xii.jp/"
@@ -16,6 +17,10 @@ adidas_article = "http://news.adidas.com/GLOBAL/Latest-News/adidas-presents-the-
 # English font used.  Even if the link appears in a
 # Japanese section.
 english_addresses = {
+    "Yoshiyuki Oki": yokkun_url,
+    "yoshiyuki oki": yokkun_url,
+    "Yoshiyuki Ōki": yokkun_url,
+    "yoshiyuki ōki": yokkun_url,
     "Jay Anderson": "http://www.jayandersonbass.com/",
     "Frank Kinbrough": "http://home.earthlink.net/~fkimbrough/",
     "Maria Schneider": "http://www.mariaschneider.com/",
@@ -32,6 +37,7 @@ english_addresses = {
     "JZ Brat": "http://www.jzbrat.com/",
 };
 japanese_addresses = {
+    "大木啓至": yokkun_url,
     "マリアシュナイダー": "http://www.mariaschneider.com/",
     "姜小青":  jiang_url,
     "喫茶茶会記": sakaiki_url,
