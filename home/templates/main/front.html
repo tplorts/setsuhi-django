@@ -2,9 +2,11 @@
 {% load staticfiles multilingual photocarousel link %}
 
 
-{% block main_content %}
-<div class="full-viewport bg-image bg-1"></div>
+{# This alone activates the background image and credit #}
+{%block super_class%} has-background-image {%endblock%}
 
+
+{% block main_content %}
 <div class="container full-width no-padding">
 
   <div class="tyle-header">
@@ -102,17 +104,6 @@
     </div> <!-- end .tyle -->
 
   </div> <!-- end .tyle-section -->
-
-  <div class="bg-photo-credit">
-    {%multilingual%}
-    {%mlpart 'en' %}
-    background photo: {%link 'yoshiyuki ōki'%}
-    {%endmlpart %}
-    {%mlpart 'ja' %}
-    壁紙写真：{%link '大木啓至'%}
-    {%endmlpart %}
-    {%endmultilingual%}
-  </div>
 
 </div> <!-- end .container -->
 {% endblock main_content %}

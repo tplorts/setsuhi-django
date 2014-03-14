@@ -31,6 +31,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+body {
+    background-color: transparent;
+}
+
 
 #ml-titles {
     display: none;
@@ -51,19 +55,26 @@ h1, h2, h3, h4, h5, h6 {
 .bg-image {
     z-index: -100;
 }
-    
-.bg-1 {
-    .cover-background( "/static/main/images/bg-xs.jpg" );
-}
-
-body {
-    background-color: transparent;
-}
-
 
 .bg-photo-credit {
     margin: 15px;
-    text-align: right;
+    float: right;
+}
+
+// By default, the background image stuff
+// will not be displayed.  Turn it on with
+// that class below.
+.bg-image, .bg-photo-credit {
+    display: none;
+}
+.has-background-image {
+    .bg-image, .bg-photo-credit {
+        display: block;
+    }
+}
+    
+.bg-1 {
+    .cover-background( "/static/main/images/bg-xs.jpg" );
 }
 
 

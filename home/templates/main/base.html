@@ -7,7 +7,7 @@
     <meta name="description" content="{% block description %}{% endblock %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% load staticfiles multilingual %}
+    {% load staticfiles multilingual link %}
 
     <!-- ================== ICONS ================== -->
     <link rel="apple-touch-icon-precomposed" href="{% static 'main/icons/setsuhi-inverted-152.png' %}">
@@ -86,9 +86,10 @@
         </p>
         <![endif]-->
 
-    <div id="super-content">
+    <div id="super-content" class="{%block super_class%}{%endblock%}">
       {% block super_content %}
-
+      
+        <div class="full-viewport bg-image bg-1"></div>
 
         <div class="navbar navbar-default navbar-setsuhi navbar-fixed-top visible-xs" role="navigation">
           <div class="container">
@@ -184,7 +185,7 @@
               </div>
             </div>
           {% endblock multilingual %}
-        </div>
+        </div> <!-- /#left-dock -->
 
         <div id="right-dock" class="hidden-xs">
           <div id="main-navigation">
@@ -213,7 +214,7 @@
 
           </div> <!-- end #main-navigation -->
           
-        </div>
+        </div> <!-- /#right-dock -->
 
         <div id="top-content">
           {% block top_content %}{% endblock %}
@@ -221,10 +222,24 @@
 
         <div id="main-content">
           {% block main_content %}{% endblock %}
-        </div>
+
+          <div class="bg-photo-credit">
+            {%multilingual%}
+            {%mlpart 'en'%}
+            background photo:  {%link 'yoshiyuki ōki'%}
+            {%endmlpart%}
+            {%mlpart 'ja'%}
+            <span lang="en">background photo:</span> {%link '大木啓至'%}
+            {%endmlpart%}
+            {%endmultilingual%}
+          </div>
+
+        </div> <!-- /#main-content -->
 
       {% endblock super_content %}
-    </div>
+    </div> <!-- /#super-content -->
+
+
 
     {% block thirdparty_postscripts %}
       <script type="text/javascript"
