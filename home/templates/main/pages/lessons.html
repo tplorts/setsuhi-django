@@ -1,13 +1,19 @@
 {% extends "main/base.html" %}
 {% load staticfiles multilingual link %}
 
+
 {% block main_content %}
-<div class="container full-width">
+<div class="full-viewport bg-image bg-1"></div>
 
-  <h1>{%ml en='Lessons' ja='教室'%}</h1>
+<div class="container full-width no-padding">
 
-  <div id="new-lessons" class="lesson-section" lang="ja">
+  <h1 class="pad-x-15">{%ml en='Lessons' ja='教室'%}</h1>
+
+  <div class="tyle-header">
     <h3 lang="ja">New 単発コースのご案内</h3>
+  </div>
+
+  <div id="new-lessons" class="tyle" lang="ja">
     
     <ol class="alphabet-list">
       <li>名前を美しく書く（筆ペンまたはペン）</li>
@@ -45,11 +51,12 @@
   </div> <!-- / #new-lessons -->
 
   
-  <hr>
 
-
-  <div id="sakaiki-lessons" class="lesson-section" lang="ja">
+  <div id="sakaiki-lessons" class="tyle-header scroll-marker">
     <h3 lang="ja">茶会記書道サロン</h3>
+  </div>
+
+  <div class="tyle" lang="ja">
 
     <h4 lang="ja">書道サロンコンセプト</h4>
     <p>
@@ -116,11 +123,11 @@
   </div>
 
 
-  <hr>
-
-
-  <div id="omotesando-lessons" class="lesson-section tyle" lang="ja">
+  <div id="omotesando-lessons" class="tyle-header scroll-marker">
     <h3 lang="ja">表参道書道教室</h3>
+  </div>
+
+  <div class="tyle" lang="ja">
 
     <p>
       基礎から創作までご希望の目標に沿って必要なことをレッスンしていく教室です。<br>
@@ -184,7 +191,7 @@
 
     <hr>
 
-    <h4 lang="ja">陶芸工房{% link "彩泥窯" %}の{% link "書道サポート" %}</h4>
+    <h5 lang="ja">陶芸工房{% link "彩泥窯" %}の{% link "書道サポート" %}</h5>
     <p>
       ブライダルギフト、ご両親へのプレゼント、記念日の贈り物など<br>
       ご自分で作った陶器にメッセージを書く「陶書」のお手伝いをしています。
