@@ -2,9 +2,10 @@
 {% load staticfiles multilingual link %}
 
 
-{% block main_content %}
-<div class="full-viewport bg-image bg-1"></div>
+{%block super_class%} has-background-image {%endblock%}
 
+
+{% block main_content %}
 <div class="container full-width no-padding">
 
   <h1 class="pad-x-15">{%ml en='Lessons' ja='教室'%}</h1>
