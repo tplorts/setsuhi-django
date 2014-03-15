@@ -24,8 +24,9 @@ class Photum:
         return s3_setsuhi.bucket_url + phota_folder + self.folder + "/" + self.cover
 
 
-jsonurl = urllib2.urlopen( s3_setsuhi.bucket_url + "phota.json" )
-jsoninfo = json.load( jsonurl )
-allphota = [Photum(d) for d in jsoninfo.values()]
+if s3_setsuhi.isConnected:
+    jsonurl = urllib2.urlopen( s3_setsuhi.bucket_url + "phota.json" )
+    jsoninfo = json.load( jsonurl )
+    allphota = [Photum(d) for d in jsoninfo.values()]
+    photatouse = [p for p in allphota if p.use]
 
-photatouse = [p for p in allphota if p.use]
