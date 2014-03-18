@@ -51,8 +51,13 @@
     {% endblock thirdparty_styles %}
 
     {% block default_styles %}
+      {% if use_less_stylesheets %}
       <link rel="stylesheet/less" type="text/css" 
             href="{% static 'main/styles/styles.less' %}" />
+      {% else %}
+      <link rel="stylesheet" type="text/css" 
+            href="{% static 'main/styles/x.css' %}" />
+      {% endif %}      
     {% endblock default_styles %}
 
 
@@ -60,6 +65,7 @@
 
     
     {% block default_prescripts %}
+      {% if use_less_stylesheets %}
       <script>
         less = {
             env: "development",
@@ -74,6 +80,7 @@
       </script>
       <script src="{%static 'third/scripts/less-1.6.1.min.js'%}">
       </script>
+      {% endif %}
     {% endblock default_prescripts %}
 
     {% block prescripts %}{% endblock %}

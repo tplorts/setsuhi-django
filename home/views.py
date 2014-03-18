@@ -5,7 +5,9 @@ from django.http import Http404, HttpResponseRedirect
 from django import forms
 from django.core.mail import EmailMessage
 
+from setsuhi import settings
 import phota
+
 
 
 ML_COOKIE_NAME = "ml-language-selection"
@@ -43,6 +45,7 @@ def render_view(request, view_name, context={}):
     context = multilingual_context( request, context )
     context["nav_list"] = nav_list    
     context['present_view_name'] = view_name.split("/")[-1]
+    context['use_less_stylesheets'] = settings.TEMPLATE_DEBUG
     return render(request, 'main/'+view_name+'.html', context)
 
 
