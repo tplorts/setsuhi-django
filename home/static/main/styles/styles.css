@@ -171,7 +171,7 @@ ol.shallow {
   display: block;
 }
 .bg-1 {
-  background: url("/static/main/images/bg-xs.jpg") no-repeat center center;
+  background: url("http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/background/1/bg-xs.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -324,6 +324,16 @@ ol.shallow {
 .lesson-subsection-label {
   font-size: 1.4em;
 }
+.simple-image-list .image-item {
+  width: 100%;
+  margin-bottom: 100px;
+}
+.simple-image-list .image-item img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 80%;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .justphone {
@@ -340,7 +350,7 @@ ol.shallow {
     margin: 1em;
   }
   .bg-1 {
-    background: url("/static/main/images/bg-sm.jpg") no-repeat center center;
+    background: url("http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/background/1/bg-sm.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -563,6 +573,13 @@ ol.shallow {
   #photum-brief-frame {
     height: 100px;
   }
+  .bg-1 {
+    background: url("http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/background/1/bg-md.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -588,5 +605,12 @@ ol.shallow {
   }
   #contact-form-wrapper textarea {
     width: 612px;
+  }
+  .bg-1 {
+    background: url("http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/background/1/bg-lg.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 }

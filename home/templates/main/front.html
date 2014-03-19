@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual photocarousel link %}
+{% load staticfiles multilingual photocarousel link s3 %}
 
 
 {# This alone activates the background image and credit #}
@@ -33,8 +33,7 @@
       <div class="row">
         <div class="col-sm-7 col-md-4">
           <div class="tyle-slideshow" id="enjin-slideshow">
-            {% static 'main/images/p0' as p0_path %}
-            {% photocarousel "p0" p0_path "6" %}
+            {% s3_photocarousel "enjin_carousel" "static/media/images/enjin" %}
           </div>
         </div>
         <div class="col-sm-5 col-md-8">
@@ -112,7 +111,7 @@
 
         </div>
         <div class="col-sm-6 col-md-4">
-          <img src="{% static 'main/images/shikaku-cover-cropped.jpg' %}" 
+          <img src="{% s3_url 'static/media/images/shikaku-cover-cropped.jpg' %}" 
                class="fit-image" />
         </div>
       </div>

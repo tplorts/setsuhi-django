@@ -1,5 +1,16 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual %}
+{% load staticfiles multilingual s3 %}
+
 
 {% block main_content %}
+
+<div class="simple-image-list">
+  {% s3_url_list 'works/en' as en_images %}
+  {% for image in en_images %}
+  <div class="image-item">
+    <img src="{{ image }}" />
+  </div>
+  {% endfor %}
+</div> <!-- end .simple-image-list -->
+
 {% endblock main_content %}

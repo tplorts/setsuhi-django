@@ -1,41 +1,38 @@
 
-<div id="{{carousel_id}}" class="carousel slide full-height" data-ride="carousel" data-interval="false">
+<div id="{{ carousel_id }}" 
+     class="carousel slide full-height" 
+     data-ride="carousel" 
+     data-interval="false">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    {% for ph in photos %}
-     <li data-target="#{{carousel_id}}" 
-         data-slide-to="{{forloop.counter0}}"
-         {% if forloop.counter0 == 0 %}
-           class="active"
-         {% endif %}
-         ></li>
+    {% for p in photo_url_list %}
+      <li data-target="#{{ carousel_id }}" 
+          data-slide-to="{{ forloop.counter0 }}"
+          {% if forloop.counter0 == 0 %}
+            class="active"
+          {% endif %}>
+      </li>
     {% endfor %}
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner full-height">
-    {% for ph in photos %}
+    {% for photo_url in photo_url_list %}
       <div class="item {% if forloop.counter0 == 0 %}active{%endif%}">
-        <img src="{{photo_path}}/{{ph}}" />
+        <img src="{{ photo_url }}" />
       </div>
     {% endfor %}
-
-{% comment %}
-    <div class="item active">
-      <img src="..." alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    ...
-{% endcomment %}
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#{{carousel_id}}" data-slide="prev">
+  <a class="left carousel-control"
+     href="#{{ carousel_id }}"
+     data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
-  <a class="right carousel-control" href="#{{carousel_id}}" data-slide="next">
+  <a class="right carousel-control"
+     href="#{{ carousel_id }}"
+     data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>

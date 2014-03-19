@@ -7,7 +7,7 @@
     <meta name="description" content="{% block description %}{% endblock %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% load staticfiles multilingual link %}
+    {% load staticfiles multilingual link s3 %}
 
     <!-- ================== ICONS ================== -->
     <link rel="apple-touch-icon-precomposed" href="{% static 'main/icons/setsuhi-inverted-152.png' %}">
@@ -114,11 +114,11 @@
               </a>
               <div class="ml-widget ml-mobile-widget">
                 <a class="ml-language" lang="ja">
-                  <img src="{% static 'main/images/flags/ja-small.png' %}" />
+                  <img src="{% s3_url 'static/media/images/flags/ja-small.png' %}" />
                   日本語
                 </a>
                 <a class="ml-language" lang="en">
-                  <img src="{% static 'main/images/flags/en-small.png' %}" />
+                  <img src="{% s3_url 'static/media/images/flags/en-small.png' %}" />
                   English
                 </a>
               </div>
@@ -145,7 +145,7 @@
         <div id="left-dock" class="hidden-xs">
           <div id="signature-div">
             <a href="{% url 'front' %}">
-              <img id="signature" src="{% static 'main/images/signature-transparent-small.png' %}" />
+              <img id="signature" src="{% s3_url 'static/media/images/signature-transparent-small.png' %}" />
             </a>
           </div>
 

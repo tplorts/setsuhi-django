@@ -90,7 +90,7 @@ ul, ol {
 }
     
 .bg-1 {
-    .cover-background( "/static/main/images/bg-xs.jpg" );
+    .cover-background( "@{s3-url}static/media/images/background/1/bg-xs.jpg" );
 }
 
 
@@ -284,3 +284,22 @@ ul, ol {
 .lesson-subsection-label {
     font-size: 1.4em;
 }
+
+
+
+
+
+.simple-image-list {
+    .image-item {
+        width: 100%;
+
+        img {
+            .center-image;
+            max-width: 100%;
+            max-height: 80%;
+        }
+
+        margin-bottom: 100px;
+    }
+}
+
