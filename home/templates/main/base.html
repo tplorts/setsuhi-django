@@ -67,6 +67,23 @@
 
     
     {% block default_prescripts %}
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery-1.10.2.min.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/bootstrap.min.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery.cookie.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery.slides.min.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/summernote.min.js' %}">
+      </script>
+
+
       {% if use_less_stylesheets %}
       <script>
         less = {
@@ -252,18 +269,6 @@
 
 
     {% block thirdparty_postscripts %}
-      <script type="text/javascript"
-              src="{% static 'third/scripts/jquery-1.10.2.min.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'third/scripts/bootstrap.min.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'third/scripts/jquery.cookie.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'third/scripts/summernote.min.js' %}">
-      </script>
     {% endblock thirdparty_postscripts %}
 
     {% block default_postscripts %}

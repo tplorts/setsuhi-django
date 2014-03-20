@@ -1,0 +1,33 @@
+<div>
+  <style>
+    /* Prevents slides from flashing */
+    #{{slides_id}} {
+      display:none;
+    }
+  </style>
+
+
+  <div id="{{ slides_id }}" class="slidesjs">
+    {% for photo_url in photo_url_list %}
+      <img src="{{ photo_url }}" />
+    {% endfor %}
+
+    <a href="#" class="slidesjs-previous slidesjs-navigation">⇦</a>
+    <a href="#" class="slidesjs-next slidesjs-navigation">⇨</a>
+  </div>
+
+  <script>
+    $(function(){
+      $("#{{slides_id}}").slidesjs({
+        width: 4,
+        height: 3,
+        navigation: {
+          active: false, effect: "slide"
+        },
+        pagination: {
+          active: true, effect: "slide"
+        }
+      });
+    });
+  </script>
+</div>
