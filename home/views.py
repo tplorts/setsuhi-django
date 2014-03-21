@@ -46,6 +46,7 @@ def render_view(request, view_name, context={}):
     context = multilingual_context( request, context )
     context["nav_list"] = nav_list    
     context['present_view_name'] = view_name.split("/")[-1]
+    context['isProduction'] = settings.isProduction
     context['use_less_stylesheets'] = settings.TEMPLATE_DEBUG
     return render(request, 'main/'+view_name+'.html', context)
 
