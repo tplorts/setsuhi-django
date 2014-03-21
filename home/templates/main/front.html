@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual photocarousel link s3 %}
+{% load staticfiles multilingual photocarousel galleria link s3 %}
 
 
 {# This alone activates the background image and credit #}
@@ -8,18 +8,32 @@
 
 {% block main_content %}
 <div class="container full-width no-padding">
-{%comment%}
+
+{% if not isProduction %}
+  <div class="tyle-header">
+    <h2>{%ml en='Featured Works' ja='注目作品'%}</h2>
+  </div>
+  <div class="tyle-section">
+
+    <div class="tyle">
+      {% galleria "featured-works-galleria" %}
+    </div> <!-- end .tyle grand hyatt -->
+
+  </div> <!-- end .tyle-section upcoming -->
+
+
+
   <div class="tyle-header">
     <h2>Upcoming</h2>
   </div>
   <div class="tyle-section">
 
     <div class="tyle">
-      
+
     </div> <!-- end .tyle grand hyatt -->
 
   </div> <!-- end .tyle-section upcoming -->
-{%endcomment%}
+{% endif %}
 
   <!---------------------------------->
 

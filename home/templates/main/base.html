@@ -61,7 +61,11 @@
             href="{% static 'main/styles/styles.css' %}" />
       {% endif %}      
     {% endblock default_styles %}
-
+      
+      <style>
+        /* This rule is read by Galleria to define the gallery height: */
+        .galleria{height:320px}
+      </style>
 
     {% block styles %}{% endblock %}
 
@@ -81,6 +85,9 @@
       </script>
       <script type="text/javascript"
               src="{% static 'third/scripts/summernote.min.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'galleria/galleria-1.3.5.min.js' %}">
       </script>
 
 
@@ -276,6 +283,16 @@
               src="{% static 'main/scripts/multilingual.js' %}"></script>
       <script type="text/javascript"
               src="{% static 'main/scripts/main.js' %}"></script>
+
+
+      <script>
+        // Load the classic theme
+        Galleria.loadTheme("{%static 'galleria/themes/classic/galleria.classic.min.js'%}");
+
+        // Initialize Galleria
+        Galleria.run('.galleria');
+      </script>
+
     {% endblock default_postscripts %}
 
     
