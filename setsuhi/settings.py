@@ -32,9 +32,8 @@ except IOError:
 SECRET_KEY = 'n##7^$uc#_9=!92!r3aiv0p)aaelo%%1&w5xtp4f#))r6m=1=v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = False
+DEBUG = not isProduction
+TEMPLATE_DEBUG = not isProduction
 
 ALLOWED_HOSTS = []
 
@@ -90,12 +89,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = S3_STATIC_URL
-
-
 
 # Email settings
 # Used for sending Setsuhi an email message when people
@@ -125,8 +118,10 @@ ALLOWED_HOSTS = ['*']
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
-#STATIC_URL = S3_STATIC_URL
-STATIC_URL = '/static/'
+if isProduction:
+    STATIC_URL = S3_STATIC_URL
+else:
+    STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
