@@ -16,6 +16,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 S3_STATIC_URL = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/"
 
 
+# Automatically detect whether this is running on my development
+# computer, otherwise assuming that the environment is production.
+isProduction = False
+try:
+    open('.devmachine')
+except IOError:
+    isProduction = True
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
