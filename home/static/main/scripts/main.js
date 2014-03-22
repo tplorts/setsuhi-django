@@ -1,5 +1,8 @@
-//$(".navigation-button").smoothHover();
 
+s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
+
+
+// Making her name vertical, oh this is janky.
 (function( $ ){
     $.fn.insertBreaks = function() {
         moji = $(this).text().trim().split('');
@@ -7,8 +10,8 @@
     }; 
 })( jQuery );
 
-
 $(".vertical-text").insertBreaks();
+
 
 //=================================================================
 // Source: http://css-tricks.com/snippets/jquery/smooth-scrolling/
@@ -26,3 +29,17 @@ $(function() {
         }
     });
 });
+
+
+//======================================
+// galleria.io
+if( Galleria && $(".galleria").length ){
+    Galleria.loadTheme(s3_url + "static/galleria/themes/classic/galleria.classic.min.js");
+    Galleria.configure({
+        debug: !isProduction
+    });
+    Galleria.run('.galleria');
+
+    // This should make any gallerias visible.
+    $(".galleria.preload").removeClass("preload");
+}

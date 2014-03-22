@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django import template
+import urllib2
+import json
+from home import s3_setsuhi
 
 register = template.Library()
 
 class G:
-    def __init__(self, url):
-        self.main_image_url = url
+    def __init__(self, info, base_url=None):
+        self.titles = info["titles"]
+        self.briefs = info["briefs"]
+        if base_url:
+            self.main_image_url = base_url + info["main"]
+        else:
+            self.main_image_url = info["main"]
         self.big_image_url = None
         self.thumbnail_image_url = None
     def main_url(self):
@@ -19,19 +27,20 @@ class G:
         if self.big_image_url:
             return self.big_image_url
         return self.main_image_url
-    def titles(self):
-        return {'en': 'The title',
-                'ja': 'タイトル'}
-    def descriptions(self):
-        return {'en': 'The desc',
-                'ja': '短い紹介文'}
 
 
-u = 'http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/shikaku-cover-cropped.jpg'
-dummy = [G(u), G(u)]
+#u = 'http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/shikaku-cover-cropped.jpg'
+#dummy = [G(u), G(u)]
 
 @register.inclusion_tag('tags/galleria.html', takes_context=True)
-def galleria( context, galleria_id ):
+def galleria( context, galleria_id, image_folder ):
     context["galleria_id"] = galleria_id
-    context["galleria_items"] = dummy
+    
+    if not image_folder.endswith('/'):
+        image_folder += '/'
+    base_url = s3_setsuhi.bucket_url + "static/media/images/" + image_folder    
+    jsonurl = urllib2.urlopen( base_url + "info.json" )
+    jsoninfo = json.load( jsonurl )
+    context["galleria_items"] = [G(json_item, base_url) for json_item in jsoninfo]
+    
     return context

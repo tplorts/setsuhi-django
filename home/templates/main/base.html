@@ -61,16 +61,15 @@
             href="{% static 'main/styles/styles.css' %}" />
       {% endif %}      
     {% endblock default_styles %}
-      
-      <style>
-        /* This rule is read by Galleria to define the gallery height: */
-        .galleria{height:320px}
-      </style>
 
     {% block styles %}{% endblock %}
 
     
     {% block default_prescripts %}
+      <script type="text/javascript">
+        isProduction = {{ isProduction|yesno:"true,false" }};
+      </script>
+
       <script type="text/javascript"
               src="{% static 'third/scripts/jquery-1.10.2.min.js' %}">
       </script>
@@ -280,19 +279,11 @@
 
     {% block default_postscripts %}
       <script type="text/javascript"
-              src="{% static 'main/scripts/multilingual.js' %}"></script>
-      <script type="text/javascript"
-              src="{% static 'main/scripts/main.js' %}"></script>
-
-
-      <script>
-        // Load the classic theme
-        Galleria.loadTheme("{%static 'galleria/themes/classic/galleria.classic.min.js'%}");
-
-        // Initialize Galleria
-        Galleria.run('.galleria');
+              src="{% static 'main/scripts/multilingual.js' %}">
       </script>
-
+      <script type="text/javascript"
+              src="{% static 'main/scripts/main.js' %}">
+      </script>
     {% endblock default_postscripts %}
 
     
