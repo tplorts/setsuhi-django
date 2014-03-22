@@ -373,6 +373,12 @@ ol.shallow {
 .slidesjs a:active {
   color: #9e2020;
 }
+.galleria {
+  height: 250px;
+}
+.galleria.preload {
+  display: none;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .justphone {
