@@ -34,9 +34,11 @@ $(function() {
 //======================================
 // galleria.io
 if( Galleria && $(".galleria").length ){
-    Galleria.loadTheme(s3_url + "static/galleria/themes/classic/galleria.classic.min.js");
+    Galleria.loadTheme(s3_url + "static/galleria/themes/twelve/galleria.twelve.min.js");
     Galleria.configure({
-        debug: !isProduction
+        debug: !isProduction,
+        imageCrop: false,
+        autoplay: true
     });
     Galleria.run('.galleria');
 
