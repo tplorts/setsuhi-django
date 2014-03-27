@@ -1,9 +1,10 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual s3 %}
+{% load staticfiles multilingual %}
 
 
 {% block main_content %}
 
+{%comment%}
 <div class="simple-image-list">
   {% s3_url_list 'works/en' as en_images %}
   {% for image in en_images %}
@@ -12,5 +13,8 @@
   </div>
   {% endfor %}
 </div> <!-- end .simple-image-list -->
+{%endcomment%}
+
+
 
 {% endblock main_content %}
