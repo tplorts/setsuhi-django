@@ -292,6 +292,7 @@ ol.shallow {
   margin-bottom: 15px;
 }
 #contact-form-wrapper input[type='text'],
+#contact-form-wrapper input[type='email'],
 #contact-form-wrapper textarea {
   width: 100%;
 }
