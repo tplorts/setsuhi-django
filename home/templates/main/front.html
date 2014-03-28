@@ -139,8 +139,20 @@
                 class="fixed-responsive-video "
                 src="//www.youtube.com/embed/VyWd2H-AGg8" 
                 frameborder="0" allowfullscreen></iframe>
+        <div class="mgY3em">&nbsp;</div>
+        <div class="mgY1em">
+          <video controls class="full-width">
+            <source src="{% s3_url 'videos/ShikakuNoNakaHe.m4v' %}"
+                    type="video/mp4" />
+            <source src="{% s3_url 'videos/ShikakuNoNakaHe.mov' %}"
+                    type="video/quicktime" />
+          </video>
+          <div class="video-credit">
+            filmed and edited by {%link 'yoshiyuki ōki'%}
+          </div>
+        </div>
       </div>
-    </div>
+    </div> <!-- /.tyle -->
   </div> <!-- /.tyle-section -->
 
 
