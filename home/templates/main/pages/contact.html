@@ -62,6 +62,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
+            {{ form.name.errors }}
             {{ form.name }}
           </div>
         </div><!--/Name row-->
@@ -73,6 +74,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
+            {{ form.email_address.errors }}
             {{ form.email_address }}
           </div>
         </div><!--/Email row-->
@@ -84,6 +86,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
+            {{ form.telephone_number.errors }}
             {{ form.telephone_number }}
             <span class="text-muted">
               {% ml ja="（任意）" en="(optional)" %}
@@ -98,6 +101,7 @@
             </label>
           </div>
           <div class="col-sm-8 col-md-9">
+            {{ form.message.errors }}
             <textarea name="message" id="id_message"
                       placeholder="お問い合わせ内容">{{ form.message.value|default_if_none:"" }}</textarea>
           </div>
