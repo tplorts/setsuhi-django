@@ -26,5 +26,5 @@ urlpatterns = patterns(
     url(r'^lessons/', views.lessons, name='lessons'),
     url(r'^contact/', views.contact, name='contact'),
 
-    url(r'^media/photum/(?P<photum_index>\d+)', views.photum, name='photum'),
+#    url(r'^media/photum/(?P<photum_index>\d+)', views.photum, name='photum'),
 )
