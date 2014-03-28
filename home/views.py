@@ -70,11 +70,15 @@ def lessons(q):
 
 
 
+
+class TelephoneInput( forms.TextInput ):
+    input_type = 'tel'
+
 class ContactForm(forms.Form):
     name = forms.CharField()
     email_address = forms.EmailField()
-    telephone_number = forms.CharField(required=False)
-    message = forms.CharField()
+    telephone_number = forms.CharField(widget=TelephoneInput, required=False)
+    message = forms.CharField(widget=forms.Textarea)
 
 def contact(request):
     form = None

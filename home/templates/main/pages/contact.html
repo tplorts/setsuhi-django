@@ -102,8 +102,7 @@
           </div>
           <div class="col-sm-8 col-md-9">
             {{ form.message.errors }}
-            <textarea name="message" id="id_message"
-                      placeholder="お問い合わせ内容">{{ form.message.value|default_if_none:"" }}</textarea>
+            {{ form.message }}
           </div>
         </div><!--/Message row-->
 

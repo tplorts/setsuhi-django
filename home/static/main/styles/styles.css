@@ -293,6 +293,7 @@ ol.shallow {
 }
 #contact-form-wrapper input[type='text'],
 #contact-form-wrapper input[type='email'],
+#contact-form-wrapper input[type='tel'],
 #contact-form-wrapper textarea {
   width: 100%;
 }
@@ -584,7 +585,8 @@ ol.shallow {
     text-align: right;
   }
   #contact-form-wrapper input[type='text'],
-  #contact-form-wrapper input[type='email'] {
+  #contact-form-wrapper input[type='email'],
+  #contact-form-wrapper input[type='tel'] {
     width: 250px;
   }
   #contact-form-wrapper textarea {
