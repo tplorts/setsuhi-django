@@ -379,6 +379,10 @@ ol.shallow {
 .galleria.preload {
   display: none;
 }
+.fixed-responsive-video {
+  width: 260px;
+  height: 146.25px;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .justphone {
@@ -591,6 +595,10 @@ ol.shallow {
   .scroll-marker {
     padding-top: 0;
   }
+  .fixed-responsive-video {
+    width: 508px;
+    height: 285.75px;
+  }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -625,6 +633,10 @@ ol.shallow {
     -o-background-size: cover;
     background-size: cover;
   }
+  .fixed-responsive-video {
+    width: 732px;
+    height: 411.75px;
+  }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -657,5 +669,9 @@ ol.shallow {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+  .fixed-responsive-video {
+    width: 853px;
+    height: 479.8125px;
   }
 }
