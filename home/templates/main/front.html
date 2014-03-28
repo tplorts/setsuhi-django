@@ -9,10 +9,11 @@
 {% block main_content %}
 <div class="container full-width no-padding">
 
-{# % if not isProduction % #}
+
   <div class="tyle-header">
     <h2>{%ml en='Featured Works' ja='注目作品'%}</h2>
   </div>
+
   <div class="tyle-section">
 
     <div class="tyle">
@@ -21,37 +22,16 @@
           {% galleria "featured-works-galleria" "works/front" %}
         </div>
       </div>
-    </div> <!-- end .tyle grand hyatt -->
+    </div> <!-- end .tyle Featured Works Galleria -->
 
-  </div> <!-- end .tyle-section upcoming -->
-
-{# % endif % #}
-
-  <div class="tyle-header">
-    <h2>Upcoming</h2>
-  </div>
-  <div class="tyle-section">
-
-    <div class="tyle" lang="ja">
-      <h3 lang="ja">❃ウーマンズ<span class="ib">エクスペリエンス</span></h3>
-      <p>
-        グランドハイアット東京(六本木ヒルズ)のフレンチキッチンで二ヶ月に一度開催中の「ウーマンズエクスペリエンス」<br>
-        3/22のスペシャルゲストとしてセミナーとデモンストレーションをさせていただくことになりました。<br>
-        その後はアントニー・ドゥヴィール氏とプレミアムシャンパン、副総料理長ダヴィッド・ブランによるスペシャルランチもお楽しみいただけます。<br>
-        個室での開催となり18名様女性限定です。<br>
-        ご興味ある方はお早めのお申し込みをお待ちしております。<br>
-        詳細、ご予約は<a href="http://restaurants.tokyo.grand.hyatt.co.jp/french-kitchen-tokyo/news/woman-experience.html">こちら</a>から
-      </p>
-    </div> <!-- end .tyle grand hyatt -->
-
-  </div> <!-- end .tyle-section upcoming -->
+  </div> <!-- end .tyle-section Featured Works -->
 
 
   <!---------------------------------->
 
 
   <div class="tyle-header">
-    <h2>Recent News</h2>
+    <h2>Recent</h2>
   </div>
 
   <div class="tyle-section">
@@ -108,7 +88,7 @@
         <div class="col-sm-6 col-md-8">
           <h3>Live: Setsuhi with Adam Unsworth at JZ Brat</h3>
               <p>
-                Setsuhi recently held another successful collaborative live with music
+                Setsuhi recently held another collaborative live with music
                 and calligraphy.  Jazz hornist {% link "Adam Unsworth" %} as well as
                 musicians from various genres joined Setsuhi on the stage of 
                 {% link "JZ Brat" %} in Shibuya.  This live was a part of a special
@@ -120,7 +100,7 @@
           {% multilingual %}
             {% mlpart "en" %}
               <p>
-                Setsuhi recently held another successful collaborative live with music
+                Setsuhi recently held another collaborative live with music
                 and calligraphy.  Jazz hornist {% link "Adam Unsworth" %} as well as
                 musicians from various genres joined Setsuhi on the stage of 
                 {% link "JZ Brat" %} in Shibuya.  This live was a part of a special
@@ -144,6 +124,25 @@
     </div> <!-- end .tyle -->
 
   </div> <!-- end .tyle-section -->
+
+
+  <!----------------------------------------------->
+
+
+  <div class="tyle-header">
+    <h2>Featured Videos</h2>
+  </div>
+  <div class="tyle-section">
+    <div class="tyle">
+      <div class="text-center">
+        <iframe width="560" height="315" 
+                class="fixed-responsive-video "
+                src="//www.youtube.com/embed/VyWd2H-AGg8" 
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div> <!-- /.tyle-section -->
+
 
 </div> <!-- end .container -->
 {% endblock main_content %}
