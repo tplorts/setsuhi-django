@@ -517,9 +517,13 @@ ol.shallow {
     height: 64px;
     border: 2px solid white;
     color: white;
+    font-size: 12px;
     position: relative;
     cursor: pointer;
-    transition: all 0.2s ease-in;
+    transition: all 0.1s ease-in;
+  }
+  .boxi [lang="ja"] {
+    font-size: 15px;
   }
   .boxi .boxi-br {
     position: absolute;
