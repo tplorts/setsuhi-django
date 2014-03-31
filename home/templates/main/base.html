@@ -149,18 +149,13 @@
             </div>
             <div class="navbar-collapse collapse" style="height: 1px;">
               <ul class="nav navbar-nav">
-                {% for view_name, english, japanese in nav_list %}
+                {% for view_name, english, japanese, attr in nav_list %}
                   <li>
-                    <a href="{% url view_name %}">
+                    <a href="{% url view_name %}" {{attr}}>
                       {% ml en=english ja=japanese %}
                     </a>
                   </li>
                 {% endfor %}
-                <li>
-                  <a href="http://setsuhi.blogspot.jp/" target="_blank">
-                    {% ml en="Blog" ja="ブログ" %}
-                  </a>
-                </li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!--/.container-->
@@ -216,10 +211,9 @@
 
         <div id="right-dock" class="hidden-xs">
           <div id="main-navigation">
-
-            {% for view_name, english, japanese in nav_list %}
+            {% for view_name, english, japanese, attr in nav_list %}
               <div class="navlink-wrapper">
-                <a href="{% url view_name %}">
+                <a href="{% url view_name %}" {{attr}}>
                   <div class="boxi">
                     <div class="boxi-br">
                       {% ml en=english ja=japanese %}
@@ -228,19 +222,7 @@
                 </a>
               </div>
             {% endfor %}
-
-            <div class="navlink-wrapper">
-              <a target="_blank" href="http://setsuhi.blogspot.jp/">
-                <div class="boxi">
-                  <div class="boxi-br">
-                    {% ml ja="ブログ" en="Blog" %}
-                  </div>
-                </div>
-              </a>
-            </div>
-
           </div> <!-- end #main-navigation -->
-          
         </div> <!-- /#right-dock -->
 
         <div id="top-content">

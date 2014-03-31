@@ -9,6 +9,7 @@ s3 = settings.S3_STATIC_URL
 
 woman = RedirectView.as_view(url="http://restaurants.tokyo.grand.hyatt.co.jp/french-kitchen-tokyo/news/woman-experience.html")
 
+blog_redirect = RedirectView.as_view(url='http://setsuhi.blogspot.jp/')
 
 urlpatterns = patterns(
     '',
@@ -22,9 +23,9 @@ urlpatterns = patterns(
     url(r'^$', views.front, name='front'),
     url(r'^about/', views.about, name='about'),
     url(r'^works/$', views.works, name='works'),
-    url(r'^media/$', views.media, name='media'),
+    url(r'^photos/$', views.photos, name='photos'),
+    url(r'^schedule/', views.schedule, name='schedule'),
     url(r'^lessons/', views.lessons, name='lessons'),
     url(r'^contact/', views.contact, name='contact'),
-
-#    url(r'^media/photum/(?P<photum_index>\d+)', views.photum, name='photum'),
+    url(r'^blog/', blog_redirect, name='blog'),
 )

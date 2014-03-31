@@ -20,11 +20,13 @@ ML_CONTEXT_KEY = "ml_active_language"
 # Each element has three parts:
 #   ("view name", "English label", "Japanese label")
 nav_list = (
-    ("about", "About", "紹介"),
-#    ("works", "Works", "作品"),
-#    ("media", "Media", "画像"),
-    ("lessons", "Lessons", "教室"),
-    ("contact", "Contact", "連絡"),
+    ("about",    "About",    "紹介", ""),
+#    ("works",    "Works",    "作品", ""),
+#    ("photos",   "Photos",   "写真", ""),
+    ("schedule", "Schedule", "予定", ""),
+    ("lessons",  "Lessons",  "教室", ""),
+    ("contact",  "Contact",  "連絡", ""),
+    ("blog",     "Blog",     "ブログ", "target=\"_blank\""),
 )
 
 
@@ -61,9 +63,11 @@ def about(q):
 def works(q):
     return render_view(q, 'pages/works')
 
-def media(q):
-    c = {"phota": phota.photatouse}
-    return render_view(q, 'pages/media', c)
+def photos(q):
+    return render_view(q, 'pages/photos')
+
+def schedule(q):
+    return render_view(q, 'pages/schedule')
 
 def lessons(q):
     return render_view(q, 'pages/lessons')
