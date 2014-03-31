@@ -6,7 +6,6 @@ from django import forms
 from django.core.mail import EmailMessage
 
 from setsuhi import settings
-import phota
 
 
 
@@ -46,7 +45,7 @@ def multilingual_context( request, context={} ):
 
 def render_view(request, view_name, context={}):
     context = multilingual_context( request, context )
-    context["nav_list"] = nav_list    
+    context["nav_list"] = nav_list
     context['present_view_name'] = view_name.split("/")[-1]
     context['isProduction'] = settings.isProduction
     context['use_less_stylesheets'] = settings.TEMPLATE_DEBUG
@@ -115,10 +114,3 @@ def contact(request):
     })
 
 
-
-def photum(q, photum_index):
-    photum_index = int(photum_index)
-    if photum_index >= len(phota.photatouse):
-        raise Http404
-    c = {"photum": phota.photatouse[photum_index]}
-    return render_view(q, 'pages/photum', c)
