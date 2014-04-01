@@ -1,13 +1,13 @@
-{% load multilingual %}
+{# % load multilingual % #}
 
-<div id="{{ galleria_id }}" class="galleria preload">
-  {% for gal in galleria_items %}
-    <a href="{{ gal.main_url }}">
-      <img 
-         src="{{ gal.thumbnail_url }}",
-         data-big="{{ gal.big_url }}"
-         data-title="{% ml gal.titles %}"
-         data-description="{% ml gal.briefs %}" />
+<div id="{{ galleria_id }}"
+     class="galleria preload {{ galleria_class }}">
+  {% for i in galleria_items %}
+    <a href="{{ i.main_image_url }}">
+      <img src="{{ i.thumb_image_url }}",
+           data-big="{{ i.large_image_url }}"
+           data-title="{{ i.title }}"
+           data-description="{{ i.brief }}" />
     </a>
   {% endfor %}
 </div>
