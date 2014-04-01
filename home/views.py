@@ -20,7 +20,7 @@ ML_CONTEXT_KEY = "ml_active_language"
 #   ("view name", "English label", "Japanese label")
 nav_list = (
     ("about",    "About",    "紹介", ""),
-#    ("works",    "Works",    "作品", ""),
+    ("works",    "Works",    "作品", ""),
 #    ("photos",   "Photos",   "写真", ""),
     ("videos",   "Videos",   "動画", ""),
     ("schedule", "Schedule", "予定", ""),

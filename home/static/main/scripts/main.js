@@ -38,7 +38,9 @@ if( Galleria && $(".galleria").length ){
     Galleria.configure({
         debug: !isProduction,
         imageCrop: false,
-        autoplay: true
+        preload: 'all',
+        autoplay: true,
+        variation: 'light'
     });
     Galleria.run('.galleria');
 

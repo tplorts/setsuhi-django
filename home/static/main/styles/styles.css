@@ -383,6 +383,9 @@ ol.shallow {
 .slidesjs a:active {
   color: #9e2020;
 }
+.galleria-wrapper.shadowed {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
 .galleria {
   height: 320px;
 }
