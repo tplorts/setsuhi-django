@@ -12,18 +12,21 @@
         <!-- シカクの中へ -->
         <div class="mgY1em">
           <h3 lang="ja">シカクの中へ</h3>
-          <video controls class="full-width">
+          <video controls class="full-width" preload="auto">
             <source src="{% s3_url 'videos/ShikakuNoNakaHe.m4v' %}"
                     type="video/mp4" />
             <source src="{% s3_url 'videos/ShikakuNoNakaHe.mov' %}"
                     type="video/quicktime" />
           </video>
           <div class="video-credit">
-            filmed and edited by {%link 'yoshiyuki ōki'%}
+            {%multilingual%}
+              {%mlpart 'en'%}filmed and edited by {%link 'yoshiyuki ōki'%}{%endmlpart%}
+              {%mlpart 'ja'%}映像：{%link '大木啓至'%}{%endmlpart%}
+            {%endmultilingual%}
           </div>
           <div class="video-brief" lang="ja">
-            2013年、二人展 書道×写真のテーマ「シカクの中へ」展示の続編を映像作品として、自身の集大成ライブ「setsuhi with Adam Unsworth」@JZ Bratにて発表
-映像:大木啓至
+            2013年、二人展 書道×写真のテーマ「シカクの中へ」展示の続編を映像作品として、<br>
+            自身の集大成ライブ「setsuhi with Adam Unsworth」@JZ Bratにて発表
           </div>
         </div> <!-- /シカクの中へ -->
 
