@@ -523,7 +523,7 @@ ol.shallow {
   .boxi {
     width: 64px;
     height: 64px;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     color: white;
     font-size: 12px;
     position: relative;
