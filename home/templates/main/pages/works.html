@@ -1,7 +1,9 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual %}
+{% load staticfiles multilingual sakuhin_galleria %}
 
 
 {% block main_content %}
-
+  <div>
+    {% sakuhin_galleria "personal" class="exclusive-galleria" %}
+  </div>
 {% endblock main_content %}
