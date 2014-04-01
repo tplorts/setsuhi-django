@@ -384,10 +384,14 @@ ol.shallow {
   color: #9e2020;
 }
 .galleria {
-  height: 250px;
+  height: 320px;
 }
 .galleria.preload {
   display: none;
+}
+.exclusive-galleria {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .fixed-responsive-video {
   width: 260px;
@@ -396,6 +400,10 @@ ol.shallow {
 .video-credit {
   font-size: 12px;
   float: right;
+  margin-left: 4em;
+}
+.video-brief {
+  padding: 1em;
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -617,6 +625,10 @@ ol.shallow {
   .fixed-responsive-video {
     width: 508px;
     height: 285.75px;
+  }
+  .exclusive-galleria {
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }
 /* Medium devices (desktops, 992px and up) */
