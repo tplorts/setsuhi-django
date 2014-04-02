@@ -39,7 +39,7 @@ if( Galleria && $(".galleria").length ){
         debug: !isProduction,
         imageCrop: false,
         preload: 'all',
-        autoplay: true,
+        autoplay: false,
         variation: 'light'
     });
     Galleria.run('.galleria');
