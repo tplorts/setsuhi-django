@@ -2,6 +2,210 @@
 {% load staticfiles multilingual %}
 
 
-{% block main_content %}
+{%block super_class%} has-background-image {%endblock%}
 
+
+{% block main_content %}
+<div class="container full-width no-padding">
+  <div class="tyle-header">
+    <h2>Upcoming Events</h2>
+  </div>
+  <div id="recent-events" class="tyle-section event-section">
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          直書観音 Vol. 4、音楽✕書ライブ
+        </div>
+        <div class="event-date">
+          2014.4.27 (日) 15:00┈17:00
+        </div>
+        <div class="event-description">
+          フルート:Miya　書:白石雪妃<br>
+          料金：予約2500円 当日3000円<br>
+          　　　学生2000円 小学生以下無料<br>
+          予約：03-6427-9156(チームカノン)<br>
+          　　　team.can-on@miya-music.com<br>
+          会場：路風舎 千葉県浦安市堀江3-5-2<br>
+          　　　(東⻄線浦安駅より徒歩10分)<br>
+          　　　浦安駅⻄口を左に出て<span class="ib">浦安駅前交差点を超え、</span><br>
+          　　　<span class="ib">清龍神社まできたら左に</span><span class="ib">フラワー通りがあるので曲がる。</span><br>
+          　　　<span class="ib">一つ目の路地を左折。</span>
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          個展：書画と縁-en-アクセサリー
+        </div>
+        <div class="event-date">
+          2014.4.30⇀5.30 10:00┈17:00 (土日祝休館)
+        </div>
+        <div class="event-description">
+          プラス株式会社ショールーム<br>
+          www.plus.co.jp/showroom/
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          Jazz Meets 書道 〜美女トリオと仲間達〜
+        </div>
+        <div class="event-date">
+          2014.5.27 open 18:00, 1 st 19:30, 2 nd 21:00
+        </div>
+        <div class="event-description">
+          銀座 No Bird、no-bird.com、03-6280-6006<br>
+          高澤綾 ❲trumpet❳ ✕ 白石雪妃❲書❳<br>
+          Sara Rector❲vocal❳<br>
+          小林岳五郎❲piano❳<br>
+          山本裕之❲bass❳<br>
+          4,000円 (2ステージ合計、入替なし)
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          フランスツアー
+        </div>
+        <div class="event-date">
+          2014.6.12⇀7.1
+        </div>
+        <div class="event-description">
+          「瞬刻」即興ライブなど<br>
+          打楽器:山㟁直人 書:白石雪妃
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          たんざく展 @ 新宿伊勢丹
+        </div>
+        <div class="event-date">
+          2014.6.25 10:30┈20:00
+        </div>
+        <div class="event-description">
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          たんざく展
+        </div>
+        <div class="event-date">
+          2014.6.30⇀7.12
+        </div>
+        <div class="event-description">
+          11:00┈19:00 (日曜休廊)<br> 
+          art data bank 銀座<br>
+          artdatabank.co.jp
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          MOVE展 in teltow
+        </div>
+        <div class="event-date">
+          2014.7.5⇀7.7  9:00┈19:00
+        </div>
+        <div class="event-description">
+          鎌倉芸術館 鎌倉市大船6-1-2<br>
+          (大船駅より徒歩10分)<br>
+          kamakura-arts.jp
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          音楽 ✕ 書 即興ライブ
+        </div>
+        <div class="event-date">
+          2014.7.20 19:30┈21:00
+        </div>
+        <div class="event-description">
+          四谷3丁目 喫茶茶会記<br>
+          Terry Day❲bamboo flute❳<br>
+          Pearl Alexander ❲bass❳<br>
+          Morishige Yasumune❲cello❳<br>
+          白石雪妃❲書❳<br>
+          gekkasha.modalbeats.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------------------------------------------->
+
+  <div class="tyle-header">
+    <h2>Recent Events</h2>
+  </div>
+  <div id="recent-events" class="tyle-section event-section">
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          {%ml ja='新宿伊勢丹' en="Shinjuku Isetan's"%} Japan Museum for Kids
+        </div>
+        <div class="event-date">
+          2014.3.153.17
+        </div>
+        <div class="event-description">
+
+          {%multilingual%}
+          {%mlpart 'ja'%}
+          〜日本を学ぶ、知る、ふれる〜<br>
+          白石雪妃 書道教室<br>
+          〜気持ちを書で表現しよう〜音楽と共に
+          {%endmlpart%}
+          {%mlpart 'en'%}
+          ~Learn, Know, Experience Japan~<br>
+          Calligraphy Workshop with Setsuhi Shiraishi<br>
+          ~Express your feelings with calligraphy~ along with music
+          {%endmlpart%}
+          {%endmultilingual%}
+
+          <a href="http://www.isetanspecial.com/kids">www.isetanspecial.com/kids</a>
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          ウーマンズエクスペリエンス
+        </div>
+        <div class="event-date">
+          2014.3.22 (土) 11:30┈15:00
+        </div>
+        <div class="event-description">
+          フレンチキッチン(個室)<br>
+          グランドハイアット東京<br>
+          書道ワークショップ・パフォーマンス<br>
+          setsuhi.jp/womans-experience
+        </div>
+      </div>
+    </div>
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          MOVE展 in teltow
+        </div>
+        <div class="event-date">
+          2014.3.21⇀3.31
+        </div>
+        <div class="event-description">
+          ドイツ<br>
+          BURGERHAUS<br>
+          Neues Rathaus Teltow<br>
+          (テルトウ市庁舎新館)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock main_content %}
