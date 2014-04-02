@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% load staticfiles multilingual %}
+{% load staticfiles multilingual email_obfuscator %}
 
 
 {%block super_class%} has-background-image {%endblock%}
@@ -24,7 +24,7 @@
           料金：予約2500円 当日3000円<br>
           　　　学生2000円 小学生以下無料<br>
           予約：03-6427-9156(チームカノン)<br>
-          　　　team.can-on@miya-music.com<br>
+          　　　{{ "team.can-on@miya-music.com"|obfuscate_mailto }}<br>
           会場：路風舎 千葉県浦安市堀江3-5-2<br>
           　　　(東⻄線浦安駅より徒歩10分)<br>
           　　　浦安駅⻄口を左に出て<span class="ib">浦安駅前交差点を超え、</span><br>
