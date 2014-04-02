@@ -71,14 +71,13 @@
 
     #signature-div {
         width: 100%;
-        padding: 25px;
+        padding: 20px;
         
-        #signature {
+        #signature-image {
             width: 100%;
-            transition: all 0.2s ease-in;
-            .filter( invert() );
+            transition: all 0.05s ease-out;
             &:hover {
-                .filter( initial );
+                .filter( invert(90%) );
             }
         }
     }

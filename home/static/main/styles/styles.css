@@ -445,19 +445,16 @@ ol.shallow {
   }
   #left-dock #signature-div {
     width: 100%;
-    padding: 25px;
+    padding: 20px;
   }
-  #left-dock #signature-div #signature {
+  #left-dock #signature-div #signature-image {
     width: 100%;
-    transition: all 0.2s ease-in;
-    -webkit-filter: invert();
-    -moz-filter: invert();
-    filter: invert();
+    transition: all 0.05s ease-out;
   }
-  #left-dock #signature-div #signature:hover {
-    -webkit-filter: initial;
-    -moz-filter: initial;
-    filter: initial;
+  #left-dock #signature-div #signature-image:hover {
+    -webkit-filter: invert(90%);
+    -moz-filter: invert(90%);
+    filter: invert(90%);
   }
   .ml-widget {
     position: absolute;
