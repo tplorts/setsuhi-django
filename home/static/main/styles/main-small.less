@@ -148,11 +148,12 @@
     }
 }
 
+@halfwhite: #C0C0C0;
 .boxi {
     width: @button-size;
     height: @button-size;
 
-    border: 2px solid rgba(255,255,255, 0.5);
+    border: 2px outset @halfwhite;
     color: white;
 
     font-size: 12px;
@@ -175,7 +176,14 @@
         background-color: white;
         color: @side-dock-bg;
     }
+
     transition: all 0.1s ease-in;
+}
+
+a:active {
+    .boxi {
+        border: 2px inset @halfwhite;
+    }
 }
 
 
