@@ -11,8 +11,8 @@ register = template.Library()
 def sakuhin_galleria( context, sakuhin_group, *args, **kwargs):
     try:
         group = models.SakuhinGroup.objects.get( name=sakuhin_group )
-    except DoesNotExist:
-        items = []
+    except Exception:
+        items = None
     else:
         items = group.sakuhin_set.all()
 
