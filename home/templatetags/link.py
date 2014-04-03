@@ -7,7 +7,7 @@ register = template.Library()
 
 
 yokkun_url = "http://yoshiyukioki.com/"
-en_url = "http://ja.wikipedia.org/wiki/%E7%B8%81"
+en_url = "https://www.facebook.com/en.setsuhi.ryona"
 sakaiki_url = "http://sakaiki.modalbeats.com/"
 jiang_url = "http://jiang-xiaoqing.xii.jp/"
 adidas_article = "http://news.adidas.com/GLOBAL/Latest-News/adidas-presents-the-Japanese-federation-kit-for-2014-FIFA-World-Cup-Brazil-/s/006665d3-f880-4b36-b1a1-ee07f37a3805#.UvhZ4j03Srs.link"
@@ -32,7 +32,7 @@ english_addresses = {
     "RYONA": "http://ryona.jp",
     "Sakaiki": sakaiki_url,
     "Saideigama": "http://saideigama.com/index_eng.html",
-#    "縁 (&ldquo;en&rdquo;)": en_url,
+    "縁 (&ldquo;en&rdquo;)": en_url,
     "article about the jersey": adidas_article,
     "JZ Brat": "http://www.jzbrat.com/",
 };
@@ -47,8 +47,9 @@ japanese_addresses = {
     "彩泥窯": "http://saideigama.com/",
     "彩泥窯の表参道工房": "http://saideigama.com/syozaichi.html",
     "書道サポート": "http://saideigama.com/taiken_tepure_syodo_saport.html",
-#    "縁": en_url,
-#    "〜en〜縁": en_url,
+    "縁": en_url,
+    "〜en〜縁": en_url,
+    "縁~en~": en_url,
 };
 
 
