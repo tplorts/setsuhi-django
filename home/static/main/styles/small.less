@@ -142,9 +142,12 @@
     right: 0;
     text-align: center;
 
-    .navigation-button, #nav-spilmenu-wrapper {
+    .navigation-button, 
+    #navigation-spill-menu-wrapper {
         // The only way I found to center them is manually
         margin: 12px (@side-dock-width - @button-size)/2;
+        //TODO: look into why the menu button is centered
+        //      even without this margin.
     }
 
     .navitem-on {
@@ -169,6 +172,7 @@
     height: @button-size;
 
     border: 2px outset @halfwhite;
+    border-radius: 4px;
     background: transparent;
     color: white;
 
@@ -196,6 +200,7 @@
     transition: all 0.1s ease-in;
 }
 
+/*
 a:active {
     .boxi {
         border: 2px inset @halfwhite;
@@ -203,6 +208,7 @@ a:active {
         background-color: black;
     }
 }
+*/
 
 
 

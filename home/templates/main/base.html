@@ -229,25 +229,25 @@
             {% endfor %}
 
               <div class="dropdown navitem-off"
-                   id="nav-spilmenu-wrapper">
+                   id="navigation-spill-menu-wrapper">
 
                 <button class="boxi dropdown-toggle" 
-                        type="button" id="navspilmenu" 
+                        type="button" id="navigation-spill-menu-button" 
                         data-toggle="dropdown">
                   <div class="text-left font-16px">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="glyphicon glyphicon-align-justify"></span>
                   </div>
                   <div class="boxi-br">
-                    others
+                    {%ml en="Others" ja="その他"%}
                   </div>
                 </button>
 
                 <ul class="dropdown-menu upleft-menu" role="menu" 
-                    aria-labelledby="navspilmenu">
+                    aria-labelledby="navigation-spill-menu-button">
                   {% for view_name, english, japanese, attr in nav_list %}
                   <li role="presentation"
-                      class="spilmenuitem navitem-off">
+                      class="spill-menu-item navitem-off">
                     <a role="menuitem" tabindex="-1" 
                        href="{%url view_name%}" {{attr}}>
                       {% ml en=english ja=japanese %}

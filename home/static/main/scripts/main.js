@@ -61,50 +61,80 @@ if( Galleria && $(".galleria").length ){
         $(this).removeClass("navitem-off")
                .addClass("navitem-on");
     };
-    $.fn.navSpilcount = function() {
-        overage = $(this).height() + $(this).offset().top - $(window).height();
-        b = $(".navigation-button");
-        bh = b.height() + parseInt(b.css("margin-top"));
-        spilcount = Math.ceil(overage / bh);
-        return spilcount;
-    };
 })( jQuery );
 
 nav = $("#main-navigation");
-spilmenuButton = $("#nav-spilmenu-wrapper");
-spilmenu = $("#navspilmenu");
+spillMenuButton = $("#navigation-spill-menu-wrapper");
 
-updateNavItems = function() {
-    spilcount = nav.navSpilcount();
-    if( spilcount > 0 ) {
-        spilmenuButton.navShow();
-        spilcount = nav.navSpilcount();
-        onlist = $(".navigation-button.navitem-on");
-        spilfrom = onlist.length - spilcount;
-        onlist.slice(spilfrom).navHide();
-        spilitems = $(".spilmenuitem.navitem-off");
-        toshow = spilitems.slice(spilfrom);
-        toshow.navShow();
-    } else if( spilcount < 0 ) {
-        showcount = -spilcount;
-        offlist = $(".navigation-button.navitem-off");
-        if( offlist.length > 0 ) {
-            if( offlist.length == showcount )
-                spilmenuButton.navHide();
-            oncount = Math.min( offlist.length, showcount );
-            toshow = offlist.slice( 0, oncount )
-            toshow.navShow();
-            tohide = $(".spilmenuitem.navitem-on").slice( 0, oncount );
-            tohide.navHide();
-        }
-    }
-    h = $(".navigation-button.navitem-off");
-    if( spilmenuButton.hasClass("navitem-on") && h.length == 1 ) {
-        spilmenuButton.navHide();
-        h.navShow();
-        $(".spilmenuitem.navitem-on").navHide();
-    }
+navSpillCount = function() {
+    // How many pixels of the navigation have gone out of view?
+    overage = nav.height() + nav.offset().top - $(window).height();
+
+    b = $(".navigation-button");
+
+    // The height of each button and the inter-button space
+    bh = b.height() + parseInt(b.css("margin-top"));
+
+    return Math.ceil(overage / bh);
 };
 
-$(window).on('ready load resize orientationChanged', updateNavItems);
+updateNavigationSpill = function() {
+    spillCount = navSpillCount();
+
+    // negative of spillCount --> how much space for buttons
+    spaceCount = -spillCount;
+
+    // If there are buttons spilling into the invisible region
+    if( spillCount > 0 ) {
+        // Turn on the spill menu button
+        spillMenuButton.navShow();
+
+        // Recalculate how much room there is now that the
+        // spill menu button was inserted.
+        spillCount = navSpillCount();
+
+        // Gather all buttons which are turned on.
+        onlist = $(".navigation-button.navitem-on");
+
+        // Get the button index from which we will spill
+        spillFrom = onlist.length - spillCount;
+
+        // Turn off all turned-on buttons starting at 'spillFrom'
+        onlist.slice(spillFrom).navHide();
+        
+        // Turn on all turned-off spill menu items starting at 'spillFrom'
+        $(".spill-menu-item.navitem-off").slice(spillFrom).navShow();
+    }         
+    // If there is now room to insert more buttons
+    else if( spaceCount > 0 ) {
+        // Gather all turned off buttons
+        offlist = $(".navigation-button.navitem-off");
+
+        // The minimum of the spilled buttons count and how much
+        // room we have tells us how many buttons to insert.
+        // (There may be more space than buttons, or vice-versa)
+        oncount = Math.min( offlist.length, spaceCount );
+
+        // Turn on the first 'oncount' buttons that were off
+        offlist.slice(0, oncount).navShow();
+
+        // Turn off the first 'oncount' menu items that were on
+        $(".spill-menu-item.navitem-on").slice( 0, oncount ).navHide();
+    }
+
+    // If only one button remains in the spil menu, then
+    // the spil menu is not necessary, so put that button back
+    // into main navigation.
+    h = $(".navigation-button.navitem-off");
+    if( spillMenuButton.hasClass("navitem-on") && h.length == 1 ) {
+        h.navShow();
+        $(".spill-menu-item.navitem-on").navHide();
+    }
+    
+    // If the spill menu is empty, then hide that button.
+    if( $(".spill-menu-item.navitem-on").length == 0 )
+        spillMenuButton.navHide();
+};
+
+$(window).on('ready load resize orientationChanged', updateNavigationSpill);
 
