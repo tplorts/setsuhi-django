@@ -144,6 +144,13 @@ h6 div {
 body {
   background-color: transparent;
 }
+hr {
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  color: #CCC;
+  background-color: #CCC;
+}
 ul.shallow,
 ol.shallow {
   -webkit-padding-start: 24px;
@@ -237,13 +244,13 @@ ol.shallow {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .tyle .tyle-slideshow .carousel-indicators li.active {
-  background-color: #400050;
+  background-color: #28003c;
 }
 #main-content {
   padding-top: 52px;
 }
 .navbar-setsuhi {
-  background-color: #400050;
+  background-color: #28003c;
 }
 .navbar-setsuhi a {
   color: white !important;
@@ -438,7 +445,7 @@ ol.shallow {
     top: 0;
     bottom: 0;
     width: 100px;
-    background-color: #400050;
+    background-color: #28003c;
     color: #ffffff;
     left: 0;
     -webkit-box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
@@ -490,7 +497,7 @@ ol.shallow {
   .ml-widget .ml-language.active {
     background-color: gray;
     font-weight: bold;
-    color: #400050;
+    color: #28003c;
   }
   .ml-widget .ml-language.active img {
     -webkit-filter: grayscale(0);
@@ -512,7 +519,7 @@ ol.shallow {
     top: 0;
     bottom: 0;
     width: 100px;
-    background-color: #400050;
+    background-color: #28003c;
     color: #ffffff;
     -webkit-box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
@@ -520,14 +527,14 @@ ol.shallow {
     right: 0;
     text-align: center;
   }
-  #right-dock .navlink-wrapper,
-  #right-dock #nav-spilmenu-wrapper {
+  #right-dock .navigation-button,
+  #right-dock #navigation-spill-menu-wrapper {
     margin: 12px 18px;
   }
-  #right-dock .navlink-shown {
+  #right-dock .navitem-on {
     display: block;
   }
-  #right-dock .navlink-hidden {
+  #right-dock .navitem-off {
     display: none;
   }
   #right-dock .upleft-menu {
@@ -540,6 +547,7 @@ ol.shallow {
     width: 64px;
     height: 64px;
     border: 2px outset #c0c0c0;
+    border-radius: 4px;
     background: transparent;
     color: white;
     font-size: 11px;
@@ -558,13 +566,17 @@ ol.shallow {
   }
   .boxi:hover {
     background-color: white;
-    color: #400050;
+    color: #28003c;
   }
-  a:active .boxi {
-    border: 2px inset #c0c0c0;
-    transition: all 0.5s ease-out;
-    background-color: black;
-  }
+  /*
+a:active {
+    .boxi {
+        border: 2px inset @halfwhite;
+        transition: all 0.5s ease-out;
+        background-color: black;
+    }
+}
+*/
   #seal-div {
     position: absolute;
     bottom: 0;
@@ -615,7 +627,7 @@ ol.shallow {
     right: 0;
     height: 140px;
     background-color: rgba(255, 255, 255, 0.95);
-    border-top: 1px solid #400050;
+    border-top: 1px solid #28003c;
     margin-left: 100px;
     margin-right: 100px;
   }
