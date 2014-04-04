@@ -29,6 +29,9 @@
 .italic {
   font-style: italic;
 }
+.font-16px {
+  font-size: 16px;
+}
 .font-22 {
   font-size: 22px;
 }
@@ -517,15 +520,29 @@ ol.shallow {
     right: 0;
     text-align: center;
   }
-  #right-dock .navlink-wrapper {
-    margin: 1em 18px;
+  #right-dock .navlink-wrapper,
+  #right-dock #nav-spilmenu-wrapper {
+    margin: 12px 18px;
+  }
+  #right-dock .navlink-shown {
+    display: block;
+  }
+  #right-dock .navlink-hidden {
+    display: none;
+  }
+  #right-dock .upleft-menu {
+    left: initial;
+    top: initial;
+    right: 70px;
+    bottom: 0;
   }
   .boxi {
     width: 64px;
     height: 64px;
     border: 2px outset #c0c0c0;
+    background: transparent;
     color: white;
-    font-size: 12px;
+    font-size: 11px;
     position: relative;
     cursor: pointer;
     transition: all 0.1s ease-in;
@@ -545,6 +562,8 @@ ol.shallow {
   }
   a:active .boxi {
     border: 2px inset #c0c0c0;
+    transition: all 0.5s ease-out;
+    background-color: black;
   }
   #seal-div {
     position: absolute;
