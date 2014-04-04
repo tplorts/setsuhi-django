@@ -217,7 +217,7 @@
           <div id="main-navigation">
 
             {% for view_name, english, japanese, attr in nav_list %}
-              <div class="navlink-wrapper navlink-shown">
+              <div class="navigation-button navitem-on">
                 <a href="{% url view_name %}" {{attr}}>
                   <div class="boxi">
                     <div class="boxi-br">
@@ -228,7 +228,7 @@
               </div>
             {% endfor %}
 
-              <div class="dropdown navlink-hidden"
+              <div class="dropdown navitem-off"
                    id="nav-spilmenu-wrapper">
 
                 <button class="boxi dropdown-toggle" 
@@ -246,7 +246,8 @@
                 <ul class="dropdown-menu upleft-menu" role="menu" 
                     aria-labelledby="navspilmenu">
                   {% for view_name, english, japanese, attr in nav_list %}
-                  <li role="presentation" class="spilmenuitem navlink-hidden">
+                  <li role="presentation"
+                      class="spilmenuitem navitem-off">
                     <a role="menuitem" tabindex="-1" 
                        href="{%url view_name%}" {{attr}}>
                       {% ml en=english ja=japanese %}

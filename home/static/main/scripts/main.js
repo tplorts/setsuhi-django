@@ -54,16 +54,16 @@ if( Galleria && $(".galleria").length ){
 // Make sure all nav buttons are accessible!
 (function( $ ){
     $.fn.navHide = function() {
-        $(this).removeClass("navlink-shown")
-               .addClass("navlink-hidden");
+        $(this).removeClass("navitem-on")
+               .addClass("navitem-off");
     }; 
     $.fn.navShow = function() {
-        $(this).removeClass("navlink-hidden")
-               .addClass("navlink-shown");
+        $(this).removeClass("navitem-off")
+               .addClass("navitem-on");
     };
     $.fn.navSpilcount = function() {
         overage = $(this).height() + $(this).offset().top - $(window).height();
-        b = $(".navlink-wrapper");
+        b = $(".navigation-button");
         bh = b.height() + parseInt(b.css("margin-top"));
         spilcount = Math.ceil(overage / bh);
         return spilcount;
@@ -79,30 +79,30 @@ updateNavItems = function() {
     if( spilcount > 0 ) {
         spilmenuButton.navShow();
         spilcount = nav.navSpilcount();
-        onlist = $(".navlink-wrapper.navlink-shown");
+        onlist = $(".navigation-button.navitem-on");
         spilfrom = onlist.length - spilcount;
         onlist.slice(spilfrom).navHide();
-        spilitems = $(".spilmenuitem.navlink-hidden");
+        spilitems = $(".spilmenuitem.navitem-off");
         toshow = spilitems.slice(spilfrom);
         toshow.navShow();
     } else if( spilcount < 0 ) {
         showcount = -spilcount;
-        offlist = $(".navlink-wrapper.navlink-hidden");
+        offlist = $(".navigation-button.navitem-off");
         if( offlist.length > 0 ) {
             if( offlist.length == showcount )
                 spilmenuButton.navHide();
             oncount = Math.min( offlist.length, showcount );
             toshow = offlist.slice( 0, oncount )
             toshow.navShow();
-            tohide = $(".spilmenuitem.navlink-shown").slice( 0, oncount );
+            tohide = $(".spilmenuitem.navitem-on").slice( 0, oncount );
             tohide.navHide();
         }
     }
-    h = $(".navlink-wrapper.navlink-hidden");
-    if( spilmenuButton.hasClass("navlink-shown") && h.length == 1 ) {
+    h = $(".navigation-button.navitem-off");
+    if( spilmenuButton.hasClass("navitem-on") && h.length == 1 ) {
         spilmenuButton.navHide();
         h.navShow();
-        $(".spilmenuitem.navlink-shown").navHide();
+        $(".spilmenuitem.navitem-on").navHide();
     }
 };
 
