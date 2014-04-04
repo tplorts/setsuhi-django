@@ -8,6 +8,15 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
+      {% for group_title in group_titles %}
+      <div class="ib">
+        <button>
+          {%ml group_title %}
+        </button>
+      </div>
+      {% endfor %}
+
+
       {% for group_name in sakuhin_groups %}
       <div id="sakuhin-section-{{forloop.counter}}">
         <h3>{{group_name}}</h3>

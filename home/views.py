@@ -62,7 +62,10 @@ def about(q):
 
 def works(q):
     groups = ["omote", "samples", "en"]
-    c = {"sakuhin_groups": groups}
+    titles = [{"en": "Original Artwork", "ja": "書画"},
+              "Commission Samples",
+              "縁～en～"]
+    c = {"sakuhin_groups": groups, "group_titles": titles}
     return render_view(q, 'pages/works', c)
 
 def photos(q):
