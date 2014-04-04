@@ -142,11 +142,26 @@
     right: 0;
     text-align: center;
 
-    .navlink-wrapper {
+    .navlink-wrapper, #nav-spilmenu-wrapper {
         // The only way I found to center them is manually
-        margin: 1em (@side-dock-width - @button-size)/2;
+        margin: 12px (@side-dock-width - @button-size)/2;
+    }
+
+    .navlink-shown {
+        display: block;
+    }
+    .navlink-hidden {
+        display: none;
+    }
+
+    .upleft-menu {
+        left: initial;
+        top: initial;
+        right: 70px;
+        bottom: 0;
     }
 }
+
 
 @halfwhite: #C0C0C0;
 .boxi {
@@ -154,9 +169,10 @@
     height: @button-size;
 
     border: 2px outset @halfwhite;
+    background: transparent;
     color: white;
 
-    font-size: 12px;
+    font-size: 11px;
     [lang="ja"] {
         font-size: 15px;
     }
@@ -183,8 +199,11 @@
 a:active {
     .boxi {
         border: 2px inset @halfwhite;
+        transition: all 0.5s ease-out;
+        background-color: black;
     }
 }
+
 
 
 #seal-div {

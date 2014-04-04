@@ -47,10 +47,12 @@
     {% block thirdparty_styles %}
       <link rel="stylesheet" type="text/css"
             href="{% static 'third/styles/bootstrap.min.css' %}" />
+      {%comment%}
       <link rel="stylesheet" type="text/css"
             href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
       <link rel="stylesheet" type="text/css"
             href="{% static 'third/styles/summernote.css' %}" />
+      {%endcomment%}
     {% endblock thirdparty_styles %}
 
     {% block default_styles %}
@@ -83,9 +85,11 @@
       <script type="text/javascript"
               src="{% static 'third/scripts/jquery.slides.min.js' %}">
       </script>
+      {%comment%}
       <script type="text/javascript"
               src="{% static 'third/scripts/summernote.min.js' %}">
       </script>
+      {%endcomment%}
       <script type="text/javascript"
               src="{% static 'galleria/galleria-1.3.5.min.js' %}">
       </script>
@@ -211,8 +215,9 @@
 
         <div id="right-dock" class="hidden-xs">
           <div id="main-navigation">
+
             {% for view_name, english, japanese, attr in nav_list %}
-              <div class="navlink-wrapper">
+              <div class="navlink-wrapper navlink-shown">
                 <a href="{% url view_name %}" {{attr}}>
                   <div class="boxi">
                     <div class="boxi-br">
@@ -222,6 +227,35 @@
                 </a>
               </div>
             {% endfor %}
+
+              <div class="dropdown navlink-hidden"
+                   id="nav-spilmenu-wrapper">
+
+                <button class="boxi dropdown-toggle" 
+                        type="button" id="navspilmenu" 
+                        data-toggle="dropdown">
+                  <div class="text-left font-16px">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                  </div>
+                  <div class="boxi-br">
+                    others
+                  </div>
+                </button>
+
+                <ul class="dropdown-menu upleft-menu" role="menu" 
+                    aria-labelledby="navspilmenu">
+                  {% for view_name, english, japanese, attr in nav_list %}
+                  <li role="presentation" class="spilmenuitem navlink-hidden">
+                    <a role="menuitem" tabindex="-1" 
+                       href="{%url view_name%}" {{attr}}>
+                      {% ml en=english ja=japanese %}
+                    </a>
+                  </li>
+                  {%endfor%}
+                </ul>
+              </div>
+
           </div> <!-- end #main-navigation -->
         </div> <!-- /#right-dock -->
 

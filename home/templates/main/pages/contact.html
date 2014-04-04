@@ -100,7 +100,7 @@
               {% ml ja="お問い合わせ内容" en="Your inquiry" %}
             </label>
           </div>
-          <div class="col-sm-8 col-md-9">
+          <div class="col-sm-8 col-md-9" style="z-index: -1;">
             {{ form.message.errors }}
             {{ form.message }}
           </div>
@@ -134,7 +134,7 @@
 </div><!--/.container-->
 {% endblock main_content %}
 
-
+{%comment%}
 {% block postscripts %}
 <script type="text/javascript">
   $(document).ready(function() {
@@ -145,3 +145,4 @@
   });
 </script>
 {% endblock %}
+{%endcomment%}

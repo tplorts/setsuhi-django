@@ -47,3 +47,64 @@ if( Galleria && $(".galleria").length ){
     // This should make any gallerias visible.
     $(".galleria.preload").removeClass("preload");
 }
+
+
+
+//=======================================================
+// Make sure all nav buttons are accessible!
+(function( $ ){
+    $.fn.navHide = function() {
+        $(this).removeClass("navlink-shown")
+               .addClass("navlink-hidden");
+    }; 
+    $.fn.navShow = function() {
+        $(this).removeClass("navlink-hidden")
+               .addClass("navlink-shown");
+    };
+    $.fn.navSpilcount = function() {
+        overage = $(this).height() + $(this).offset().top - $(window).height();
+        b = $(".navlink-wrapper");
+        bh = b.height() + parseInt(b.css("margin-top"));
+        spilcount = Math.ceil(overage / bh);
+        return spilcount;
+    };
+})( jQuery );
+
+nav = $("#main-navigation");
+spilmenuButton = $("#nav-spilmenu-wrapper");
+spilmenu = $("#navspilmenu");
+
+updateNavItems = function() {
+    spilcount = nav.navSpilcount();
+    if( spilcount > 0 ) {
+        spilmenuButton.navShow();
+        spilcount = nav.navSpilcount();
+        onlist = $(".navlink-wrapper.navlink-shown");
+        spilfrom = onlist.length - spilcount;
+        onlist.slice(spilfrom).navHide();
+        spilitems = $(".spilmenuitem.navlink-hidden");
+        toshow = spilitems.slice(spilfrom);
+        toshow.navShow();
+    } else if( spilcount < 0 ) {
+        showcount = -spilcount;
+        offlist = $(".navlink-wrapper.navlink-hidden");
+        if( offlist.length > 0 ) {
+            if( offlist.length == showcount )
+                spilmenuButton.navHide();
+            oncount = Math.min( offlist.length, showcount );
+            toshow = offlist.slice( 0, oncount )
+            toshow.navShow();
+            tohide = $(".spilmenuitem.navlink-shown").slice( 0, oncount );
+            tohide.navHide();
+        }
+    }
+    h = $(".navlink-wrapper.navlink-hidden");
+    if( spilmenuButton.hasClass("navlink-shown") && h.length == 1 ) {
+        spilmenuButton.navHide();
+        h.navShow();
+        $(".spilmenuitem.navlink-shown").navHide();
+    }
+};
+
+$(window).on('ready load resize orientationChanged', updateNavItems);
+
