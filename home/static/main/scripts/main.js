@@ -64,76 +64,47 @@ if( Galleria && $(".galleria").length ){
 })( jQuery );
 
 nav = $("#main-navigation");
-spillMenuButton = $("#navigation-spill-menu-wrapper");
-
-navSpillCount = function() {
-    // How many pixels of the navigation have gone out of view?
-    overage = nav.height() + nav.offset().top - $(window).height();
-
-    b = $(".navigation-button");
-
-    // The height of each button and the inter-button space
-    bh = b.height() + parseInt(b.css("margin-top"));
-
-    return Math.ceil(overage / bh);
-};
+spillMenu = $("#navigation-spill-menu-wrapper");
 
 updateNavigationSpill = function() {
-    spillCount = navSpillCount();
+    buttons = nav.find(".navigation-button");
+    buttonCount = buttons.length;
+    spillItems = spillMenu.find(".spill-menu-item");
 
-    // negative of spillCount --> how much space for buttons
-    spaceCount = -spillCount;
+    // The height of each button and the inter-button space
+    buttonsh = buttons.height() + parseInt(buttons.css("margin-top"));
 
-    // If there are buttons spilling into the invisible region
-    if( spillCount > 0 ) {
+    // How much vertical space there is for navigation
+    // buttons, in terms of how many buttons could be fit into
+    // the visible navigation area.
+    spaceCount = Math.floor( $(window).height() / buttonsh );
+
+    // How many buttons can be shown
+    showCount = Math.min( spaceCount, buttonCount );
+
+    // If there is not enough room for all buttons...
+    if( showCount < buttonCount ) {
         // Turn on the spill menu button
-        spillMenuButton.navShow();
+        spillMenu.navShow();
 
-        // Recalculate how much room there is now that the
-        // spill menu button was inserted.
-        spillCount = navSpillCount();
-
-        // Gather all buttons which are turned on.
-        onlist = $(".navigation-button.navitem-on");
-
-        // Get the button index from which we will spill
-        spillFrom = onlist.length - spillCount;
-
-        // Turn off all turned-on buttons starting at 'spillFrom'
-        onlist.slice(spillFrom).navHide();
-        
-        // Turn on all turned-off spill menu items starting at 'spillFrom'
-        $(".spill-menu-item.navitem-off").slice(spillFrom).navShow();
-    }         
-    // If there is now room to insert more buttons
-    else if( spaceCount > 0 ) {
-        // Gather all turned off buttons
-        offlist = $(".navigation-button.navitem-off");
-
-        // The minimum of the spilled buttons count and how much
-        // room we have tells us how many buttons to insert.
-        // (There may be more space than buttons, or vice-versa)
-        oncount = Math.min( offlist.length, spaceCount );
-
-        // Turn on the first 'oncount' buttons that were off
-        offlist.slice(0, oncount).navShow();
-
-        // Turn off the first 'oncount' menu items that were on
-        $(".spill-menu-item.navitem-on").slice( 0, oncount ).navHide();
+        // Since we activated the menu button, there is
+        // now less space for navigation buttons.
+        if(showCount > 0) showCount -= 1;
     }
 
-    // If only one button remains in the spil menu, then
-    // the spil menu is not necessary, so put that button back
-    // into main navigation.
-    h = $(".navigation-button.navitem-off");
-    if( spillMenuButton.hasClass("navitem-on") && h.length == 1 ) {
-        h.navShow();
-        $(".spill-menu-item.navitem-on").navHide();
+    // But if there is enough room for all buttons...
+    else {
+        // Turn off the spill menu button
+        spillMenu.navHide();
     }
-    
-    // If the spill menu is empty, then hide that button.
-    if( $(".spill-menu-item.navitem-on").length == 0 )
-        spillMenuButton.navHide();
+
+    // Show up to 'showCount'; hide the rest.
+    buttons.slice(0, showCount).navShow();
+    buttons.slice(showCount).navHide();
+
+    // In the spill menu, show only starting at 'showCount'.
+    spillItems.slice(0, showCount).navHide();
+    spillItems.slice(showCount).navShow();
 };
 
 $(window).on('ready load resize orientationChanged', updateNavigationSpill);
