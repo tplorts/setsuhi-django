@@ -61,7 +61,9 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def works(q):
-    return render_view(q, 'pages/works')
+    groups = ["omote", "samples", "en"]
+    c = {"sakuhin_groups": groups}
+    return render_view(q, 'pages/works', c)
 
 def photos(q):
     return render_view(q, 'pages/photos')
