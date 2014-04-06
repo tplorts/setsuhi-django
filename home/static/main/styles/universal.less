@@ -370,18 +370,16 @@ ul, ol {
 
 
 
-
-.galleria-wrapper {
-    &.shadowed {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    }
-}
-
 .galleria {
     &.preload {
         display: none;
     }
+
     height: 320px;
+
+    &.shadowed {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
 }
 
 .exclusive-galleria {
@@ -389,6 +387,9 @@ ul, ol {
     margin-bottom: 15px;
 }
 
+.galleria-stage {
+    background: #FFF;
+}
 
 
 .fixed-responsive-video {
@@ -407,6 +408,13 @@ ul, ol {
 }
 
 
+#sakuhin-section-buttons {
+    button {
+        font-size: 16px;
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+}
 
 .section-on {
     display: block;

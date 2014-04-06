@@ -61,9 +61,14 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def works(q):
-    g = [("omote", {"en": "Original Artwork", "ja": "書画"}),
-         ("samples", "Commission Samples"),
-         ("en", "縁～en～")]
+    g = [
+        ("omote",     {"en": "Artwork", 
+                       "ja": "書画"}),
+        ("samples",   {"en": "Sample Commissions",
+                       "ja": "依頼のサンプル"}),
+        ("en",        {"en": "縁～en～ Accessories",
+                       "ja": "縁～en～ アクセサリー"})
+    ]
     c = {"sakuhin_groups": g}
     return render_view(q, 'pages/works', c)
 

@@ -5,9 +5,16 @@
 {% block main_content %}
 
 <div class="container full-width">
+{% with column_class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" %}
   <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <div class="{{column_class}}">
+      <hr>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="text-center">
+      <div id="sakuhin-section-buttons">
       {% for name, title in sakuhin_groups %}
       <div class="ib">
         <button id="section-button-{{forloop.counter}}"
@@ -17,11 +24,21 @@
         </button>
       </div>
       {% endfor %}
+      </div>
+    </div>
+  </div> <!-- /.row -->
 
-      <div class="galleria"></div>
+  <div class="row">
+    <div class="{{column_class}}">
+
+      <hr>
+
+      <div class="galleria shadowed"></div>
 
     </div> <!-- /.column -->
   </div> <!-- /.row -->
+
+{% endwith %}
 </div> <!-- /.container -->
 
 

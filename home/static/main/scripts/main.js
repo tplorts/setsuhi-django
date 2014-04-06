@@ -24,19 +24,18 @@ $(function() {
 
 // Activate different groups of sakuhin in the galleria
 $("button.section-button").click( function() {
-    if( typeof galleriaDataSets === 'undefined' )
-        return;
     groupName = $(this).attr('data-sakuhin-group');
-    Galleria.get(0).load( galleriaDataSets[groupName] );
-    activeSakuhinGroup = groupName;
-    //TODO: use the below function instead
+    setActiveSakuhinGroup( groupName );
 });
 
 function setActiveSakuhinGroup( groupName ) {
     if( groupName == activeSakuhinGroup )
         return;
+    if( typeof galleriaDataSets === 'undefined' )
+        return;
+
+    Galleria.get(0).load( galleriaDataSets[groupName] );
     activeSakuhinGroup = groupName;
-    //TODO: code from above to update galleria + button visual active
 }
 
 //======================================
@@ -51,8 +50,7 @@ $(window).ready( function() {
         debug: !isProduction,
         imageCrop: false,
         preload: 'all',
-        autoplay: false,
-        variation: 'light'
+        autoplay: false
     });
 
     if( typeof galleriaDataSets !== 'undefined' 
