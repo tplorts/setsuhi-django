@@ -54,6 +54,22 @@ ul, ol {
     display: inline-block;
 }
 
+.white-button {
+    background: #CCC;
+    color: #555;
+    border: 1px solid #CCC;
+    padding: 0.5em 1em;
+    transition: all 0.1s linear;
+
+    &:active, &.active-group {
+        background: white;
+        color: black;
+    }
+
+    &:hover {
+        background: #EEE;
+    }
+}
 
 .nophone {
     display: none;

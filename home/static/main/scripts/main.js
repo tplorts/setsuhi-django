@@ -29,13 +29,20 @@ $("button.section-button").click( function() {
 });
 
 function setActiveSakuhinGroup( groupName ) {
-    if( groupName == activeSakuhinGroup )
-        return;
+    buttonBin = $("#sakuhin-section-buttons");
+    activeButtons = buttonBin.find(".active-group");
+    activeButtons.removeClass("active-group");
+
     if( typeof galleriaDataSets === 'undefined' )
         return;
 
-    Galleria.get(0).load( galleriaDataSets[groupName] );
-    activeSakuhinGroup = groupName;
+    b = buttonBin.find(".section-button[data-sakuhin-group='"+groupName+"']");
+    b.addClass("active-group");
+
+    if( groupName != activeSakuhinGroup ) {
+        Galleria.get(0).load( galleriaDataSets[groupName] );
+        activeSakuhinGroup = groupName;
+    }
 }
 
 //======================================
