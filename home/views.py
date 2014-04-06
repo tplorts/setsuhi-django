@@ -62,11 +62,11 @@ def about(q):
 
 def works(q):
     g = [
-        ("omote",     {"en": "Artwork", 
+        ("shoga",     {"en": "Artwork", 
                        "ja": "書画"}),
         ("samples",   {"en": "Sample Commissions",
                        "ja": "依頼のサンプル"}),
-        ("en2",       {"en": "縁～en～ Accessories",
+        ("en",        {"en": "縁～en～ Accessories",
                        "ja": "縁～en～ アクセサリー"})
     ]
     c = {"sakuhin_groups": g}
