@@ -2,17 +2,6 @@
 s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
 
 
-// Making her name vertical, oh this is janky.
-(function( $ ){
-    $.fn.insertBreaks = function() {
-        moji = $(this).text().trim().split('');
-        $(this).html( moji.join("<br>") );
-    }; 
-})( jQuery );
-
-$(".vertical-text").insertBreaks();
-
-
 //=================================================================
 // Source: http://css-tricks.com/snippets/jquery/smooth-scrolling/
 $(function() {

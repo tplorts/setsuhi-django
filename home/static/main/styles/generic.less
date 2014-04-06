@@ -9,6 +9,54 @@
     background-color: rgba(0,0,0,0.5);
 }
 
+//===============================================
+// WRITING MODES (vertical/horizontal etc.)
+// thanks to David Storey
+// http://generatedcontent.org/post/45384206019/writing-modes
+
+.text-vertical-rl {
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    -moz-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+.text-vertical-lr {
+    -ms-writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+    -moz-writing-mode: vertical-lr;
+    -ms-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+}
+
+.text-horizontal-lr {
+    -ms-writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+    -moz-writing-mode: horizontal-tb;
+    -ms-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb;
+}
+
+.text-horizontal-rl {
+    -ms-writing-mode: rl-tb;
+    -webkit-writing-mode: horizontal-tb;
+    -moz-writing-mode: horizontal-tb;
+    -ms-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb;
+
+    direction: rtl; /* not specified as part of writing-mode property in standard syntax */
+}
+
+// ~END OF~ WRITING MODES
+//==========================================
+
+
+.horizontally-centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .float-left {
     float: left;
 }
@@ -34,6 +82,13 @@
     margin-left: 2em;
 }
 
+.serif {
+    font-family: serif;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
 
 .bold {
     font-weight: bold;
@@ -232,4 +287,11 @@
 .aspect-widescreen( @width ) {
     width: @width;
     height: @width * 9/16;
+}
+
+.white-link {
+    color: white;
+    &:hover {
+        text-decoration: none;
+    }
 }
