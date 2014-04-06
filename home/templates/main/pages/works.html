@@ -8,26 +8,35 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
-      {% for group_title in group_titles %}
+      {% for name, title in sakuhin_groups %}
       <div class="ib">
-        <button>
-          {%ml group_title %}
+        <button id="section-button-{{forloop.counter}}"
+                class="section-button"
+                data-sakuhin-group="{{name}}">
+          {%ml title %}
         </button>
       </div>
       {% endfor %}
 
-
-      {% for group_name in sakuhin_groups %}
-      <div id="sakuhin-section-{{forloop.counter}}">
-        <h3>{{group_name}}</h3>
-        <div class="galleria-wrapper shadowed">
-          {% sakuhin_galleria group_name class="exclusive-galleria" %}
-        </div>
-      </div>
-      {% endfor %}
+      <div class="galleria"></div>
 
     </div> <!-- /.column -->
   </div> <!-- /.row -->
 </div> <!-- /.container -->
+
+
+<script>
+  var galleriaDataSets = {
+    {% for group_name, t in sakuhin_groups %}
+      "{{group_name}}": {% sakuhin_galleria_data group=group_name %},
+    {% endfor %}
+    "": ""
+  };
+  
+  {% with first_group=sakuhin_groups|first|first %}
+    var activeSakuhinGroup = "{{first_group}}";
+  {% endwith %}
+</script>
+
 
 {% endblock main_content %}

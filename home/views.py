@@ -61,11 +61,10 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def works(q):
-    groups = ["omote", "samples", "en"]
-    titles = [{"en": "Original Artwork", "ja": "書画"},
-              "Commission Samples",
-              "縁～en～"]
-    c = {"sakuhin_groups": groups, "group_titles": titles}
+    g = [("omote", {"en": "Original Artwork", "ja": "書画"}),
+         ("samples", "Commission Samples"),
+         ("en", "縁～en～")]
+    c = {"sakuhin_groups": g}
     return render_view(q, 'pages/works', c)
 
 def photos(q):

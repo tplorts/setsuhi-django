@@ -31,10 +31,33 @@ $(function() {
 });
 
 
+
+
+// Activate different groups of sakuhin in the galleria
+$("button.section-button").click( function() {
+    if( typeof galleriaDataSets === 'undefined' )
+        return;
+    groupName = $(this).attr('data-sakuhin-group');
+    Galleria.get(0).load( galleriaDataSets[groupName] );
+    activeSakuhinGroup = groupName;
+    //TODO: use the below function instead
+});
+
+function setActiveSakuhinGroup( groupName ) {
+    if( groupName == activeSakuhinGroup )
+        return;
+    activeSakuhinGroup = groupName;
+    //TODO: code from above to update galleria + button visual active
+}
+
 //======================================
 // galleria.io
-if( Galleria && $(".galleria").length ){
-    Galleria.loadTheme(s3_url + "static/galleria/themes/twelve/galleria.twelve.min.js");
+$(window).ready( function() {
+    if( !Galleria || $(".galleria").length == 0 )
+        return;
+
+    themePath = "static/galleria/themes/twelve/galleria.twelve.min.js";
+    Galleria.loadTheme(s3_url + themePath);
     Galleria.configure({
         debug: !isProduction,
         imageCrop: false,
@@ -42,11 +65,26 @@ if( Galleria && $(".galleria").length ){
         autoplay: false,
         variation: 'light'
     });
-    Galleria.run('.galleria');
+
+    if( typeof galleriaDataSets !== 'undefined' 
+        && typeof activeSakuhinGroup !== 'undefined' )
+    {
+        Galleria.run(".galleria", {
+            dataSource: galleriaDataSets[activeSakuhinGroup]
+        });
+        setActiveSakuhinGroup( activeSakuhinGroup );
+    } else if( typeof galleriaData !== 'undefined' ) {
+        Galleria.run('.galleria', {
+            dataSource: galleriaData
+        });
+    } else {
+        Galleria.run('.galleria');
+    }
 
     // This should make any gallerias visible.
     $(".galleria.preload").removeClass("preload");
-}
+});
+
 
 
 
@@ -108,4 +146,3 @@ updateNavigationSpill = function() {
 };
 
 $(window).on('ready load resize orientationChanged', updateNavigationSpill);
-
