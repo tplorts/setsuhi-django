@@ -130,7 +130,15 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="{% url 'front' %}">
-                <span class="ib">{% ml ja="白石雪妃" en="Setsuhi Shiraishi" %}</span>
+                {% multilingual %}
+                {% mlpart "ja" %}
+                <div>書道家 白石雪妃</div>
+                {% endmlpart %}
+                {% mlpart "en" %}
+                <div>Setsuhi Shiraishi</div>
+                {# <div class="italic">Calligraphy Artist</div> #}
+                {% endmlpart %}
+                {% endmultilingual %}
               </a>
               <div class="ml-widget ml-mobile-widget">
                 <a class="ml-language" lang="ja">
