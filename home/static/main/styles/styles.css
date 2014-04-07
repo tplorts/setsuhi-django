@@ -322,7 +322,8 @@ ol.shallow {
 .navbar-setsuhi .ml-mobile-widget {
   position: absolute;
   right: 74px;
-  margin: 14px 0;
+  font-size: 12px;
+  margin-top: 5px;
 }
 .navbar-setsuhi .ml-mobile-widget a {
   cursor: pointer;

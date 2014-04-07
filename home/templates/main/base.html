@@ -134,12 +134,22 @@
               </a>
               <div class="ml-widget ml-mobile-widget">
                 <a class="ml-language" lang="ja">
-                  <img src="{% s3_url 'static/media/images/flags/ja-small.png' %}" />
-                  日本語
+                  <div>
+                    <div>
+                      <img src="{% static 'media/images/flags/hinomaru.svg' %}" 
+                           style="width: 37px;" />
+                    </div>
+                    日本語
+                  </div>
                 </a>
                 <a class="ml-language" lang="en">
-                  <img src="{% s3_url 'static/media/images/flags/en-small.png' %}" />
-                  English
+                  <div>
+                    <div>
+                      <img src="{% static 'media/images/flags/union-jack.svg' %}"
+                           style="width: 42px; margin-top: 5px;" />
+                    </div>
+                    English
+                  </div>
                 </a>
               </div>
             </div>
