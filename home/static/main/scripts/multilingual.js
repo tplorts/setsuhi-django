@@ -45,7 +45,7 @@ function setLanguage( lang, animated ) {
 
     if( former && latter ) {
 
-        if( animated ) {
+        if( animated && false ) {
             former.fadeOut(400, function() {
                 former.removeClass("ml-on").addClass("ml-off");
                 latter.fadeIn(400, function() {
