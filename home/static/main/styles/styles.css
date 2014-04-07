@@ -156,11 +156,8 @@
 .opensans-condensed {
   font-family: 'Open Sans Condensed', sans-serif;
 }
-.takao {
-  font-family: 'TakaoMincho';
-}
 [lang="ja"] {
-  font-family: 'TakaoMincho' !important;
+  font-family: serif !important;
 }
 [lang="en"] {
   font-family: sans-serif !important;

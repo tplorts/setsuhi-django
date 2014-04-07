@@ -7,6 +7,7 @@ s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
 //=============================================================
 // http://www.codeproject.com/Articles/462209/Using-custom-font-without-slowing-down-page-load
 // http://css-tricks.com/preventing-the-performance-hit-from-custom-fonts/
+/*
 takaoFontFile = s3_url + "TakaoMincho.ttf";
 takaoCSS = "\
 @font-face {\
@@ -32,7 +33,7 @@ $(document).ready(function(){
         }
     });
 });
-
+*/
 
 
 
