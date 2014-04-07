@@ -1,5 +1,40 @@
 
+
 s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
+
+
+
+//=============================================================
+// http://www.codeproject.com/Articles/462209/Using-custom-font-without-slowing-down-page-load
+// http://css-tricks.com/preventing-the-performance-hit-from-custom-fonts/
+takaoFontFile = s3_url + "TakaoMincho.ttf";
+takaoCSS = "\
+@font-face {\
+    font-family: 'TakaoMincho';\
+    font-style: normal;\
+    font-weight: 300;\
+    src: url('"+takaoFontFile+"');\
+}\
+[lang='ja'] {\
+    font-family: 'TakaoMincho' !important;\
+}\
+";
+$(document).ready(function(){
+    $.ajax({
+        url: takaoFontFile,
+        beforeSend: function ( xhr ) {
+            xhr.overrideMimeType("application/octet-stream");
+        },
+        success: function(data) {
+            style = $('<style type="text/css" />');
+            style.append( takaoCSS );
+            style.appendTo('head');
+        }
+    });
+});
+
+
+
 
 
 //=================================================================
