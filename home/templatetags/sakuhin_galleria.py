@@ -61,10 +61,10 @@ def sakuhin_galleria_data( *args, **kwargs ):
         return "[]"
     group_name = kwargs["group"]
     try:
-        group = models.SakuhinGroup.objects.get( name=group_name )
+        g = models.SakuhinGroup.objects.get( name=group_name )
     except Exception:
         return "[]"
-    items = group.sakuhin_set.all()
-    gitems = [GalleriaImage(x) for x in items]
-    gJSON = json.dumps(gitems, cls=GalleriaEncoder)
+    entries = models.SakuhinEntry.objects.filter( group=g ).order_by("order_index")
+    gitems = [GalleriaImage(e.sakuhin) for e in entries]
+    gJSON = json.dumps( gitems, cls=GalleriaEncoder )
     return gJSON
