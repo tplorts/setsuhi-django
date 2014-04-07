@@ -7,7 +7,13 @@ from home import models
 
 register = template.Library()
 
-
+def mlify( string ):
+    both = string.split('|')
+    if len(both) < 2:
+        return string
+    d = {"ja": both[0].strip(),
+         "en": both[1].strip()};
+    
 class GalleriaImage:
     def __init__(self):
         self.image = None

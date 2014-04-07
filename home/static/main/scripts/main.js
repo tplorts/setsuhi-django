@@ -100,7 +100,17 @@ $(window).ready( function() {
         && typeof activeSakuhinGroup !== 'undefined' )
     {
         Galleria.run(".galleria", {
-            dataSource: galleriaDataSets[activeSakuhinGroup]
+            dataSource: galleriaDataSets[activeSakuhinGroup],
+            extend: function(options) {
+
+                //Galleria.log(this) // the gallery instance
+                //Galleria.log(options) // the gallery options
+
+                // listen to when an image is shown
+                this.bind('image', function(e) {
+                    
+                });
+            }
         });
         setActiveSakuhinGroup( activeSakuhinGroup );
     } else if( typeof galleriaData !== 'undefined' ) {
