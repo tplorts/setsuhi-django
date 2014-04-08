@@ -469,6 +469,12 @@ ol.shallow {
 .video-brief {
   padding: 1em;
 }
+#sakuhin-section-buttons {
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
 #sakuhin-section-buttons button {
   font-size: 16px;
   margin-right: 2px;
@@ -725,6 +731,10 @@ a:active {
   .exclusive-galleria {
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+  #sakuhin-section-buttons {
+    overflow-x: initial;
+    white-space: initial;
   }
 }
 /* Medium devices (desktops, 992px and up) */
