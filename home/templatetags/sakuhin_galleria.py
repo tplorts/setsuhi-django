@@ -16,6 +16,7 @@ def mlify( string ):
     
 class GalleriaImage:
     def __init__(self):
+        self.dbpk = None
         self.image = None
         self.thumb = None
         self.big = None
@@ -23,11 +24,13 @@ class GalleriaImage:
         self.description = None
 
     def __init__(self, sakuhin):
+        self.dbpk = sakuhin.id
         self.image = sakuhin.main_image_url
         self.thumb = sakuhin.thumb_image_url
         self.big = sakuhin.large_image_url
         self.title = sakuhin.title
         self.description = sakuhin.brief
+        self.long_description = sakuhin.lengthy
 
 class GalleriaEncoder(json.JSONEncoder):
     def default(self, o):

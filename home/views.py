@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django import forms
 from django.core.mail import EmailMessage
 
@@ -127,3 +127,26 @@ def contact(request):
     })
 
 
+
+
+from models import Sakuhin, SakuhinInfoForm
+
+def edit_sakuhin_info( request ):
+    if request.method != "POST":
+        response = "Please use POST"
+    else:
+        form = SakuhinInfoForm( request.POST )
+        if not form.is_valid():
+            response = "Maybe there was a mistake"
+        else:
+            pk = form.cleaned_data["dbpk"]
+            try:
+                sakuhin = Sakuhin.objects.get( id=pk )
+            except Exception:
+                response = "I can't find that piece"
+            else:
+                if not sakuhin.updateInfo( form ):
+                    response = "Something broke"
+                else:
+                    response = "A-OK"
+    return HttpResponse(response)

@@ -1,4 +1,14 @@
 from django.db import models
+from django import forms
+
+
+
+class SakuhinInfoForm( forms.Form ):
+    dbpk = forms.IntegerField()
+    title = forms.CharField( max_length=60, required=False )
+    brief = forms.CharField( max_length=200, required=False )
+    lengthy = forms.CharField( widget=forms.Textarea, required=False )
+
 
 
 
@@ -26,6 +36,15 @@ class Sakuhin( models.Model ):
         if self.title and len(self.title) > 0:
             return self.title
         return self.main_image_url.split('/')[-1]
+
+    def updateInfo( self, infoForm ):
+        if self.id != infoForm.cleaned_data["dbpk"]:
+            return False
+        self.title = infoForm.cleaned_data["title"]
+        self.brief = infoForm.cleaned_data["brief"]
+        self.lengthy = infoForm.cleaned_data["lengthy"]
+        self.save()
+        return True
 
 
 class SakuhinEntry( models.Model ):

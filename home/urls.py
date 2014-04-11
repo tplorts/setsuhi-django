@@ -29,4 +29,7 @@ urlpatterns = patterns(
     url(r'^lessons/', views.lessons, name='lessons'),
     url(r'^contact/', views.contact, name='contact'),
     url(r'^blog/', blog_redirect, name='blog'),
+
+    url(r'^edit-sakuhin-info/$', views.edit_sakuhin_info, 
+        name='edit-sakuhin-info'),
 )

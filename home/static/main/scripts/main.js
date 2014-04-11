@@ -108,7 +108,13 @@ $(window).ready( function() {
 
                 // listen to when an image is shown
                 this.bind('image', function(e) {
-                    
+                    editform = $("#sakuhin-info-form");
+                    if( editform.length == 0 ) return;
+                    info = e.galleriaData;
+                    editform.find("[name='dbpk']").val(info.dbpk);
+                    editform.find("[name='title']").val(info.title);
+                    editform.find("[name='brief']").val(info.description);
+                    editform.find("[name='lengthy']").val(info.long_description);
                 });
             }
         });

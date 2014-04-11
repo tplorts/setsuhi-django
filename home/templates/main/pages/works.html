@@ -38,6 +38,22 @@
     </div> <!-- /.column -->
   </div> <!-- /.row -->
 
+  {% if user.is_authenticated %}
+  <div id="sakuhin-edit-div">
+    <form id="sakuhin-info-form" class="off"
+          action="{%url 'edit-sakuhin-info'%}"
+          method="POST">
+      {% csrf_token %}
+      <input name="dbpk" type="hidden" />
+      <input name="title" type="text" /> <br>
+      <input name="brief" type="text" /> <br>
+      <textarea name="lengthy"></textarea> <br>
+      <button type="submit">Save</button>
+    </form>
+    <div id="sakuhin-edit-result"></div>
+  </div>
+  {% endif %}
+
 {% endwith %}
 </div> <!-- /.container -->
 
@@ -53,6 +69,24 @@
   {% with first_group=sakuhin_groups|first|first %}
     var activeSakuhinGroup = "{{first_group}}";
   {% endwith %}
+
+    var frm = $('#sakuhin-info-form');
+    frm.submit(function () {
+        d = frm.serialize();
+        console.log("data to POST:"+d);
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: d,
+            success: function (data) {
+                $("#sakuhin-edit-result").html(data);
+            },
+            error: function(data) {
+                $("#sakuhin-edit-result").html(data);
+            }
+        });
+        return false;
+    });
 </script>
 
 
