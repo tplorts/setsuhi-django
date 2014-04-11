@@ -85,7 +85,11 @@
       <script type="text/javascript"
               src="{% static 'galleria/galleria-1.3.5.min.js' %}">
       </script>
-
+      {%comment%}
+      <script type="text/javascript"
+              src="{%static 'third/scripts/modernizr-2.7.1.min.js'%}">
+      </script>
+      {%endcomment%}
 
       {% if use_less_stylesheets %}
       <script>
@@ -185,8 +189,8 @@
           <a href="{% url 'front' %}" class="white-link">
           {% multilingual %}
             {% mlpart "ja" %}
-              <div class="horizontally-centered text-vertical-rl">
-                <span class="font-24">書道家 白石雪妃</span>
+              <div class="horizontally-centered font-24 text-vertical-hack text-vertical-rl">
+                書道家 白石雪妃
               </div>
             {% endmlpart %}
             {% mlpart "en" %}
