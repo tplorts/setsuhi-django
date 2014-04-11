@@ -23,7 +23,7 @@ nav_list = (
     ("works",    "Works",    "作品", ""),
 #    ("photos",   "Photos",   "写真", ""),
     ("videos",   "Videos",   "動画", ""),
-    ("schedule", "Schedule", "予定", ""),
+    ("schedule", "Events",   "予定", ""),
     ("lessons",  "Lessons",  "教室", ""),
     ("contact",  "Contact",  "連絡", ""),
     ("blog",     "Blog",     "ブログ", "target=\"_blank\""),
