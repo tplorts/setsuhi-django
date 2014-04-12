@@ -81,6 +81,27 @@ function setActiveSakuhinGroup( groupName ) {
     }
 }
 
+
+updateImageEditor = function (e) {
+    editform = $("#sakuhin-info-form");
+
+    // Don't do anything if this element does
+    // not exist (user is not logged in).
+    if( editform.length == 0 ) return;
+
+    // Get the data Galleria's structure.
+    info = e.galleriaData;
+
+    // Insert the values originally from the database
+    editform.find("[name='dbpk']").val(info.dbpk);
+    editform.find("[name='title']").val(info.title);
+    editform.find("[name='brief']").val(info.description);
+    editform.find("[name='lengthy']").val(info.long_description);
+
+    // Reset the result area
+    $("#sakuhin-edit-result").empty();
+};
+
 //======================================
 // galleria.io
 $(window).ready( function() {
@@ -102,20 +123,8 @@ $(window).ready( function() {
         Galleria.run(".galleria", {
             dataSource: galleriaDataSets[activeSakuhinGroup],
             extend: function(options) {
-
-                //Galleria.log(this) // the gallery instance
-                //Galleria.log(options) // the gallery options
-
                 // listen to when an image is shown
-                this.bind('image', function(e) {
-                    editform = $("#sakuhin-info-form");
-                    if( editform.length == 0 ) return;
-                    info = e.galleriaData;
-                    editform.find("[name='dbpk']").val(info.dbpk);
-                    editform.find("[name='title']").val(info.title);
-                    editform.find("[name='brief']").val(info.description);
-                    editform.find("[name='lengthy']").val(info.long_description);
-                });
+                this.bind('image', updateImageEditor);
             }
         });
         setActiveSakuhinGroup( activeSakuhinGroup );
@@ -129,6 +138,38 @@ $(window).ready( function() {
 
     // This should make any gallerias visible.
     $(".galleria.preload").removeClass("preload");
+});
+
+var infoForm = $('#sakuhin-info-form');
+
+$("#edit-toggle").click( function() {
+    if( infoForm.hasClass("on") ) {
+        infoForm.removeClass("on").addClass("off");
+        $(this).text("show editor");
+    } else if( infoForm.hasClass("off") ) {
+        infoForm.removeClass("off").addClass("on");
+        $(this).text("hide editor");
+    }
+});
+
+
+// Submit the edits for the image info without
+// triggering a page reload.
+infoForm.submit(function () {
+    d = infoForm.serialize();
+    console.log("data to POST:"+d);
+    $.ajax({
+        type: infoForm.attr('method'),
+        url: infoForm.attr('action'),
+        data: d,
+        success: function (data) {
+            $("#sakuhin-edit-result").html(data);
+        },
+        error: function(data) {
+            $("#sakuhin-edit-result").html(data);
+        }
+    });
+    return false;
 });
 
 

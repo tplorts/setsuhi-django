@@ -40,15 +40,43 @@
 
   {% if user.is_authenticated %}
   <div id="sakuhin-edit-div">
+
+    <div class="text-center">
+      <button id="edit-toggle">show editor</button>
+    </div>
+
     <form id="sakuhin-info-form" class="off"
           action="{%url 'edit-sakuhin-info'%}"
           method="POST">
       {% csrf_token %}
       <input name="dbpk" type="hidden" />
-      <input name="title" type="text" /> <br>
-      <input name="brief" type="text" /> <br>
-      <textarea name="lengthy"></textarea> <br>
-      <button type="submit">Save</button>
+
+      <div class="row">
+        <div class="{{ column_class }}">
+          <input name="title" type="text" 
+                 placeholder="Title" 
+                 class="full-width"/>
+          <input name="brief" type="text"
+                 placeholder="Brief description"
+                 class="full-width" />
+        </div><!-- ENDOF column -->
+      </div><!-- ENDOF row for title & description -->
+
+      <div class="row">
+        <div class="{{ column_class }}">
+          <textarea name="lengthy"
+                    placeholder="Lengthy description"
+                    class="full-width"
+                    ></textarea>
+        </div><!-- ENDOF column -->
+      </div><!-- ENDOF row for lengthy -->
+
+      <div class="row">
+        <div class="{{ column_class }}">
+          <button type="submit">Save</button>
+        </div><!-- ENDOF column -->
+      </div><!-- ENDOF row for save button -->
+
     </form>
     <div id="sakuhin-edit-result"></div>
   </div>
@@ -70,23 +98,6 @@
     var activeSakuhinGroup = "{{first_group}}";
   {% endwith %}
 
-    var frm = $('#sakuhin-info-form');
-    frm.submit(function () {
-        d = frm.serialize();
-        console.log("data to POST:"+d);
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: d,
-            success: function (data) {
-                $("#sakuhin-edit-result").html(data);
-            },
-            error: function(data) {
-                $("#sakuhin-edit-result").html(data);
-            }
-        });
-        return false;
-    });
 </script>
 
 
