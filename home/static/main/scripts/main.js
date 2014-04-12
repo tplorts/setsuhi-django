@@ -81,7 +81,7 @@ function setActiveSakuhinGroup( groupName ) {
     }
 }
 
-
+var presentImageData = null;
 updateImageEditor = function (e) {
     editform = $("#sakuhin-info-form");
 
@@ -91,6 +91,7 @@ updateImageEditor = function (e) {
 
     // Get the data Galleria's structure.
     info = e.galleriaData;
+    presentImageData = info;
 
     // Insert the values originally from the database
     editform.find("[name='dbpk']").val(info.dbpk);
@@ -164,6 +165,12 @@ infoForm.submit(function () {
         data: d,
         success: function (data) {
             $("#sakuhin-edit-result").html(data);
+            // Put the new data into the Galleria
+            // structure so that navigating back to 
+            // this image renders the new info data.
+            presentImageData.title = infoForm.find("[name='title']").val();
+            presentImageData.description = infoForm.find("[name='brief']").val();
+            presentImageData.long_description = infoForm.find("[name='lengthy']").val();
         },
         error: function(data) {
             $("#sakuhin-edit-result").html(data);
