@@ -59,7 +59,7 @@ $(function() {
 
 
 // Activate different groups of sakuhin in the galleria
-$("button.section-button").click( function() {
+$(".sakuhin-group-button").click( function() {
     groupName = $(this).attr('data-sakuhin-group');
     setActiveSakuhinGroup( groupName );
 });
@@ -72,7 +72,7 @@ function setActiveSakuhinGroup( groupName ) {
     if( typeof galleriaDataSets === 'undefined' )
         return;
 
-    b = buttonBin.find(".section-button[data-sakuhin-group='"+groupName+"']");
+    b = buttonBin.find(".sakuhin-group-button[data-sakuhin-group='"+groupName+"']");
     b.addClass("active-group");
 
     if( groupName != activeSakuhinGroup ) {

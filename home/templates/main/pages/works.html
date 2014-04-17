@@ -6,35 +6,33 @@
 
 <div class="container full-width">
 {% with column_class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" %}
-  <div class="row">
-    <div class="{{column_class}}">
-      <hr>
-    </div>
-  </div>
 
   <div class="row">
-    <div class="text-center">
-      <div id="sakuhin-section-buttons">
-      {% for name, title in sakuhin_groups %}
-      <div class="ib">
-        <button id="section-button-{{forloop.counter}}"
-                class="section-button white-button"
-                data-sakuhin-group="{{name}}">
-          {%ml title %}
-        </button>
-      </div>
-      {% endfor %}
-      </div>
-    </div>
+    <div class="{{column_class}}">
+
+      <div class="galleria shadowed"
+           id="sakuhin-galleria"></div>
+
+    </div> <!-- /.column -->
   </div> <!-- /.row -->
 
   <div class="row">
-    <div class="{{column_class}}">
-
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
       <hr>
 
-      <div class="galleria shadowed"></div>
+      <div id="sakuhin-section-buttons">
+        {% for name, title in sakuhin_groups %}
+        <div>
+          <button id="section-button-{{forloop.counter}}"
+                  class="sakuhin-group-button white-button"
+                  data-sakuhin-group="{{name}}">
+            {%ml title %}
+          </button>
+        </div>
+        {% endfor %}
+      </div>
 
+      <hr>
     </div> <!-- /.column -->
   </div> <!-- /.row -->
 
