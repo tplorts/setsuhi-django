@@ -187,30 +187,24 @@
           </div>
 
           <a href="{% url 'front' %}" class="white-link">
-          {% multilingual %}
-            {% mlpart "ja" %}
-              <div class="horizontally-centered font-24 text-vertical-hack text-vertical-rl">
-                書道家 白石雪妃
+            <div lang="ja">
+              <div class="horizontally-centered font-24 text-vertical-hack">
+                書道家 白石雪妃　
               </div>
-            {% endmlpart %}
-            {% mlpart "en" %}
+            </div>
+            <div lang="en">
               <div class="pad-x-10">
                 <div class="serif text-upper">
-                  <div style="letter-spacing: 3.2px;">
-                    Setsuhi
-                  </div>
-                  <div style="letter-spacing: 1px;">
-                    Shiraishi
-                  </div>
+                  Setsuhi <br>
+                  Shiraishi
                 </div>
-                <div class="serif italic">
+                <div class="serif italic text-muted">
                   Japanese<br>
                   Calligraphy<br>
                   Artist
                 </div>        
               </div>
-            {% endmlpart %}
-          {% endmultilingual %}
+            </div>
           </a>
 
           {% block multilingual %}
