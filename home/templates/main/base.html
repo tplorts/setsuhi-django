@@ -217,13 +217,17 @@
             <div id="ml-titles">
             </div>
             <div class="ml-widget">
-              <div class="btn-group-vertical ml-btn-group">
-                <a class="btn btn-default ml-language" lang="en">
-                  English
-                </a>
-                <a class="btn btn-default ml-language" lang="ja">
-                  日本語
-                </a>
+              <div class="ml-btn-group">
+                <button class="ml-language ml-button text-left" lang="en">
+                  <img src="{% static 'media/images/flags/union-jack.svg' %}" 
+                       class="ml-flag" />
+                  <span class="language-name">English</span>
+                </button>
+                <button class="ml-language ml-button text-left" lang="ja">
+                  <img src="{% static 'media/images/flags/hinomaru.svg' %}" 
+                       class="ml-flag" />
+                  <span class="language-name">日本語</span>
+                </button>
               </div>
             </div>
           {% endblock multilingual %}

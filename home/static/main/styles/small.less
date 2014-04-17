@@ -88,52 +88,51 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 10px 4px;
 
     .ml-btn-group {
         width: 100%;
     }
 
-    .ml-language {
-        text-align: center;
-        background-color: @soft-black;
-        color: silver;
-        border-color: black;
+    .ml-button {
+        background-color: #999;
+        color: black;
+        border: 1px solid transparent;
         transition: all 0.1s ease-in;
-        padding: 4px 8px 4px;
+        padding: 3px;
+        padding-right: 0;
+        width: 100%;
 
-        img {
-            .grayscale;
-            transition: all 0.4s ease-in;
+        .language-name {
+            display: inline;
+            font-size: 13px;
+            font-family: serif;
         }
-        .active-indicator {
-            opacity: 0;
-            transition: opacity 0.4s ease-in;
-            font-family: serif !important;
-        }
+
         &.active {
-            background-color: gray;
-            font-weight: bold;
-            color: @setsuhi-murasaki;
-            img {
-                .grayscale(0);
-            }
-            .active-indicator {
-                opacity: 1;
-            }
+            background-color: #DDD;
         }
 
         &:hover {
-            background-color: silver;
-            color: black;
+            background-color: #BBB;
+        }
+
+        @ml-flag-width: 30px;
+        .ml-flag {
+            width: @ml-flag-width;
         }
         
-        // The image of Union Jack is 5px shorter than the others
-        &[lang='en'] img {
-            margin: 2.5px 0;
+        // Union Jack's aspect ratio is 2:1, whereas
+        // Hinomaru's is 3:2.  This will vertically
+        // center Union Jack.
+        &[lang='en'] .ml-flag {
+            @m: @ml-flag-width / 12;
+            margin-top: @m;
+            margin-bottom: @m;
         }
     }
 }
+
 
 
 #right-dock {
