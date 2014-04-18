@@ -22,7 +22,6 @@ ML_CONTEXT_KEY = "ml_active_language"
 nav_list = (
     ("about",    "About",    "紹介", ""),
     ("works",    "Artwork",    "作品", ""),
-#    ("photos",   "Photos",   "写真", ""),
     ("videos",   "Videos",   "動画", ""),
     ("schedule", "Events",   "予定", ""),
     ("lessons",  "Lessons",  "教室", ""),
@@ -65,9 +64,6 @@ def works(q):
     g = models.SakuhinGroup.objects.order_by("order_index")
     c = {"sakuhin_groups": g}
     return render_view(q, 'pages/works', c)
-
-def photos(q):
-    return render_view(q, 'pages/photos')
 
 def videos(q):
     return render_view(q, 'pages/videos')
