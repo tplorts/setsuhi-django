@@ -3,6 +3,15 @@ from django import forms
 import json
 
 
+def to_dict( str_or_json ):
+    try:
+        data = json.loads( str_or_json )
+    except ValueError:
+        data = str_or_json
+    return data
+
+
+
 class SakuhinInfoForm( forms.Form ):
     dbpk = forms.IntegerField()
     title = forms.CharField( max_length=60, required=False )
@@ -22,12 +31,7 @@ class SakuhinGroup( models.Model ):
         return self.name
 
     def ml_title( self ):
-        try:
-            title_data = json.loads( self.title )
-        except ValueError:
-            title_data = self.title
-        return title_data
-
+        return to_dict( self.title )
 
 
 class Sakuhin( models.Model ):
@@ -47,6 +51,15 @@ class Sakuhin( models.Model ):
         if self.title and len(self.title) > 0:
             return self.title
         return self.main_image_url.split('/')[-1]
+
+    def ml_title( self ):
+        return to_dict( self.title )
+
+    def ml_brief( self ):
+        return to_dict( self.brief )
+    
+    def ml_lengthy( self ):
+        return to_dict( self.lengthy )
 
     def updateInfo( self, infoForm ):
         if self.id != infoForm.cleaned_data["dbpk"]:
