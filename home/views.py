@@ -21,7 +21,7 @@ ML_CONTEXT_KEY = "ml_active_language"
 #   ("view name", "English label", "Japanese label")
 nav_list = (
     ("about",    "About",    "紹介", ""),
-    ("works",    "Artwork",    "作品", ""),
+    ("works",    "Artwork",  "作品", ""),
     ("videos",   "Videos",   "動画", ""),
     ("schedule", "Events",   "予定", ""),
     ("lessons",  "Lessons",  "教室", ""),
@@ -44,35 +44,35 @@ def multilingual_context( request, context={} ):
     return context
 
 
-def render_view(request, view_name, context={}):
+def render_page(request, page_name, context={}):
     context = multilingual_context( request, context )
     context["nav_list"] = nav_list
-    context['present_view_name'] = view_name.split("/")[-1]
+    context['present_page_name'] = page_name.split("/")[-1]
     context['isProduction'] = settings.isProduction
     context['use_less_stylesheets'] = settings.TEMPLATE_DEBUG
-    return render(request, 'main/'+view_name+'.html', context)
+    return render(request, 'pages/' + page_name + '.html', context)
 
 
 
 def front(q):
-    return render_view(q, 'front')
+    return render_page(q, 'front')
 
 def about(q):
-    return render_view(q, 'pages/about')
+    return render_page(q, 'about')
 
 def works(q):
     g = models.SakuhinGroup.objects.order_by("order_index")
     c = {"sakuhin_groups": g}
-    return render_view(q, 'pages/works', c)
+    return render_page(q, 'works', c)
 
 def videos(q):
-    return render_view(q, 'pages/videos')
+    return render_page(q, 'videos')
 
 def schedule(q):
-    return render_view(q, 'pages/schedule')
+    return render_page(q, 'schedule')
 
 def lessons(q):
-    return render_view(q, 'pages/lessons')
+    return render_page(q, 'lessons')
 
 
 
@@ -111,7 +111,7 @@ def contact(request):
     else:
         form = ContactForm() # An unbound form
 
-    return render_view(request, 'pages/contact', {
+    return render_page(request, 'contact', {
         'form': form,
         'sent_message': sent_message,
     })
