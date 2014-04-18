@@ -110,7 +110,7 @@ $(".sakuhin-group-button").click( function() {
 });
 
 function setActiveSakuhinGroup( groupName ) {
-    buttonBin = $("#sakuhin-section-buttons");
+    buttonBin = $("#sakuhin-group-buttons");
     activeButtons = buttonBin.find(".active-group");
     activeButtons.removeClass("active-group");
 

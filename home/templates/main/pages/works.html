@@ -67,7 +67,7 @@
     <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
       <hr>
 
-      <div id="sakuhin-section-buttons">
+      <div id="sakuhin-group-buttons">
         {% for group in sakuhin_groups %}
         <div class="{{ group.is_shown|yesno:'on,off' }}">
           <button id="section-button-{{forloop.counter}}"
