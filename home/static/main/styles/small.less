@@ -69,16 +69,32 @@
 
     line-height: 1.2;
 
-    #signature-div {
+    #signature {
         width: 100%;
         padding: 20px;
-        
+
+        position: relative;
+        background: inherit;
+        z-index: 2;
+
         #signature-image {
             width: 100%;
             transition: all 0.05s linear;
             &:hover {
                 opacity: 0.5;
             }
+        }
+    }
+
+    #login-widget {
+        height: 100px;
+        position: relative;
+        margin-top: -100px;
+        background: black;
+        z-index: 1;
+
+        &.open {
+            margin-right: -150px;
         }
     }
 }
@@ -178,7 +194,7 @@
 
     font-size: 13px;
     font-family: sans-serif;
-//    text-transform: uppercase;
+    //    text-transform: uppercase;
     [lang="ja"] {
         font-size: 15px;
         font-family: serif;
@@ -204,14 +220,14 @@
 }
 
 /*
-a:active {
-    .boxi {
-        border: 2px inset @halfwhite;
-        transition: all 0.5s ease-out;
-        background-color: black;
-    }
-}
-*/
+  a:active {
+  .boxi {
+  border: 2px inset @halfwhite;
+  transition: all 0.5s ease-out;
+  background-color: black;
+  }
+  }
+  */
 
 
 

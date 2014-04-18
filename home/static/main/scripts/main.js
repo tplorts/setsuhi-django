@@ -4,7 +4,52 @@ s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
 
 
 
-//=============================================================
+//=================================================================
+// LONG PRESS DETECTION
+// For opening a login menu without an explicit login button.
+
+var pressTimer = null;
+var signature = $("#signature");
+var didLongPress = false;
+var loginWidget = $("#login-widget");
+
+loginWidget.click( function() {
+    loginWidget.removeClass("open");
+});
+
+signature.click( function() {
+    var toGo = !didLongPress;
+    didLongPress = false;
+    console.log("click "+toGo);
+    return toGo;
+});
+
+var longPressed = function() {
+    didLongPress = true;
+//    console.log("long");
+    // Open the login form
+    loginWidget.addClass("open");
+    return false;
+};
+
+signature.mouseup(function(){
+    clearTimeout(pressTimer);
+    pressTimer = null;
+//    console.log("up");
+    return false;
+}).mousedown(function(){
+    pressTimer = window.setTimeout(longPressed, 2000);
+//    console.log("down");
+    didLongPress = false;
+    return false; 
+});
+//=================================================================
+//                            \\\\|////
+//                             \\|||//
+//                              |||||
+//                             //|||\\
+//                            ////|\\\\
+//=================================================================
 // http://www.codeproject.com/Articles/462209/Using-custom-font-without-slowing-down-page-load
 // http://css-tricks.com/preventing-the-performance-hit-from-custom-fonts/
 /*
