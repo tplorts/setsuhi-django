@@ -6,6 +6,7 @@ from django import forms
 from django.core.mail import EmailMessage
 
 from setsuhi import settings
+import models
 
 
 
@@ -61,14 +62,7 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def works(q):
-    g = [
-        ("shoga",     {"en": "Artwork", 
-                       "ja": "書画"}),
-        ("samples",   {"en": "Sample Commissions",
-                       "ja": "依頼のサンプル"}),
-        ("en",        {"en": "縁～en～ Accessories",
-                       "ja": "縁～en～ アクセサリー"})
-    ]
+    g = models.SakuhinGroup.objects.all()
     c = {"sakuhin_groups": g}
     return render_view(q, 'pages/works', c)
 

@@ -1,6 +1,6 @@
 from django.db import models
 from django import forms
-
+import json
 
 
 class SakuhinInfoForm( forms.Form ):
@@ -14,9 +14,19 @@ class SakuhinInfoForm( forms.Form ):
 
 class SakuhinGroup( models.Model ):
     name = models.CharField( max_length=100 )
+    title = models.CharField( max_length=100 )
+    is_shown = models.BooleanField( default=False )
 
     def __unicode__( self ):
         return self.name
+
+    def ml_title( self ):
+        try:
+            title_data = json.loads( self.title )
+        except ValueError:
+            title_data = self.title
+        return title_data
+
 
 
 class Sakuhin( models.Model ):

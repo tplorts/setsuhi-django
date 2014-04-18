@@ -21,12 +21,12 @@
       <hr>
 
       <div id="sakuhin-section-buttons">
-        {% for name, title in sakuhin_groups %}
-        <div>
+        {% for group in sakuhin_groups %}
+        <div class="{{ group.is_shown|yesno:'on,off' }}">
           <button id="section-button-{{forloop.counter}}"
                   class="sakuhin-group-button white-button"
-                  data-sakuhin-group="{{name}}">
-            {%ml title %}
+                  data-sakuhin-group="{{group.name}}">
+            {%ml group.ml_title %}
           </button>
         </div>
         {% endfor %}
@@ -86,15 +86,14 @@
 
 <script>
   var galleriaDataSets = {
-    {% for group_name, t in sakuhin_groups %}
-      "{{group_name}}": {% sakuhin_galleria_data group=group_name %},
+    {% for group in sakuhin_groups %}
+      "{{group.name}}": {% sakuhin_galleria_data group=group.name %},
     {% endfor %}
     "": ""
   };
-  
-  {% with first_group=sakuhin_groups|first|first %}
-    var activeSakuhinGroup = "{{first_group}}";
-  {% endwith %}
+
+  /* Select the group listed at the top */
+  var activeSakuhinGroup = $(".sakuhin-group-button:first-of-type").attr("data-sakuhin-group");
 
 </script>
 
