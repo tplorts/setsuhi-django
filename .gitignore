@@ -63,10 +63,15 @@ staticfiles
 # Keeping large media data in AWS S3 and
 # I do not want it inside the repository
 media
+external
 
 
 # To detect whether on my development computer
 .devmachine
 
+# Miscellaneous notes that shouldn't be stored
+# within the repository
+.my-information
 
-.ted-information
+# Prevent my compiled css from entering
+*.compiled.css
