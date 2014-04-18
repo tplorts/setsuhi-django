@@ -62,7 +62,7 @@ def about(q):
     return render_view(q, 'pages/about')
 
 def works(q):
-    g = models.SakuhinGroup.objects.all()
+    g = models.SakuhinGroup.objects.order_by("order_index")
     c = {"sakuhin_groups": g}
     return render_view(q, 'pages/works', c)
 

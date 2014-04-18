@@ -16,6 +16,7 @@ class SakuhinGroup( models.Model ):
     name = models.CharField( max_length=100 )
     title = models.CharField( max_length=100 )
     is_shown = models.BooleanField( default=False )
+    order_index = models.IntegerField( default=0 )
 
     def __unicode__( self ):
         return self.name
