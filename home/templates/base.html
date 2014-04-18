@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js {% block html_class %}{% endblock %}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block title %}書道家白石雪妃{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    {% load staticfiles multilingual link s3 %}
+
+    <!-- ================== ICONS ================== -->
+    <link rel="apple-touch-icon-precomposed" href="{% static 'main/icons/setsuhi-inverted-152.png' %}">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="{% static 'main/icons/setsuhi-inverted-144.png' %}">
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'main/icons/setsuhi-inverted-152.png' %}">
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'main/icons/setsuhi-inverted-144.png' %}">
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'main/icons/setsuhi-inverted-120.png' %}">
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'main/icons/setsuhi-inverted-114.png' %}">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'main/icons/setsuhi-inverted-72.png' %}">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="{% static 'main/icons/setsuhi-inverted-57.png' %}">
+    <!-- And for the rest of us -->
+    <link rel="icon" sizes="32x32" href="{% static 'main/icons/setsuhi-inverted-32.png' %}">
+
+
+    <!-- FONTS -->
+    {%comment%}
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,800,700,600|Open+Sans+Condensed:300,700,300italic" rel="stylesheet" type="text/css">
+    {%endcomment%}
+
+
+    {% block thirdparty_styles %}
+      <link rel="stylesheet" type="text/css"
+            href="{% static 'third/styles/bootstrap.min.css' %}" />
+
+      {%comment%}
+      <link rel="stylesheet" type="text/css"
+            href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css"
+            href="{% static 'third/styles/summernote.css' %}" />
+      <link rel="stylesheet" type="text/css"
+            href="{% static 'chosen_v1.1.0/chosen.min.css' %}" />
+      {%endcomment%}
+    {% endblock thirdparty_styles %}
+
+    {% block default_styles %}
+      {% if use_less_stylesheets %}
+      <link rel="stylesheet/less" type="text/css" 
+            href="{% static 'main/styles/styles.less' %}" />
+      {% else %}
+      <link rel="stylesheet" type="text/css" 
+            href="{% static 'main/styles/styles.compiled.css' %}" />
+      {% endif %}      
+    {% endblock default_styles %}
+
+    {% block styles %}{% endblock %}
+
+    
+    {% block default_prescripts %}
+      <script type="text/javascript">
+        isProduction = {{ isProduction|yesno:"true,false" }};
+      </script>
+
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery-1.11.0.min.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/bootstrap.min.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery.cookie.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'third/scripts/jquery.slides.min.js' %}">
+      </script>
+
+      {%comment%}
+      <script type="text/javascript"
+              src="{% static 'third/scripts/summernote.min.js' %}">
+      </script>
+      {%endcomment%}
+
+      <script type="text/javascript"
+              src="{% static 'galleria/galleria-1.3.5.min.js' %}">
+      </script>
+
+      {%comment%}
+      <script type="text/javascript"
+              src="{%static 'third/scripts/modernizr-2.7.1.min.js'%}">
+      </script>
+      <script type="text/javascript"
+              src="{%static 'chosen_v1.1.0/chosen.jquery.min.js'%}">
+      </script>
+      {%endcomment%}
+
+      {% if use_less_stylesheets %}
+      <script>
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/0.0.0.0:5000/"
+        };
+      </script>
+      <script src="{%static 'third/scripts/less-1.7.0.min.js'%}">
+      </script>
+      {% endif %}
+    {% endblock default_prescripts %}
+
+    {% block prescripts %}{% endblock %}
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
+    <!--[if lt IE 8]>
+        <p class="browsehappy">
+          You are using an <strong>outdated</strong> browser. 
+          Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+        <![endif]-->
+
+    <div id="super-content" class="{%block super_class%}{%endblock%}">
+      {% block super_content %}{% endblock %}
+    </div> <!-- /#super-content -->
+
+
+
+    {% block thirdparty_postscripts %}
+    {% endblock thirdparty_postscripts %}
+
+    {% block default_postscripts %}
+      <script type="text/javascript"
+              src="{% static 'main/scripts/multilingual.js' %}">
+      </script>
+      <script type="text/javascript"
+              src="{% static 'main/scripts/main.js' %}">
+      </script>
+    {% endblock default_postscripts %}
+
+    
+    {% block postscripts %}{% endblock %}
+
+    {% block google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-49573930-1', 'setsuhi.jp');
+        ga('send', 'pageview');
+
+      </script>
+    {% endblock %}
+
+  </body>
+</html>
+
