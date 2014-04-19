@@ -1,6 +1,5 @@
 @import (less) "generic.less";
 @import (less) "colors.less";
-@import (less) "phota-grid.less";
 
 
 .opensans {
@@ -212,34 +211,6 @@ ul, ol {
         }
     }
 }
-
-
-
-
-.phota-grid {
-    .phota-grid-of( 1 );
-}
-
-// We won't have the fixed description area
-// on mobile so we need to have each
-// piece of associated text underneath each
-// cover photo.
-.photum-caption {
-    display: block;
-    padding-left: 2%;
-    padding-right: 6%;
-}
-#photum-brief-frame {
-    display: none;
-}
-
-.photum-brief {
-    display: none;
-    &.active {
-        display: block;
-    }
-}
-
 
 
 

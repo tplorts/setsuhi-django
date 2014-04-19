@@ -1,6 +1,5 @@
 @import (less) "generic.less";
 @import (less) "colors.less";
-@import (less) "phota-grid.less";
 
 
 @side-dock-width: 100px;
@@ -252,41 +251,6 @@
     // This also removes the top padding that was
     // for the mobile navbar.
     padding: 0 @side-dock-width;
-}
-
-
-@description-area-height: 140px;
-
-.phota-grid {
-    .phota-grid-of( 2 );
-
-    // No longer mobile, so again hide the
-    // adjacent texts and go with the fixed area.
-    .photum-caption {
-        display: none;
-    }
-
-    // Accounting for the description area below
-    margin-bottom: @description-area-height;
-}
-
-#photum-brief-frame {
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: @description-area-height;
-    background-color: rgba(255,255,255, 0.95);
-    border-top: 1px solid @setsuhi-murasaki;
-
-    margin-left: @side-dock-width;
-    margin-right: @side-dock-width;
-
-    #photum-brief-area {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
 }
 
 
