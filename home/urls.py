@@ -29,6 +29,9 @@ urlpatterns = patterns(
     url(r'^contact/', views.contact, name='contact'),
     url(r'^blog/', blog_redirect, name='blog'),
 
+    # Used to use 'works' for artwork pictures
+    url(r'^works/', RedirectView.as_view(url='/pictures/'), name='works'),
+
     url(r'^edit-sakuhin-info/$', views.edit_sakuhin_info, 
         name='edit-sakuhin-info'),
 )
