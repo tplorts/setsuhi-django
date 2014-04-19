@@ -13,7 +13,16 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-S3_STATIC_URL = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/"
+
+S3_SERVER_URL = "http://s3-ap-northeast-1.amazonaws.com/"
+S3_BUCKET_NAME = "setsuhi-tokyo"
+S3_BUCKET_URL = S3_SERVER_URL + S3_BUCKET_NAME + "/"
+S3_STATIC_URL = S3_BUCKET_URL + "static/"
+
+
+ML_COOKIE_NAME = "ml-language-selection"
+ML_CONTEXT_KEY = "ml_active_language"
+ML_DEFAULT_LANGUAGE = "ja"
 
 
 # Automatically detect whether this is running on my development

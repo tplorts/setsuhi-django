@@ -1,5 +1,6 @@
 from django import template
 import boto
+from setsuhi import settings
 from home import s3_setsuhi
 
 
@@ -8,7 +9,7 @@ register = template.Library()
 
 @register.simple_tag
 def s3_url( key ):
-    return s3_setsuhi.bucket_url + key
+    return settings.S3_BUCKET_URL + key
 
 
 @register.assignment_tag
@@ -22,7 +23,7 @@ def s3_url_list( folder ):
 @register.inclusion_tag('tags/s3photoset.html')
 def s3photoset( place ):
     ls = s3_setsuhi.bucket.list(prefix="photographs/"+place, encoding_type="url")
-    image_locators = [ s3_setsuhi.bucket_url + photo.key for photo in ls ]
+    image_locators = [ settings.S3_BUCKET_URL + photo.key for photo in ls ]
     return {"image_locators": image_locators}
 
 

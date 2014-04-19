@@ -10,10 +10,6 @@ import models
 
 
 
-ML_COOKIE_NAME = "ml-language-selection"
-ML_CONTEXT_KEY = "ml_active_language"
-
-
 # This list defines which navigation items will
 # appear in the right-hand dock, and the order
 # in which they appear, top-to-bottom.
@@ -32,15 +28,15 @@ nav_list = (
 
 
 def ml_selection(request):
-    if ML_COOKIE_NAME in request.COOKIES:
-        lang = request.COOKIES[ML_COOKIE_NAME]
+    if settings.ML_COOKIE_NAME in request.COOKIES:
+        lang = request.COOKIES[settings.ML_COOKIE_NAME]
     else:
-        lang = "ja"
+        lang = settings.ML_DEFAULT_LANGUAGE
     return lang
 
 
 def multilingual_context( request, context={} ):
-    context[ML_CONTEXT_KEY] = ml_selection(request)
+    context[settings.ML_CONTEXT_KEY] = ml_selection(request)
     return context
 
 
@@ -119,19 +115,18 @@ def contact(request):
 
 
 
-from models import Sakuhin, SakuhinInfoForm
 
 def edit_sakuhin_info( request ):
     if request.method != "POST":
         response = "Please use POST"
     else:
-        form = SakuhinInfoForm( request.POST )
+        form = models.SakuhinInfoForm( request.POST )
         if not form.is_valid():
             response = "Maybe there was a mistake"
         else:
             pk = form.cleaned_data["dbpk"]
             try:
-                sakuhin = Sakuhin.objects.get( id=pk )
+                sakuhin = models.Sakuhin.objects.get( id=pk )
             except Exception:
                 response = "I can't find that piece"
             else:

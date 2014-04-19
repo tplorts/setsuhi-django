@@ -3,9 +3,11 @@ from __future__ import unicode_literals
 from django import template
 import urllib2
 import json
-from home import s3_setsuhi
+from setsuhi import settings
+
 
 register = template.Library()
+
 
 class G:
     def __init__(self, info, base_url=None):
@@ -29,8 +31,6 @@ class G:
         return self.main_image_url
 
 
-#u = 'http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/static/media/images/shikaku-cover-cropped.jpg'
-#dummy = [G(u), G(u)]
 
 @register.inclusion_tag('tags/galleria.html', takes_context=True)
 def galleria( context, galleria_id, image_folder ):
@@ -38,7 +38,7 @@ def galleria( context, galleria_id, image_folder ):
     
     if not image_folder.endswith('/'):
         image_folder += '/'
-    base_url = s3_setsuhi.bucket_url + "static/media/images/" + image_folder    
+    base_url = settings.S3_BUCKET_URL + "static/media/images/" + image_folder    
     jsonurl = urllib2.urlopen( base_url + "info.json" )
     jsoninfo = json.load( jsonurl )
     context["galleria_items"] = [G(json_item, base_url) for json_item in jsoninfo]
