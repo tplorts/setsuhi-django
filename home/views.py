@@ -57,7 +57,7 @@ def about(q):
     return render_page(q, 'about')
 
 def pictures(q):
-    g = models.SakuhinGroup.objects.order_by("order_index")
+    g = models.SakuhinGroup.objects.filter(is_shown=True).order_by("order_index")
     c = {"sakuhin_groups": g}
     return render_page(q, 'pictures', c)
 
