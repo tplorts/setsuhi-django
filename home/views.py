@@ -21,7 +21,7 @@ ML_CONTEXT_KEY = "ml_active_language"
 #   ("view name", "English label", "Japanese label")
 nav_list = (
     ("about",    "About",    "紹介", ""),
-    ("works",    "Artwork",  "作品", ""),
+    ("pictures", "Pictures", "写真", ""),
     ("videos",   "Videos",   "動画", ""),
     ("schedule", "Events",   "予定", ""),
     ("lessons",  "Lessons",  "教室", ""),
@@ -60,10 +60,10 @@ def front(q):
 def about(q):
     return render_page(q, 'about')
 
-def works(q):
+def pictures(q):
     g = models.SakuhinGroup.objects.order_by("order_index")
     c = {"sakuhin_groups": g}
-    return render_page(q, 'works', c)
+    return render_page(q, 'pictures', c)
 
 def videos(q):
     return render_page(q, 'videos')

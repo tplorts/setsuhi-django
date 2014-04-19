@@ -22,7 +22,7 @@ urlpatterns = patterns(
 
     url(r'^$', views.front, name='front'),
     url(r'^about/', views.about, name='about'),
-    url(r'^works/$', views.works, name='works'),
+    url(r'^pictures/$', views.pictures, name='pictures'),
     url(r'^videos/$', views.videos, name='videos'),
     url(r'^schedule/', views.schedule, name='schedule'),
     url(r'^lessons/', views.lessons, name='lessons'),
