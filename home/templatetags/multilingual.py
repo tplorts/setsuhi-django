@@ -14,14 +14,16 @@ def class_for_language(context, lang):
 
 @register.inclusion_tag('tags/multilingual.html', takes_context=True)
 def ml(context, ml_dict_or_str=None, *args, **kwargs):
+    local = {}
     if ml_dict_or_str:
         if isinstance( ml_dict_or_str, unicode ):
-            context["unilingual_text"] = ml_dict_or_str
+            local["unilingual_text"] = ml_dict_or_str
         else:
-            context["multilingual_text"] = ml_dict_or_str
+            local["multilingual_text"] = ml_dict_or_str
     else:
-        context["multilingual_text"] = kwargs
-    return context
+        local["multilingual_text"] = kwargs
+    local["ml_active_language"] = context["ml_active_language"]
+    return local
 
 
 @register.tag
