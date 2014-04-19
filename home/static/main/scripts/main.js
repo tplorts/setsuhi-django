@@ -102,6 +102,8 @@ $(function() {
 
 
 
+  /* Select the group listed at the top */
+  var activeSakuhinGroup = $("#sakuhin-group-buttons .on").first().find("button").attr("data-sakuhin-group");
 
 // Activate different groups of sakuhin in the galleria
 $(".sakuhin-group-button").click( function() {
