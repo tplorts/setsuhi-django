@@ -161,7 +161,7 @@ $(window).ready( function() {
     Galleria.configure({
         debug: !isProduction,
         imageCrop: false,
-        preload: 'all',
+//        preload: 'all',
         autoplay: false
     });
 
@@ -172,7 +172,7 @@ $(window).ready( function() {
             dataSource: galleriaDataSets[activeSakuhinGroup],
             extend: function(options) {
                 // listen to when an image is shown
-                this.bind('image', updateImageEditor);
+                this.bind('loadfinish', updateImageEditor);
             }
         });
         setActiveSakuhinGroup( activeSakuhinGroup );
