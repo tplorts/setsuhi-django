@@ -180,15 +180,16 @@
 }
 
 
-@halfwhite: #C0C0C0;
+@button-fg: #DDD;
+
 .boxi {
     width: @button-size;
     height: @button-size;
 
-    border: 2px outset @halfwhite;
+    border: 1px solid #999;
     border-radius: 4px;
     background: transparent;
-    color: white;
+    color: @button-fg;
 
 
     font-size: 13px;
@@ -211,7 +212,7 @@
     cursor: pointer;
 
     &:hover {
-        background-color: white;
+        background-color: @button-fg;
         color: @side-dock-bg;
     }
 
