@@ -98,8 +98,9 @@
     }
 
     .ml-button {
-        background-color: #777;
-        color: black;
+        background-color: #222;
+        color: #CCC;
+        opacity: 0.4;
         border: 1px solid transparent;
         transition: all 0.1s ease-in;
         padding: 3px;
@@ -114,7 +115,8 @@
         }
 
         &.active {
-            background-color: @active-teal;
+            background-color: @subteal;
+            opacity: 1;
         }
 
         &:hover {
@@ -148,7 +150,7 @@
     .navigation-button, 
     #navigation-spill-menu-wrapper {
         // The only way I found to center them is manually
-        margin: 12px (@side-dock-width - @boxi-size)/2;
+        margin: 12px @boxi-margin;
         //TODO: look into why the menu button is centered
         //      even without this margin.
     }
@@ -200,7 +202,10 @@
     cursor: pointer;
 
     &.present-page {
-        background-color: @active-maize;
+        background-color: @subteal;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
     }
 
     &:hover {
@@ -211,6 +216,34 @@
     transition: all 0.1s ease-in;
 }
 
+.boxiguchi {
+    position: absolute;
+    height: @boxi-size + 2*@boxi-margin;
+    top: -@boxi-margin;
+    width: @boxi-margin;
+    left: -@boxi-margin;
+    background-color: inherit;
+    overflow: hidden;
+
+    @guchi-curve-spil: 1px;
+    @guchi-radius: (@boxi-margin + @guchi-curve-spil);
+    .guchi-corner {
+        position: absolute;
+        width: 2*@guchi-radius;
+        height: 2*@guchi-radius;
+        left: -@guchi-curve-spil;
+        background-color: @dock-background;
+        border: 1px solid @boxi-border-color;
+        border-radius: @guchi-radius;
+
+        &.guchi-top {
+            top: -1-@guchi-radius;
+        }
+        &.guchi-bottom {
+            bottom: 1-@guchi-radius;
+        }
+    }
+}
 
 
 // Accomodate for the side docks

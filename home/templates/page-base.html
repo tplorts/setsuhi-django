@@ -135,7 +135,15 @@
       {% for view_name, english, japanese, attr in nav_list %}
         <div class="navigation-button navitem-on">
           <a href="{% url view_name %}" {{attr}}>
-            <div class="boxi">
+            <div class="boxi 
+                        {% if view_name == present_page_name %}
+                        present-page {% endif %}">
+              {% if view_name == present_page_name %}
+                <div class="boxiguchi">
+                  <div class="guchi-corner guchi-top"></div>
+                  <div class="guchi-corner guchi-bottom"></div>
+                </div>
+              {% endif %}
               <div class="boxi-br">
                 {% ml en=english ja=japanese %}
               </div>
