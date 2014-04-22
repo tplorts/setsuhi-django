@@ -1,5 +1,5 @@
 @import (less) "generic.less";
-@import (less) "colors.less";
+@import (less) "variables.less";
 
 
 .opensans {
@@ -50,12 +50,12 @@ ul, ol {
     transition: all 0.1s linear;
 
     &:active, &.active-group {
-        background: #D4AA00;
+        background: @active-maize;
         color: black;
     }
 
     &:hover {
-        opacity: 0.8;
+        opacity: @hover-opacity;
     }
 }
 
@@ -130,7 +130,7 @@ ul, ol {
 }
 
 .tyle {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, @tyle-opacity);
     padding: 15px 30px;
     margin-bottom: 50px;
 
@@ -176,7 +176,7 @@ ul, ol {
 
 
 #main-content {
-    padding-top: 52px; // mobile navbar
+    padding-top: @mobile-navbar-height;
 }
 
 
@@ -270,24 +270,6 @@ ul, ol {
 
 
 
-
-.simple-image-list {
-    .image-item {
-        width: 100%;
-
-        img {
-            .center-image;
-            max-width: 100%;
-            max-height: 80%;
-        }
-
-        margin-bottom: 100px;
-    }
-}
-
-
-
-
 .slidesjs {
     .slidesjs-container {
         margin-bottom:10px;
@@ -352,16 +334,11 @@ ul, ol {
         display: none;
     }
 
-    height: 320px;
+    height: @galleria-height;
 
     &.shadowed {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 20px @soft-black;
     }
-}
-
-.exclusive-galleria {
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 .galleria-stage {

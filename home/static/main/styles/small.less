@@ -1,17 +1,5 @@
 @import (less) "generic.less";
-@import (less) "colors.less";
-
-
-@side-dock-width: 100px;
-@side-dock-bg: @setsuhi-murasaki;
-@side-dock-fg: white;
-
-@content-side-padding: 15px;
-
-@button-color: #f0f0f0;
-@button-size: 64px;
-
-
+@import (less) "variables.less";
 
 
 
@@ -46,8 +34,8 @@
 
 
 .side-dock( @width: @side-dock-width, 
-            @bg: @side-dock-bg,
-            @fg: @side-dock-fg ) 
+            @bg: @dock-background,
+            @fg: @dock-foreground ) 
 {
     position: fixed;
     top: 0;
@@ -132,7 +120,6 @@
             opacity: 0.8;
         }
 
-        @ml-flag-width: 30px;
         .ml-flag {
             width: @ml-flag-width;
         }
@@ -159,7 +146,7 @@
     .navigation-button, 
     #navigation-spill-menu-wrapper {
         // The only way I found to center them is manually
-        margin: 12px (@side-dock-width - @button-size)/2;
+        margin: 12px (@side-dock-width - @boxi-size)/2;
         //TODO: look into why the menu button is centered
         //      even without this margin.
     }
@@ -180,16 +167,15 @@
 }
 
 
-@button-fg: #DDD;
 
 .boxi {
-    width: @button-size;
-    height: @button-size;
+    width: @boxi-size;
+    height: @boxi-size;
 
-    border: 1px solid #999;
+    border: 1px solid @boxi-border-color;
     border-radius: 4px;
-    background: transparent;
-    color: @button-fg;
+    background-color: @boxi-background;
+    color: @boxi-foreground;
 
 
     font-size: 13px;
@@ -211,41 +197,19 @@
 
     cursor: pointer;
 
+    &.present-page {
+        background-color: @active-maize;
+    }
+
     &:hover {
-        background-color: @button-fg;
-        color: @side-dock-bg;
+        background-color: @boxi-foreground;
+        color: @boxi-background;
     }
 
     transition: all 0.1s ease-in;
 }
 
-/*
-  a:active {
-  .boxi {
-  border: 2px inset @halfwhite;
-  transition: all 0.5s ease-out;
-  background-color: black;
-  }
-  }
-  */
 
-
-
-#seal-div {
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    padding: 0 30px 15px;
-
-    #seal {
-        width: 100%;
-
-        transition: all 0.25s ease-in;
-        &:hover {
-            .filter( invert() );
-        }        
-    }
-}
 
 // Accomodate for the side docks
 #main-content {
@@ -288,8 +252,3 @@
     .aspect-widescreen( 508px );
 }
 
-
-.exclusive-galleria {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
