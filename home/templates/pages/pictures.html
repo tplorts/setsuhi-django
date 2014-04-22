@@ -71,7 +71,7 @@
         {% for group in sakuhin_groups %}
         <div class="{{ group.is_shown|yesno:'on,off' }}">
           <button id="section-button-{{forloop.counter}}"
-                  class="sakuhin-group-button white-button"
+                  class="sakuhin-group-button gray-button text-left"
                   data-sakuhin-group="{{group.name}}">
             {%ml group.ml_title %}
           </button>
