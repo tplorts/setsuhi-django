@@ -16,12 +16,13 @@ import models
 # Each element has three parts:
 #   ("view name", "English label", "Japanese label")
 nav_list = (
-    ("about",    "About",    "紹介", ""),
+    ("front",    "Front",    "表",   ""),
     ("pictures", "Pictures", "写真", ""),
     ("videos",   "Videos",   "動画", ""),
     ("schedule", "Events",   "予定", ""),
     ("lessons",  "Lessons",  "教室", ""),
     ("contact",  "Contact",  "連絡", ""),
+    ("about",    "About",    "紹介", ""),
     ("blog",     "Blog",     "ブログ", "target=\"_blank\""),
 )
 
