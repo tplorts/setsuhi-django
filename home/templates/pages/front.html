@@ -24,10 +24,17 @@
           </a>
         </div> <!-- /column -->
         <div class="col-sm-8 col-md-9 col-lg-7">
-          <h3>Vasco da Gama, <span class="ib font-twothirds">{%ml ja="4月号" en="April Edition"%}</span></h3>
-          <div lang="ja">
-            連載させていただいているVasco da Gama 4月号発売となりました 。<br>
-            「五週連続イベント」と題し、<br>
+          {% with vasco_april_url="http://www.amazon.co.jp/gp/product/B00JCULKX0/" %}
+          <h3 style="margin-top: 0;">
+            Vasco da Gama,
+            <span class="ib font-twothirds">{%ml ja="4月号" en="April Edition"%}</span>
+          </h3>
+          {% multilingual %} {% mlpart "ja" %}
+            <p>
+              連載させていただいているVasco da Gama 
+              4月号発売となりました。
+              「五週連続イベント」と題し、
+            </p>
             <ul>
               <li>芝居×ファッションショーの舞台</li>
               <li>ワークショップ@新宿伊勢丹</li>
@@ -35,10 +42,33 @@
               <li>瞬刻ライブ</li>
               <li>声明 X 書道</li>
             </ul>
-            を振り返りました。<br>
-            どうぞ宜しくお願いいたします
-          </div>
-          <a href="http://www.amazon.co.jp/gp/product/B00JCULKX0/" target="_blank">Purchase from Amazon</a>
+            <p>
+              を振り返りました。<br>
+              どうぞ宜しくお願いいたします
+            </p>
+            <a href="{{ vasco_april_url }}" target="_blank">Amazonで購入</a>
+          {% endmlpart %} {% mlpart "en" %}
+            <p>
+              Vasco da Gama, an e-book publication for which
+              I have the pleasure of writing, released its
+              April edition.
+            </p>
+            <p>
+              Entitled &ldquo;Five Weeks of Events&rdquo;,
+              this installment looks at:
+            <ul>
+              <li>A Play &amp; Fashion Show mixed performance</li>
+              <li>My calligraphy workshop at the Shinjuku Isetan</li>
+              <li><i>Woman's Experience</i> at Grant Hyatt Tokyo</li>
+              <li>The <i>Moments</i> live performance</li>
+              <li>Live calligraphy with Bhuddist chant</li>
+            </ul>
+            <a href="{{ vasco_april_url }}" target="_blank">Purchase from Amazon</a>
+            <p class="small text-muted">
+               Please note that there is only a Japanese edition.
+            </p>
+          {% endmlpart %} {% endmultilingual %}
+          {% endwith %}
         </div> <!-- /column -->
       </div> <!-- /row -->
     </div> <!-- /tyle -->
