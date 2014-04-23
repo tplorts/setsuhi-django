@@ -5,7 +5,8 @@
 
   <div class="full-viewport bg-image bg-1"></div>
 
-  <div class="navbar navbar-default navbar-setsuhi navbar-fixed-top visible-xs" role="navigation">
+  <div class="navbar navbar-default navbar-setsuhi
+              navbar-fixed-top visible-xs" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,15 +48,14 @@
         </div>
       </div>
       <div class="navbar-collapse collapse" style="height: 1px;">
-        <ul class="nav navbar-nav">
-          {% for view_name, english, japanese, attr in nav_list %}
-            <li>
-              <a href="{% url view_name %}" {{attr}}>
-                {% ml en=english ja=japanese %}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+        {% for view_name, english, japanese, attr in nav_list %}
+          <div class="mini-nav-item">
+            <a class="btn btn-default transparent full-width"
+               href="{% url view_name %}" {{attr}}>
+              {% ml en=english ja=japanese %}
+            </a>
+          </div>
+        {% endfor %}
       </div><!--/.nav-collapse -->
     </div><!--/.container-->
   </div><!--/.navbar-->
