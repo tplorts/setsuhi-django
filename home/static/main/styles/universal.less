@@ -112,6 +112,35 @@ ul, ol {
 }
 
 
+
+.navbar-setsuhi {
+    .navbar-toggle {
+        padding-top: 5px;
+        padding-bottom: 0;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        
+        &:hover, &:focus {
+            background-color: #666;
+        }
+
+        .glyphicon {
+            color: #CCC;
+            .transition(all, 0.25s, linear);
+            
+            &.glyphicon-chevron-down {
+                .rotate( 180deg );
+            }
+        }
+
+        &.collapsed {
+            .glyphicon-chevron-down {
+                .rotate( 0 );
+            }
+        }
+    }
+}
+
 .mini-nav-item {
     display: inline-block;
     width: 49%;

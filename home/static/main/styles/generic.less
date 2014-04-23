@@ -259,12 +259,20 @@
     transition: @prop @time @ease;
 }
 
-.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+.transform (@rotate: 90deg, @scale: 1, @skew: 0, @translate: 0) {
     -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
     -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
     -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
     -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
     transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+.rotate (@rotate: 90deg) {
+    -webkit-transform: rotate(@rotate);
+    -moz-transform: rotate(@rotate);
+    -o-transform: rotate(@rotate);
+    -ms-transform: rotate(@rotate);
+    transform: rotate(@rotate);
 }
 
 .gradient (@origin: left, @start: #ffffff, @stop: #000000) {
