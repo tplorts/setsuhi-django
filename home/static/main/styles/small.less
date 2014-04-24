@@ -55,33 +55,27 @@
     .dock-shadow( 5px );
 
     line-height: 1.2;
+}
 
-    #signature {
-        width: 100%;
-        padding: 20px;
 
-        position: relative;
-        background: inherit;
-        z-index: 2;
+#signature {
+    width: 100%;
+    padding: 20px;
 
-        #signature-image {
-            width: 100%;
-            transition: all 0.05s linear;
-            &:hover {
-                opacity: 0.5;
-            }
-        }
+    position: relative;
+    background: inherit;
+    z-index: 2;
+
+    transition: all 0.3s linear;
+    &.secret-activated {
+        -webkit-transform: rotateX(180deg) rotateY(180deg);
     }
-
-    #login-widget {
-        height: 100px;
-        position: relative;
-        margin-top: -100px;
-        background: black;
-        z-index: 1;
-
-        &.open {
-            margin-right: -150px;
+    
+    #signature-image {
+        width: 100%;
+        transition: all 0.05s linear;
+        &:hover {
+            opacity: 0.5;
         }
     }
 }

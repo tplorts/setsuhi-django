@@ -11,38 +11,31 @@ s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
 var pressTimer = null;
 var signature = $("#signature");
 var didLongPress = false;
-var loginWidget = $("#login-widget");
-
-loginWidget.click( function() {
-    loginWidget.removeClass("open");
-});
 
 signature.click( function() {
     var toGo = !didLongPress;
+    if( didLongPress ) {
+        window.location.href = '/workroom/';
+    }
     didLongPress = false;
-    console.log("click "+toGo);
     return toGo;
 });
 
 var longPressed = function() {
     didLongPress = true;
-//    console.log("long");
-    // Open the login form
-    loginWidget.addClass("open");
-    return false;
+    signature.addClass("secret-activated");
 };
 
 signature.mouseup(function(){
     clearTimeout(pressTimer);
     pressTimer = null;
-//    console.log("up");
     return false;
 }).mousedown(function(){
     pressTimer = window.setTimeout(longPressed, 2000);
-//    console.log("down");
     didLongPress = false;
     return false; 
 });
+
 //=================================================================
 //                            \\\\|////
 //                             \\|||//
@@ -123,7 +116,8 @@ function setActiveSakuhinGroup( groupName ) {
     b.addClass("active-group");
 
     if( groupName != activeSakuhinGroup ) {
-        Galleria.get(0).load( galleriaDataSets[groupName] );
+        var gal = Galleria.get(0);
+        gal.load( galleriaDataSets[groupName] );
         activeSakuhinGroup = groupName;
     }
 }
@@ -132,9 +126,14 @@ var presentImageData = null;
 updateImageEditor = function (e) {
     editform = $("#sakuhin-info-form");
 
+    //todo: when in fullscreen an error shows up on the
+    //      log but it seems to be inconsequential.
+    var isFullscreen = $(".galleria-container").hasClass("fullscreen");
+
     // Don't do anything if this element does
     // not exist (user is not logged in).
-    if( editform.length == 0 ) return;
+    if( editform.length == 0 )
+        return;
 
     // Get the data Galleria's structure.
     info = e.galleriaData;
