@@ -32,6 +32,7 @@ urlpatterns = patterns(
     # Used to use 'works' for artwork pictures
     url(r'^works/', RedirectView.as_view(url='/pictures/'), name='works'),
 
+    url(r'^workroom/', views.workroom, name='workroom'),
     url(r'^edit-sakuhin-info/$', views.edit_sakuhin_info, 
         name='edit-sakuhin-info'),
 )

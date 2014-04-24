@@ -36,18 +36,23 @@ def ml_selection(request):
     return lang
 
 
-def multilingual_context( request, context={} ):
-    context[settings.ML_CONTEXT_KEY] = ml_selection(request)
-    return context
+
+def render_view( request, template, context={} ):
+    context.update({
+        'isProduction': settings.isProduction,
+        'use_less_stylesheets': settings.TEMPLATE_DEBUG,
+        settings.ML_CONTEXT_KEY: ml_selection( request ),
+    })
+    return render( request, template, context )
 
 
 def render_page(request, page_name, context={}):
-    context = multilingual_context( request, context )
-    context["nav_list"] = nav_list
-    context['present_page_name'] = page_name.split("/")[-1]
-    context['isProduction'] = settings.isProduction
-    context['use_less_stylesheets'] = settings.TEMPLATE_DEBUG
-    return render(request, 'pages/' + page_name + '.html', context)
+    context.update({
+        'nav_list': nav_list,
+        'present_page_name': page_name.split('/')[-1],
+    })
+    template_path = 'pages/' + page_name + '.html'
+    return render_view( request, template_path, context )
 
 
 
@@ -71,6 +76,9 @@ def schedule(q):
 def lessons(q):
     return render_page(q, 'lessons')
 
+
+def workroom(q):
+    return render_view(q, 'workroom.html')
 
 
 
