@@ -36,6 +36,11 @@ signature.mouseup(function(){
     return false; 
 });
 
+$(document).mouseup(function() {
+    if( signature.hasClass("secret-activated") )
+        signature.removeClass("secret-activated");
+});
+
 //=================================================================
 //                            \\\\|////
 //                             \\|||//
