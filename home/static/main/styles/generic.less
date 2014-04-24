@@ -259,12 +259,12 @@
     transition: @prop @time @ease;
 }
 
-.transform (@rotate: 90deg, @scale: 1, @skew: 0, @translate: 0) {
-    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+.transform( @transforms: none ) {
+    -webkit-transform: @transforms;
+    -moz-transform: @transforms;
+    -o-transform: @transforms;
+    -ms-transform: @transforms;
+    transform: @transforms;
 }
 
 .rotate (@rotate: 90deg) {
