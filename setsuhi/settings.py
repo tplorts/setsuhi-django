@@ -34,6 +34,12 @@ except IOError:
     isProduction = True
 
 
+# Wad of Stuff
+SERIALIZATION_MODULES = {
+    'json': 'wadofstuff.django.serializers.json'
+}
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
