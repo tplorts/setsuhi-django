@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js {% block html_class %}{% endblock %}">
+<html lang="en"
+      class="no-js {% block html_class %}{% endblock %}"
+      {% block html_attributes %}{% endblock %}>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -120,7 +122,8 @@
 
     {% block prescripts %}{% endblock %}
   </head>
-  <body class="{% block body_class %}{% endblock %}">
+  <body class="{% block body_class %}{% endblock %}"
+        {% block body_attributes %}{% endblock %}>
     <!--[if lt IE 8]>
         <p class="browsehappy">
           You are using an <strong>outdated</strong> browser. 
