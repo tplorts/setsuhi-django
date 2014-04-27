@@ -75,3 +75,7 @@ external
 
 # Prevent my compiled css from entering
 *.compiled.css
+
+
+node_modules
+bower_components
