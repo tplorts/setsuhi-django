@@ -1,9 +1,77 @@
 {% extends "base.html" %}
 
+{% load staticfiles json_filters multilingual %}
+
+{% block html_attributes %}
+  ng-app="workroomApp"
+{% endblock %}
+
+
 {% block super_content %}
-<h2>The Workroom</h2>
-<div>
-  <input type="file" id="file_input" mozdirectory="" 
-         webkitdirectory="" directory="" />
+<div class="container">
+  <h2>The Workroom</h2>
 </div>
+
+<script>
+  var ngData_pictureEntries = {{ entries|jsonify_expand:"sakuhin"|safe }};
+</script>
+
+<div ng-controller="PictureListController">
+  <div class="container">
+    <div class="entry-row" taw-reorderable-entry
+         ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
+         ng-init=" sak = e.fields.sakuhin.fields "
+         id="entry-[[ e.fields.sakuhin.pk ]]">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="text-right">
+            <img ng-src="[[ sak.thumb_image_url ]]" 
+                 class="workroom-thumbnail
+                        expandable-image" />
+          </div>
+        </div> <!-- /column (lefthand, for picture) -->
+        <div class="col-sm-9">
+          <div>
+            [[ sak.title ]]
+            <span class="text-muted small"
+                  ng-show=" sak.title.length == 0 ">
+              no title
+            </span>
+          </div>
+          <div>
+            [[ sak.brief ]]
+            <span class="text-muted small"
+                  ng-show=" sak.brief.length == 0 ">
+              no brief description
+            </span>
+          </div>
+          <div>
+            [[ sak.lengthy ]]
+            <span class="text-muted small"
+                  ng-show=" sak.lengthy.length == 0 ">
+              no lengthy description
+            </span>
+          </div>
+        </div> <!-- /column (righthand, for info) -->
+      </div> <!-- /.row -->
+    </div> <!-- /.entry-row -->
+  </div> <!-- /.container -->
+</div> <!-- /PictureListController -->
+
 {% endblock super_content %}
+
+
+
+
+{% block postscripts %}
+
+  <script src="{% static 'bower_components/angular/angular.js' %}"></script>
+  <script src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+
+  <script src="{% static 'ng/scripts/app.js' %}"></script>
+  <script src="{% static 'ng/scripts/filters.js' %}"></script>
+  <script src="{% static 'ng/scripts/services.js' %}"></script>
+  <script src="{% static 'ng/scripts/directives.js' %}"></script>
+  <script src="{% static 'ng/scripts/controllers.js' %}"></script>
+
+{% endblock %}

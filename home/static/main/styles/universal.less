@@ -99,7 +99,7 @@ ul, ol {
         display: block;
     }
 }
-    
+
 .bg-1 {
     .cover-background( "@{s3-url}static/media/images/background/1/bg-xs.jpg" );
 }
@@ -410,4 +410,36 @@ ul, ol {
     width: 100%;
     margin: 1px;
     font-size: 16px;
+}
+
+
+
+//==================================================================
+// WORKROOM STYLES
+
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+    cursor: move;
+}
+
+.entry-row {
+    margin-top: 15px;
+    background-color: rgba(20, 0, 40, 0.15);
+}
+
+.workroom-thumbnail {
+    height: 80px;
+    width: auto;
+    max-width: 100%;
+}
+
+.expandable-image {
+    cursor: pointer;
 }

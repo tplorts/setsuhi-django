@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django import forms
 from django.core.mail import EmailMessage
-
+import json
 from setsuhi import settings
 import models
 
@@ -78,7 +78,12 @@ def lessons(q):
 
 
 def workroom(q):
-    return render_view(q, 'workroom.html')
+    engroup = models.SakuhinGroup.objects.get( name='縁' )
+    entries = models.SakuhinEntry.objects.filter( group=engroup )
+    c = {
+        'entries': entries,
+    }
+    return render_view(q, 'workroom.html', c)
 
 
 
