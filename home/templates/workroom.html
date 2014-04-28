@@ -21,7 +21,8 @@
     <div class="entry-row" taw-reorderable-entry
          ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
          ng-init=" sak = e.fields.sakuhin.fields "
-         id="entry-[[ e.fields.sakuhin.pk ]]">
+         data-index="[[ e.arrayIndex ]]"
+         data-on-drop="moveEntry( fromIndex, toIndex )">
       <div class="row">
         <div class="col-sm-3">
           <div class="text-right">

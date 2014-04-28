@@ -432,6 +432,8 @@ ul, ol {
 .entry-row {
     margin-top: 15px;
     background-color: rgba(20, 0, 40, 0.15);
+    border: 2px dashed transparent;
+    .transition( all, 0.2s, ease-out );
 }
 
 .workroom-thumbnail {
@@ -442,4 +444,12 @@ ul, ol {
 
 .expandable-image {
     cursor: pointer;
+}
+
+.dragged-from {
+    opacity: 0.5;
+}
+
+.dragged-over {
+    border-color: orange;
 }
