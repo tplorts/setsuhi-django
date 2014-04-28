@@ -2,16 +2,23 @@
 
 from django.core.serializers import serialize
 from django.db.models.query import QuerySet
-from django.utils import simplejson
 from django.template import Library
+import json
+
 
 register = Library()
+
+
+class DefaultJSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        return o.__dict__
+
 
 @register.filter
 def jsonify(obj):
     if isinstance(obj, QuerySet):
         return serialize('json', obj)
-    return simplejson.dumps(obj)
+    return json.dumps(obj, cls=DefaultJSONEncoder)
 
 
 @register.filter
