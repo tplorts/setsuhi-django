@@ -12,83 +12,102 @@ dmod.directive('appVersion', ['version', function(version) {
     };
 }]);
 
-var priorEntrance = null;
+var priorOver = null;
 
-dmod.directive('tawReorderableEntry', ['$rootScope', function($rootScope) {
-    function link(scope, el, attrs, controller) {
-        var ngel = angular.element(el);
-        ngel.attr("draggable", "true");
+function linkDrag(scope, el, attrs) {
+    var ngel = angular.element(el);
+    ngel.attr("draggable", "true");
+    ngel.addClass('entry-row');
 
-        var thisIndex = attrs.index;
+    var thisIndex = attrs.index;
 
-        el.bind("dragstart", function(eve) {
-            var e = eve.originalEvent;
-            var dt = e.dataTransfer;
-            ngel.addClass('dragged-from');
-            dt.effectAllowed = 'move';
-            dt.setData("text/plain", thisIndex);
-        });
+    el.bind("dragstart", function(eve) {
+        var e = eve.originalEvent;
+        var dt = e.dataTransfer;
+        ngel.addClass('dragged-from');
+        dt.effectAllowed = 'move';
+        console.log('starting '+thisIndex);
+        dt.setData("text/plain", thisIndex);
+    });
 
-        el.bind("dragend", function(e) {
-            ngel.removeClass('dragged-from');
-            priorEntrance = null;
-        });
+    el.bind("dragend", function(e) {
+        ngel.removeClass('dragged-from');
+        priorOver = null;
+        e.originalEvent.dataTransfer.clearData();
+    });
+}
 
 
+function linkDrop(scope, el, attrs) {
+    var ngel = angular.element(el);
+    ngel.addClass('drop-zone');
 
-        el.bind("dragover", function(eve) {
-            var e = eve.originalEvent;
-            var dt = e.dataTransfer;
-            if (e.preventDefault) {
-                // Necessary. Allows us to drop.
-                e.preventDefault();
+    var thisIndex = attrs.index;
+
+
+    el.bind("dragover", function(eve) {
+        var e = eve.originalEvent;
+        var dt = e.dataTransfer;
+        if (e.preventDefault) {
+            // Necessary. Allows us to drop.
+            e.preventDefault();
+        }
+        dt.dropEffect = 'move';
+        return false;
+    });
+
+    el.bind("dragenter", function(eve) {
+        var e = eve.originalEvent;
+        var dt = e.dataTransfer;
+        if( thisIndex != priorOver ) {
+            priorOver = thisIndex;
+            var i = dt.getData("text/plain");
+            if( i != thisIndex ) {
+                ngel.addClass('dragged-over');
             }
-            dt.dropEffect = 'move';
-            return false;
-        });
+        }
+    });
+    
+    el.bind("dragleave", function(eve) {
+        ngel.removeClass('dragged-over');
+        priorOver = null;
+    });
 
-        el.bind("dragenter", function(eve) {
-            var e = eve.originalEvent;
-            var dt = e.dataTransfer;
-            if( thisIndex != priorEntrance ) {
-                priorEntrance = thisIndex;
-                var sourceIndex = dt.getData('text/plain');
-                if( sourceIndex != thisIndex ) {
-                    ngel.addClass('dragged-over');
-                }
-            }
-        });
-        
-        el.bind("dragleave", function(eve) {
-            var e = eve.originalEvent;
-            ngel.removeClass('dragged-over');
-        });
+    el.bind("drop", function(eve) {
+        var e = eve.originalEvent;
+        var dt = e.dataTransfer;
+        if (e.stopPropagation) {
+            // Stops some browsers from redirecting.
+            e.stopPropagation();
+        }
+        ngel.removeClass('dragged-over');
+        var oldIndex = dt.getData("text/plain");
+        if( thisIndex != oldIndex ) {
+            scope.onDrop({
+                fromIndex: oldIndex, 
+                toIndex: thisIndex
+            });
+        }
+        return false;
+    });
+}
 
-        el.bind("drop", function(eve) {
-            var e = eve.originalEvent;
-            var dt = e.dataTransfer;
-            if (e.stopPropagation) {
-                // Stops some browsers from redirecting.
-                e.stopPropagation();
-            }
-            ngel.removeClass('dragged-over');
-            var oldIndex = dt.getData("text/plain");
-            if( thisIndex != oldIndex ) {
-                scope.onDrop({
-                    fromIndex: oldIndex, 
-                    toIndex: thisIndex
-                });
-            }
-            return false;
-        });
 
-    }
-
+dmod.directive('tawDraggableEntry', function() {
     return {
         restrict: 'A',
-        link: link,
+        link: linkDrag
+    }
+});
+
+
+dmod.directive('tawEntryDropZone', function() {
+    return {
+        restrict: 'A',
+        link: linkDrop,
         scope: {
             onDrop: '&'
         }
     }
-}]);
+});
+

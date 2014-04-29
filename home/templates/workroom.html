@@ -18,44 +18,46 @@
 
 <div ng-controller="PictureListController">
   <div class="container">
-    <div class="entry-row" taw-reorderable-entry
-         ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
-         ng-init=" sak = e.fields.sakuhin.fields "
-         data-index="[[ e.arrayIndex ]]"
-         data-on-drop="moveEntry( fromIndex, toIndex )">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="text-right">
-            <img ng-src="[[ sak.thumb_image_url ]]" 
-                 class="workroom-thumbnail
-                        expandable-image" />
-          </div>
-        </div> <!-- /column (lefthand, for picture) -->
-        <div class="col-sm-9">
-          <div>
-            [[ sak.title ]]
-            <span class="text-muted small"
-                  ng-show=" sak.title.length == 0 ">
-              no title
-            </span>
-          </div>
-          <div>
-            [[ sak.brief ]]
-            <span class="text-muted small"
-                  ng-show=" sak.brief.length == 0 ">
-              no brief description
-            </span>
-          </div>
-          <div>
-            [[ sak.lengthy ]]
-            <span class="text-muted small"
-                  ng-show=" sak.lengthy.length == 0 ">
-              no lengthy description
-            </span>
-          </div>
-        </div> <!-- /column (righthand, for info) -->
-      </div> <!-- /.row -->
-    </div> <!-- /.entry-row -->
+    <div ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
+         ng-init="sak = e.fields.sakuhin.fields">
+      <div taw-entry-drop-zone data-index="[[ e.arrayIndex ]]"
+           data-on-drop="moveEntry(fromIndex, toIndex)">
+      </div>
+      <div taw-draggable-entry data-index="[[ e.arrayIndex ]]">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="text-right">
+              <img ng-src="[[ sak.thumb_image_url ]]" 
+                   class="workroom-thumbnail
+                          expandable-image" />
+            </div>
+          </div> <!-- /column (lefthand, for picture) -->
+          <div class="col-sm-9">
+            <div>
+              [[ sak.title ]]
+              <span class="text-muted small"
+                    ng-show=" sak.title.length == 0 ">
+                no title
+              </span>
+            </div>
+            <div>
+              [[ sak.brief ]]
+              <span class="text-muted small"
+                    ng-show=" sak.brief.length == 0 ">
+                no brief description
+              </span>
+            </div>
+            <div>
+              [[ sak.lengthy ]]
+              <span class="text-muted small"
+                    ng-show=" sak.lengthy.length == 0 ">
+                no lengthy description
+              </span>
+            </div>
+          </div> <!-- /column (righthand, for info) -->
+        </div> <!-- /.row -->
+      </div> <!-- /taw-draggable-entry -->
+    </div> <!-- /ng-repeat -->
   </div> <!-- /.container -->
 </div> <!-- /PictureListController -->
 
