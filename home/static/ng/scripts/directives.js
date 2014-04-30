@@ -12,28 +12,26 @@ dmod.directive('appVersion', ['version', function(version) {
     };
 }]);
 
-var priorOver = null;
 
 function linkDrag(scope, el, attrs) {
     var ngel = angular.element(el);
     ngel.attr("draggable", "true");
-    ngel.addClass('entry-row');
-
-    var thisIndex = attrs.index;
+    ngel.addClass('taw-entry');
 
     el.bind("dragstart", function(eve) {
         var e = eve.originalEvent;
         var dt = e.dataTransfer;
         ngel.addClass('dragged-from');
         dt.effectAllowed = 'move';
-        console.log('starting '+thisIndex);
+        var thisIndex = $(e.target).attr('data-i-dom');
         dt.setData("text/plain", thisIndex);
+        $('[taw-entry-drop-zone]').addClass('now-dragging');
     });
 
     el.bind("dragend", function(e) {
         ngel.removeClass('dragged-from');
-        priorOver = null;
         e.originalEvent.dataTransfer.clearData();
+        $('[taw-entry-drop-zone]').removeClass('now-dragging');
     });
 }
 
@@ -41,9 +39,6 @@ function linkDrag(scope, el, attrs) {
 function linkDrop(scope, el, attrs) {
     var ngel = angular.element(el);
     ngel.addClass('drop-zone');
-
-    var thisIndex = attrs.index;
-
 
     el.bind("dragover", function(eve) {
         var e = eve.originalEvent;
@@ -57,20 +52,11 @@ function linkDrop(scope, el, attrs) {
     });
 
     el.bind("dragenter", function(eve) {
-        var e = eve.originalEvent;
-        var dt = e.dataTransfer;
-        if( thisIndex != priorOver ) {
-            priorOver = thisIndex;
-            var i = dt.getData("text/plain");
-            if( i != thisIndex ) {
-                ngel.addClass('dragged-over');
-            }
-        }
+        ngel.addClass('dragged-over');
     });
     
     el.bind("dragleave", function(eve) {
         ngel.removeClass('dragged-over');
-        priorOver = null;
     });
 
     el.bind("drop", function(eve) {
@@ -81,13 +67,13 @@ function linkDrop(scope, el, attrs) {
             e.stopPropagation();
         }
         ngel.removeClass('dragged-over');
-        var oldIndex = dt.getData("text/plain");
-        if( thisIndex != oldIndex ) {
-            scope.onDrop({
-                fromIndex: oldIndex, 
-                toIndex: thisIndex
-            });
-        }
+        var oldIndex = parseInt( dt.getData("text/plain") );
+        var thisIndex = parseInt( $(e.target).attr('data-i-dom') );
+        scope.onDrop({
+            exIDom: oldIndex, 
+            toIDom: thisIndex
+        });
+        
         return false;
     });
 }

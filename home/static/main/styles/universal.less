@@ -429,7 +429,7 @@ ul, ol {
     cursor: move;
 }
 
-.entry-row {
+.taw-entry {
 //    margin-top: 15px;
     margin: 2px 0;
     background-color: rgba(20, 0, 40, 0.15);
@@ -438,7 +438,7 @@ ul, ol {
 }
 
 .workroom-thumbnail {
-    height: 80px;
+    height: 60px;
     width: auto;
     max-width: 100%;
 }
@@ -453,7 +453,11 @@ ul, ol {
 
 .drop-zone {
     border: 2px dashed transparent;
-    height: 50px;
+    .transition(all, 0.2s, ease-out);
+    height: 1px;
+    &.now-dragging {
+        height: 25px;
+    }
 }
 
 .dragged-over {

@@ -20,10 +20,13 @@
   <div class="container">
     <div ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
          ng-init="sak = e.fields.sakuhin.fields">
-      <div taw-entry-drop-zone data-index="[[ e.arrayIndex ]]"
-           data-on-drop="moveEntry(fromIndex, toIndex)">
+      <div taw-entry-drop-zone
+           data-i-dom="[[ $index ]]"
+           data-on-drop="moveEntry(exIDom, toIDom)">
       </div>
-      <div taw-draggable-entry data-index="[[ e.arrayIndex ]]">
+      <div taw-draggable-entry 
+           data-i-dom="[[ $index ]]"
+           data-i-array="[[ e.arrayIndex ]]">
         <div class="row">
           <div class="col-sm-3">
             <div class="text-right">
@@ -32,7 +35,7 @@
                           expandable-image" />
             </div>
           </div> <!-- /column (lefthand, for picture) -->
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <div>
               [[ sak.title ]]
               <span class="text-muted small"
@@ -55,9 +58,26 @@
               </span>
             </div>
           </div> <!-- /column (righthand, for info) -->
+          <div class="col-sm-2">
+            <div class="text-right condensed-line"
+                 style="padding: 10px 10px 0 0;">
+              <strong>[[ $index + 1 ]]</strong><br>
+              <small class="text-muted">of 35</small>
+            </div>
+            {% if not isProduction %}
+              <div class="text-info">
+                [[ e.fields.order_index ]]
+              </div>
+            {% endif %}
+          </div>
         </div> <!-- /.row -->
       </div> <!-- /taw-draggable-entry -->
     </div> <!-- /ng-repeat -->
+    <div taw-entry-drop-zone
+         data-i-dom="[[ pictureEntries.length ]]"
+         data-on-drop="moveEntry(exIDom, toIDom)">
+    </div>
+      
   </div> <!-- /.container -->
 </div> <!-- /PictureListController -->
 
