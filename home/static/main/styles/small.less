@@ -55,6 +55,16 @@
     .dock-shadow( 5px );
 
     line-height: 1.2;
+
+    .setsuhi-name {
+        &[lang='en'] {
+            padding: 0 4px;
+            font-size: 15px;
+        }
+        &[lang='ja'] {
+            font-size: 24px;
+        }
+    }
 }
 
 
@@ -146,6 +156,12 @@
         margin: 12px @boxi-margin;
         //TODO: look into why the menu button is centered
         //      even without this margin.
+
+        #navigation-spill-menu-button {
+            .glyphicon {
+                font-size: 16px;
+            }
+        }
     }
 
     .navitem-on {
