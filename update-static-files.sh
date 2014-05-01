@@ -5,4 +5,4 @@ lessc -x styles.less styles.compiled.css
 
 echo "~(^^)~ Beginning upload of new static files"
 cd ../..
-aws s3 sync . s3://setsuhi-tokyo/static    --acl public-read
+aws s3 sync . s3://setsuhi-tokyo/static   --exclude "node_modules/*"    --acl public-read
