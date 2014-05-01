@@ -22,8 +22,14 @@
       <div class="col-sm-7">
         <div style="margin-top: 30px;">
           <label>
-            <input type="checkbox" ng-model="isDragEnabled">
-            Enable Dragging
+            <input type="checkbox" ng-model="isDragEnabled"
+                   ng-change="dragEnableChanging()">
+            Drag
+          </label>
+          <label style="margin-left: 25px;">
+            <input type="checkbox" ng-model="isRepositEnabled"
+                   ng-change="repositEnableChanging()">
+            Reposit
           </label>
         </div>
       </div>

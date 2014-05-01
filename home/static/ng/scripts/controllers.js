@@ -9,6 +9,20 @@ cmod.controller(
     ['$scope', function($scope) {
 
         $scope.isDragEnabled = false;
+        $scope.isRepositEnabled = false;
+
+        $scope.dragEnableChanging = function() {
+            // If we just turned on dragging. . .
+            if( $scope.isDragEnabled ) {
+                $scope.isRepositEnabled = false;
+            }
+        };
+        $scope.repositEnableChanging = function() {
+            if( $scope.isRepositEnabled ) {
+                $scope.isDragEnabled = false;
+            }
+        };
+
 
         $scope.pictureEntries = ngData_pictureEntries;
         var entries = $scope.pictureEntries;
