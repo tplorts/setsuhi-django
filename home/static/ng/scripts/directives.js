@@ -15,8 +15,6 @@ dmod.directive('appVersion', ['version', function(version) {
 
 function linkDrag(scope, el, attrs) {
     var ngel = angular.element(el);
-    ngel.attr("draggable", "true");
-    ngel.addClass('taw-entry');
 
     el.bind("dragstart", function(eve) {
         var e = eve.originalEvent;
@@ -25,13 +23,11 @@ function linkDrag(scope, el, attrs) {
         dt.effectAllowed = 'move';
         var thisIndex = $(e.target).attr('data-i-dom');
         dt.setData("text/plain", thisIndex);
-        $('[taw-entry-drop-zone]').addClass('now-dragging');
     });
 
     el.bind("dragend", function(e) {
         ngel.removeClass('dragged-from');
         e.originalEvent.dataTransfer.clearData();
-        $('[taw-entry-drop-zone]').removeClass('now-dragging');
     });
 }
 
@@ -79,7 +75,7 @@ function linkDrop(scope, el, attrs) {
 }
 
 
-dmod.directive('tawDraggableEntry', function() {
+dmod.directive('tawEntryDraggable', function() {
     return {
         restrict: 'A',
         link: linkDrag

@@ -422,7 +422,7 @@ ul, ol {
 // WORKROOM STYLES
 
 /* Prevent the text contents of draggable elements from being selectable. */
-[draggable] {
+[draggable='true'] {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
@@ -434,11 +434,7 @@ ul, ol {
 }
 
 .taw-entry {
-//    margin-top: 15px;
-    margin: 2px 0;
-    background-color: rgba(20, 0, 40, 0.15);
-
-    .transition( all, 0.2s, ease-out );
+    background-color: rgba(0, 100, 100, 0.25);
 }
 
 .workroom-thumbnail {
@@ -456,14 +452,17 @@ ul, ol {
 }
 
 .drop-zone {
-    border: 2px dashed transparent;
+    height: 0px;
     .transition(all, 0.2s, ease-out);
-    height: 1px;
-    &.now-dragging {
-        height: 25px;
-    }
+    border: 2px dashed transparent;
 }
 
-.dragged-over {
-    border-color: orange;
+.drag-enabled {
+    .drop-zone {
+        height: 30px;
+        
+        &.dragged-over {
+            border-color: orange;
+        }
+    }        
 }

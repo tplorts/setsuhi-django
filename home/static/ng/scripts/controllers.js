@@ -7,6 +7,9 @@ var cmod = angular.module('workroomApp.controllers', []);
 cmod.controller(
     'PictureListController', 
     ['$scope', function($scope) {
+
+        $scope.isDragEnabled = false;
+
         $scope.pictureEntries = ngData_pictureEntries;
         var entries = $scope.pictureEntries;
         var qEntries = entries.length;
@@ -63,5 +66,6 @@ cmod.controller(
             });
 
         }; // end: moveEntry()
+
     }] // end: controller function
 ); // end: PictureListController
