@@ -12,14 +12,20 @@ cmod.controller(
         $scope.isRepositEnabled = false;
 
         $scope.dragEnableChanging = function() {
+            var domEntries = $('[taw-entry-draggable]');
             // If we just turned on dragging. . .
             if( $scope.isDragEnabled ) {
                 $scope.isRepositEnabled = false;
+                domEntries.attr('draggable','draggable');
+            } else {
+                domEntries.removeAttr('draggable');
             }
         };
         $scope.repositEnableChanging = function() {
             if( $scope.isRepositEnabled ) {
                 $scope.isDragEnabled = false;
+                var domEntries = $('[taw-entry-draggable]');
+                domEntries.removeAttr('draggable');
             }
         };
 
@@ -29,6 +35,7 @@ cmod.controller(
         $scope.beginReposit = function( iDom ) {
             $scope.pendingRepositee = parseInt(iDom);
             $scope.isRepositPending = true;
+
             var e = $('.taw-entry')[parseInt(iDom)];
             $(e).addClass('dragged-from');
         }
