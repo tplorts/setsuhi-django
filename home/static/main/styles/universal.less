@@ -421,8 +421,22 @@ ul, ol {
 //==================================================================
 // WORKROOM STYLES
 
+.workroom-title {
+    color: @setsuhi-murasaki;
+    text-shadow: rgba(45, 0, 60, 0.3) -2px 2px 0;
+}
+
+.clickable {
+    cursor: pointer;
+    input[type='checkbox'] {
+        cursor: pointer;
+    }
+}
+
 /* Prevent the text contents of draggable elements from being selectable. */
-[draggable='true'] {
+[draggable='draggable'],
+[draggable='true'],
+[draggable] {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
@@ -434,11 +448,18 @@ ul, ol {
 }
 
 .taw-entry {
-    background-color: rgba(0, 100, 100, 0.25);
+    background-color: rgba(60, 0, 0, 0.1);
+    border: 1px solid rgba(150, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+@taw-row-height: 60px;
+.entry-row {
+    height: @taw-row-height;
 }
 
 .workroom-thumbnail {
-    height: 60px;
+    height: @taw-row-height;
     width: auto;
     max-width: 100%;
 }
@@ -449,6 +470,7 @@ ul, ol {
 
 .dragged-from {
     opacity: 0.5;
+    border-style: dotted;
 }
 
 .drop-zone {
@@ -457,7 +479,7 @@ ul, ol {
     border: 2px dashed transparent;
 }
 
-.drag-enabled {
+.reposit, .drag { &-enabled {
     .drop-zone {
         height: 30px;
         
@@ -465,4 +487,28 @@ ul, ol {
             border-color: orange;
         }
     }        
+}}
+
+.pickup-button {
+    height: 100%;
+    width: 100%;
+    max-width: 88px;
+}
+
+.reposit-button {
+    max-height: 100%;
+    width: 20%;
+    min-width: 150px;
+    max-width: 300px;
+
+    &[disabled='disabled'],
+    &[disabled='true'],
+    &[disabled] {
+        opacity: 0.2;
+    }
+}
+
+.reposit-button-wrapper {
+    max-height: 100%;
+    width: 100%;
 }

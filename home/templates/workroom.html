@@ -16,17 +16,17 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-sm-5">
-        <h1>The Workroom</h1>
+      <div class="col-sm-6">
+        <h1 class="workroom-title text-upper bold">The Workroom</h1>
       </div>
-      <div class="col-sm-7">
+      <div class="col-sm-6">
         <div style="margin-top: 30px;">
-          <label>
+          <label class="clickable">
             <input type="checkbox" ng-model="isDragEnabled"
                    ng-change="dragEnableChanging()">
             Drag
           </label>
-          <label style="margin-left: 25px;">
+          <label class="clickable" style="margin-left: 25px;">
             <input type="checkbox" ng-model="isRepositEnabled"
                    ng-change="repositEnableChanging()">
             Reposit
@@ -36,27 +36,46 @@
     </div> <!-- /.row -->
 
     <div class="taw-entry-list
-                [[ isDragEnabled ? 'drag-enabled' : '' ]]">
+                [[ isDragEnabled ? 'drag-enabled' : '' ]]
+                [[ isRepositEnabled ? 'reposit-enabled':'' ]]">
       <div ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
            ng-init="sak = e.fields.sakuhin.fields">
         <div taw-entry-drop-zone
              data-i-dom="[[ $index ]]"
              data-on-drop="moveEntry(exIDom, toIDom)">
+          <span class="reposit-button-wrapper
+                       [[ isRepositEnabled ? 'show':'hide' ]]">
+            <button class="reposit-button center-block"
+                    ng-disabled=" !isRepositPending "
+                    ng-click="applyReposit( [[pendingRepositee]], [[$index]] )">
+              Put here
+            </button>
+          </span>
         </div>
-        <div taw-entry-draggable taw-entry-movable
-             class="taw-entry"
+        <div taw-entry-draggable class="taw-entry"
              draggable="[[ isDragEnabled ]]"
              data-i-dom="[[ $index ]]"
              data-i-array="[[ e.arrayIndex ]]">
-          <div class="row">
-            <div class="col-sm-3">
+          <div class="row entry-row">
+            <div class="col-sm-2 full-height">
+              <div class="full-height
+                          [[ isRepositEnabled ? 'show':'hide' ]]"
+                   style="padding: 8px;">
+                <button class="pickup-button"
+                        ng-disabled=" !isRepositEnabled || isRepositPending "
+                        ng-click="beginReposit( [[$index]] )">
+                  Move
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-2">
               <div class="text-right">
                 <img ng-src="[[ sak.thumb_image_url ]]" 
                      class="workroom-thumbnail
                             expandable-image" />
               </div>
             </div> <!-- /column (lefthand, for picture) -->
-            <div class="col-sm-7">
+            <div class="col-sm-6">
               <div>
                 [[ sak.title ]]
                 <span class="text-muted small"
@@ -80,9 +99,9 @@
               </div>
             </div> <!-- /column (righthand, for info) -->
             <div class="col-sm-2">
-              <div class="text-right condensed-line"
+              <div class="pull-right condensed-line"
                    style="padding: 10px 10px 0 0;">
-                <strong>[[ $index + 1 ]]</strong><br>
+                <strong class="large">[[ $index + 1 ]]</strong><br>
                 <small class="text-muted">of 35</small>
               </div>
               {% if not isProduction %}

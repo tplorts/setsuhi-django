@@ -13,6 +13,8 @@ dmod.directive('appVersion', ['version', function(version) {
 }]);
 
 
+
+
 function linkDrag(scope, el, attrs) {
     var ngel = angular.element(el);
 

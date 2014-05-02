@@ -23,6 +23,24 @@ cmod.controller(
             }
         };
 
+        $scope.isRepositPending = false;
+        $scope.pendingRepositee = null;
+
+        $scope.beginReposit = function( iDom ) {
+            $scope.pendingRepositee = parseInt(iDom);
+            $scope.isRepositPending = true;
+            var e = $('.taw-entry')[parseInt(iDom)];
+            $(e).addClass('dragged-from');
+        }
+
+        $scope.applyReposit = function( exIDom, toIDom ) {
+            $scope.moveEntry( exIDom, toIDom );
+
+            $scope.pendingRepositee = null;
+            $scope.isRepositPending = false;
+
+            $('.dragged-from').removeClass('dragged-from');
+        };
 
         $scope.pictureEntries = ngData_pictureEntries;
         var entries = $scope.pictureEntries;
@@ -74,10 +92,21 @@ cmod.controller(
             // Locate the data of the entry to move
             var iArrayMove = iArrayAt( exIDom );
 
-            // Apply this move operation while Angular is watching
-            $scope.$apply(function() {
+            // Apply this move operation
+            var applyReordering = function() {
                 entries[iArrayMove].fields.order_index = newOrder;
-            });
+            };
+
+            // In the drag case, I call the moveEntry function from
+            // a directive's event handler, which doesn't seem to
+            // encase the execution in an '$apply()'; whereas in the
+            // case of a reposit, I call the moveEntry function from
+            // an 'ng-click', which does seem to use '$apply()'.
+            if( $scope.isRepositEnabled ) {
+                applyReordering();
+            } else {
+                $scope.$apply( applyReordering );
+            }
 
         }; // end: moveEntry()
 
