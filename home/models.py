@@ -25,7 +25,7 @@ class SakuhinGroup( models.Model ):
     name = models.CharField( max_length=100 )
     title = models.CharField( max_length=100 )
     is_shown = models.BooleanField( default=False )
-    order_index = models.IntegerField( default=0 )
+    order_index = models.FloatField( default=0 )
 
     def __unicode__( self ):
         return self.name
@@ -74,7 +74,7 @@ class Sakuhin( models.Model ):
 class SakuhinEntry( models.Model ):
     sakuhin = models.ForeignKey( Sakuhin )
     group = models.ForeignKey( SakuhinGroup )
-    order_index = models.IntegerField( default=0 )
+    order_index = models.FloatField( default=0 )
 
     class Meta:
         unique_together = ("sakuhin", "group",)
