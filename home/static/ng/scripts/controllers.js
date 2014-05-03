@@ -16,6 +16,7 @@ cmod.controller(
             // If we just turned on dragging. . .
             if( $scope.isDragEnabled ) {
                 $scope.isRepositEnabled = false;
+                $scope.endReposit();
                 domEntries.attr('draggable','draggable');
             } else {
                 domEntries.removeAttr('draggable');
@@ -26,6 +27,8 @@ cmod.controller(
                 $scope.isDragEnabled = false;
                 var domEntries = $('[taw-entry-draggable]');
                 domEntries.removeAttr('draggable');
+            } else {
+                $scope.endReposit();
             }
         };
 
