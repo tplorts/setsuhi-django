@@ -12,34 +12,38 @@ var pressTimer = null;
 var signature = $("#signature");
 var didLongPress = false;
 
-signature.click( function() {
+var longPressed = function() {
+    didLongPress = true;
+    signature.addClass("secret-activated");
+};
+
+var onGlobalUp = function( event ) {
+    signature.removeClass("secret-activated");
+};
+var onSigDown = function( event ) {
+    pressTimer = window.setTimeout(longPressed, 2000);
+    didLongPress = false;
+    return false; 
+};
+var onSigUp = function( event ) {
+    clearTimeout(pressTimer);
+    pressTimer = null;
+    return false;
+};
+var onSigClick = function( event ) {
     var toGo = !didLongPress;
     if( didLongPress ) {
         window.location.href = '/workroom/';
     }
     didLongPress = false;
     return toGo;
-});
-
-var longPressed = function() {
-    didLongPress = true;
-    signature.addClass("secret-activated");
 };
 
-signature.mouseup(function(){
-    clearTimeout(pressTimer);
-    pressTimer = null;
-    return false;
-}).mousedown(function(){
-    pressTimer = window.setTimeout(longPressed, 2000);
-    didLongPress = false;
-    return false; 
-});
+signature.on('mousedown touchstart', onSigDown);
+signature.on('mouseup touchend', onSigUp);
+signature.on('click', onSigClick);
+$(document).on('mouseup touchend', onGlobalUp);
 
-$(document).mouseup(function() {
-    if( signature.hasClass("secret-activated") )
-        signature.removeClass("secret-activated");
-});
 
 //=================================================================
 //                            \\\\|////
