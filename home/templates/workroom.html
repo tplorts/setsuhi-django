@@ -70,7 +70,7 @@
              data-i-array="[[ e.arrayIndex ]]">
           <div class="row entry-row">
 
-            <div class="col-sm-2 full-height">
+            <div class="col-xs-4 col-sm-2 full-height">
               <div class="full-height
                           [[ isRepositEnabled ? 'show':'hide' ]]"
                    style="padding: 8px;">
@@ -81,14 +81,15 @@
                 </button>
               </div>
             </div> <!-- /column: pickup button -->
-            <div class="col-sm-2">
-              <div class="text-right">
+            <div class="col-xs-4 col-sm-2">
+              <div>
                 <img ng-src="[[ sak.thumb_image_url ]]" 
                      class="workroom-thumbnail
-                            expandable-image" />
+                            expandable-image
+                            center-block" />
               </div>
             </div> <!-- /column: picture -->
-            <div class="col-sm-6">
+            <div class="hidden-xs col-sm-6">
               <div>
                 [[ sak.title ]]
                 <span class="text-muted small"
@@ -111,7 +112,7 @@
                 </span>
               </div>
             </div> <!-- /column: info -->
-            <div class="col-sm-2">
+            <div class="col-xs-4 col-sm-2">
               <div class="pull-right condensed-line"
                    style="padding: 10px 10px 0 0;">
                 <strong class="large">[[ $index + 1 ]]</strong><br>
