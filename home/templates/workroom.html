@@ -37,7 +37,15 @@
 
     <div class="taw-entry-list
                 [[ isDragEnabled ? 'drag-enabled' : '' ]]
-                [[ isRepositEnabled ? 'reposit-enabled':'' ]]">
+                [[ isRepositEnabled ? 'reposit-enabled':'' ]]
+                [[ isRepositPending ? 'reposit-pending':'' ]]">
+      <div class="reposit-cancel-wrapper">
+        <button class="reposit-cancel-button
+                       full-width text-left"
+                ng-click="endReposit()">
+          Cancel<br>the<br>move
+        </button>
+      </div>
       <div ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
            ng-init="sak = e.fields.sakuhin.fields">
         <div taw-entry-drop-zone

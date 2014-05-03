@@ -37,16 +37,18 @@ cmod.controller(
             $scope.isRepositPending = true;
 
             var e = $('.taw-entry')[parseInt(iDom)];
-            $(e).addClass('dragged-from');
+            $(e).addClass('pending-entry');
         }
+
+        $scope.endReposit = function() {
+            $scope.pendingRepositee = null;
+            $scope.isRepositPending = false;
+            $('.pending-entry').removeClass('pending-entry');
+        };            
 
         $scope.applyReposit = function( exIDom, toIDom ) {
             $scope.moveEntry( exIDom, toIDom );
-
-            $scope.pendingRepositee = null;
-            $scope.isRepositPending = false;
-
-            $('.dragged-from').removeClass('dragged-from');
+            $scope.endReposit();
         };
 
         $scope.pictureEntries = ngData_pictureEntries;

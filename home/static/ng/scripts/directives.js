@@ -21,14 +21,14 @@ function linkDrag(scope, el, attrs) {
     el.bind("dragstart", function(eve) {
         var e = eve.originalEvent;
         var dt = e.dataTransfer;
-        ngel.addClass('dragged-from');
+        ngel.addClass('pending-entry');
         dt.effectAllowed = 'move';
         var thisIndex = $(e.target).attr('data-i-dom');
         dt.setData("text/plain", thisIndex);
     });
 
     el.bind("dragend", function(e) {
-        ngel.removeClass('dragged-from');
+        ngel.removeClass('pending-entry');
         e.originalEvent.dataTransfer.clearData();
     });
 }

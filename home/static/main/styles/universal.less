@@ -451,6 +451,7 @@ ul, ol {
     background-color: rgba(60, 0, 0, 0.1);
     border: 1px solid rgba(150, 0, 0, 0.5);
     border-radius: 4px;
+    .transition(all, 0.2s, ease-out);
 }
 
 @taw-row-height: 60px;
@@ -468,7 +469,7 @@ ul, ol {
     cursor: pointer;
 }
 
-.dragged-from {
+.pending-entry {
     opacity: 0.5;
     border-style: dotted;
 }
@@ -486,7 +487,7 @@ ul, ol {
         &.dragged-over {
             border-color: orange;
         }
-    }        
+    }
 }}
 
 .pickup-button {
@@ -504,11 +505,38 @@ ul, ol {
     &[disabled='disabled'],
     &[disabled='true'],
     &[disabled] {
-        opacity: 0.2;
+        opacity: 0.5;
     }
 }
 
 .reposit-button-wrapper {
     max-height: 100%;
     width: 100%;
+}
+
+@cancel-width: 100px;
+.reposit-cancel-wrapper {
+    position: fixed;
+    left: -@cancel-width;
+    top: 30%;
+    width: @cancel-width;
+    padding: 25px 20px 25px 15px;
+    z-index: 1;
+    background-color: @setsuhi-murasaki;
+    border-radius: 45px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid grey;
+    .transition( all, 0.2s, ease-out );
+}
+
+.reposit-pending {
+    .reposit-cancel-wrapper {
+        left: -2px;
+    }
+}
+
+
+.reposit-cancel-button {
+
 }
