@@ -78,11 +78,11 @@ cmod.controller(
                 return parseInt(domEntry.attr('data-i-array'));
             };
 
-            // Return the order value for the entry identified
+            // Return the rank value for the entry identified
             // by its present DOM position.  If domIndex is
             // out of bounds, return 2 more in the respective
             // direction.
-            var orderValueAt = function( domIndex ) {
+            var rankAt = function( domIndex ) {
                 var more = 0;
                 if( domIndex < 0 ) {
                     more = -2;
@@ -92,21 +92,21 @@ cmod.controller(
                     domIndex = qEntries - 1;
                 }
                 var iA = iArrayAt( domIndex );
-                return entries[iA].fields.order_index + more;
+                return entries[iA].fields.rank + more;
             };
 
-            // Put the new order value between the two
+            // Put the new rank value between the two
             // new neighbors of the moving element.
-            var orderAfter = orderValueAt( toIDom );
-            var orderBefore = orderValueAt( toIDom - 1 );
-            var newOrder = (orderAfter + orderBefore) / 2;
+            var rankAfter = rankAt( toIDom );
+            var rankBefore = rankAt( toIDom - 1 );
+            var newRank = (rankAfter + rankBefore) / 2;
 
             // Locate the data of the entry to move
             var iArrayMove = iArrayAt( exIDom );
 
             // Apply this move operation
-            var applyReordering = function() {
-                entries[iArrayMove].fields.order_index = newOrder;
+            var applyReranking = function() {
+                entries[iArrayMove].fields.rank = newRank;
             };
 
             // In the drag case, I call the moveEntry function from
@@ -115,9 +115,9 @@ cmod.controller(
             // case of a reposit, I call the moveEntry function from
             // an 'ng-click', which does seem to use '$apply()'.
             if( $scope.isRepositEnabled ) {
-                applyReordering();
+                applyReranking();
             } else {
-                $scope.$apply( applyReordering );
+                $scope.$apply( applyReranking );
             }
 
         }; // end: moveEntry()

@@ -73,7 +73,7 @@ def sakuhin_galleria_data( *args, **kwargs ):
         g = models.SakuhinGroup.objects.get( name=group_name )
     except Exception:
         return "[]"
-    entries = models.SakuhinEntry.objects.filter( group=g ).order_by("order_index")
+    entries = models.SakuhinEntry.objects.filter( group=g ).order_by("rank")
     gitems = [GalleriaImage(e.sakuhin) for e in entries]
     gJSON = json.dumps( gitems, cls=GalleriaEncoder )
     return gJSON

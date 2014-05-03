@@ -49,7 +49,7 @@
       </div> <!-- /.reposit-cancel-wrapper -->
 
       <div ng-repeat="e in pictureEntries 
-                      | orderBy:'fields.order_index'"
+                      | orderBy:'fields.rank'"
            ng-init="sak = e.fields.sakuhin.fields">
 
         <div taw-entry-drop-zone
@@ -120,7 +120,7 @@
               </div>
               {% if not isProduction %}
               <div class="text-info">
-                [[ e.fields.order_index ]]
+                [[ e.fields.rank ]]
               </div>
               {% endif %}
             </div> <!-- /column: index number -->
