@@ -39,15 +39,19 @@
                 [[ isDragEnabled ? 'drag-enabled' : '' ]]
                 [[ isRepositEnabled ? 'reposit-enabled':'' ]]
                 [[ isRepositPending ? 'reposit-pending':'' ]]">
+
       <div class="reposit-cancel-wrapper">
         <button class="reposit-cancel-button
                        full-width text-left"
                 ng-click="endReposit()">
           Cancel<br>the<br>move
         </button>
-      </div>
-      <div ng-repeat="e in pictureEntries | orderBy:'fields.order_index'"
+      </div> <!-- /.reposit-cancel-wrapper -->
+
+      <div ng-repeat="e in pictureEntries 
+                      | orderBy:'fields.order_index'"
            ng-init="sak = e.fields.sakuhin.fields">
+
         <div taw-entry-drop-zone
              data-i-dom="[[ $index ]]"
              data-on-drop="moveEntry(exIDom, toIDom)">
@@ -59,11 +63,13 @@
               Put here
             </button>
           </span>
-        </div>
+        </div> <!-- /taw-entry-drop-zone -->
+
         <div taw-entry-draggable class="taw-entry"
              data-i-dom="[[ $index ]]"
              data-i-array="[[ e.arrayIndex ]]">
           <div class="row entry-row">
+
             <div class="col-sm-2 full-height">
               <div class="full-height
                           [[ isRepositEnabled ? 'show':'hide' ]]"
@@ -74,14 +80,14 @@
                   Move
                 </button>
               </div>
-            </div>
+            </div> <!-- /column: pickup button -->
             <div class="col-sm-2">
               <div class="text-right">
                 <img ng-src="[[ sak.thumb_image_url ]]" 
                      class="workroom-thumbnail
                             expandable-image" />
               </div>
-            </div> <!-- /column (lefthand, for picture) -->
+            </div> <!-- /column: picture -->
             <div class="col-sm-6">
               <div>
                 [[ sak.title ]]
@@ -104,7 +110,7 @@
                   no lengthy description
                 </span>
               </div>
-            </div> <!-- /column (righthand, for info) -->
+            </div> <!-- /column: info -->
             <div class="col-sm-2">
               <div class="pull-right condensed-line"
                    style="padding: 10px 10px 0 0;">
@@ -116,10 +122,12 @@
                 [[ e.fields.order_index ]]
               </div>
               {% endif %}
-            </div>
-          </div> <!-- /.row -->
-        </div> <!-- /taw-draggable-entry -->
+            </div> <!-- /column: index number -->
+
+          </div> <!-- /.row.entry-row -->
+        </div> <!-- /taw-entry -->
       </div> <!-- /ng-repeat -->
+
       <div taw-entry-drop-zone
            data-i-dom="[[ pictureEntries.length ]]"
            data-on-drop="moveEntry(exIDom, toIDom)">
