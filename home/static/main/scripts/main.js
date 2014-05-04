@@ -9,44 +9,13 @@ function deepCopy( obj ) {
 
 
 //=================================================================
-// LONG PRESS DETECTION
-// For opening a login menu without an explicit login button.
 
-var pressTimer = null;
 var signature = $("#signature");
-var didLongPress = false;
-
-var longPressed = function() {
-    didLongPress = true;
-    signature.addClass("secret-activated");
-};
-
-var onGlobalUp = function( event ) {
-    signature.removeClass("secret-activated");
-};
-var onSigDown = function( event ) {
-    pressTimer = window.setTimeout(longPressed, 2000);
-    didLongPress = false;
-    return false; 
-};
-var onSigUp = function( event ) {
-    clearTimeout(pressTimer);
-    pressTimer = null;
+signature.dblclick( function(event) {
+    signature.addClass('secret-activated');
+    window.location.href = '/workroom/';
     return false;
-};
-var onSigClick = function( event ) {
-    var toGo = !didLongPress;
-    if( didLongPress ) {
-        window.location.href = '/workroom/';
-    }
-    didLongPress = false;
-    return toGo;
-};
-
-signature.on('mousedown touchstart', onSigDown);
-signature.on('mouseup touchend', onSigUp);
-signature.on('click', onSigClick);
-$(document).on('mouseup touchend', onGlobalUp);
+});
 
 
 //=================================================================

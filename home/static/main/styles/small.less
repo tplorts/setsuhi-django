@@ -69,26 +69,13 @@
 
 
 #signature {
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-
     width: 100%;
     padding: 20px;
-    position: relative;
     background: inherit;
-    z-index: 2;
 
-    .transition( all, 0.3s, linear );
+    .transition( all, 0.8s, linear );
     &.secret-activated {
         .transform( rotateX(180deg) rotateY(180deg) );
-    }
-    
-    #signature-image {
-        width: 100%;
-        .transition( all, 0.05s, linear );
-        &:hover {
-            opacity: 0.5;
-        }
     }
 }
 
