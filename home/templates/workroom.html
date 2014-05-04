@@ -44,9 +44,21 @@
         <button class="reposit-cancel-button
                        full-width text-left"
                 ng-click="endReposit()">
-          Cancel the move
+          Cancel move
         </button>
       </div> <!-- /.reposit-cancel-wrapper -->
+
+      <div class="save-wrapper">
+        <button class="save-button"
+                ng-click="saveChanges()">
+          Save changes
+        </button>
+      </div> <!-- /.save-wrapper -->
+
+      <div class="message-board">
+        <div class="message">
+        </div>
+      </div>
 
       <div ng-repeat="e in pictureEntries 
                       | orderBy:'fields.rank'"

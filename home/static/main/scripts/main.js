@@ -3,6 +3,10 @@
 s3_url = "http://s3-ap-northeast-1.amazonaws.com/setsuhi-tokyo/";
 
 
+function deepCopy( obj ) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
 
 //=================================================================
 // LONG PRESS DETECTION

@@ -8,8 +8,23 @@ cmod.controller(
     'PictureListController', 
     ['$scope', function($scope) {
 
+        $scope.pictureEntries = ngData_pictureEntries;
+        $scope.originalEntries = deepCopy( $scope.pictureEntries );
+
+        var entries = $scope.pictureEntries;
+        var qEntries = entries.length;
+
         $scope.isDragEnabled = false;
         $scope.isRepositEnabled = false;
+
+        $scope.isRepositPending = false;
+        $scope.pendingRepositee = null;
+
+        // Give each entry its index for access in
+        // this array.  Used later in DOM.
+        for( var i=0; i < qEntries; i++ )
+            entries[i]['arrayIndex'] = i;
+
 
         $scope.dragEnableChanging = function() {
             var domEntries = $('[taw-entry-draggable]');
@@ -22,6 +37,7 @@ cmod.controller(
                 domEntries.removeAttr('draggable');
             }
         };
+
         $scope.repositEnableChanging = function() {
             if( $scope.isRepositEnabled ) {
                 $scope.isDragEnabled = false;
@@ -32,8 +48,6 @@ cmod.controller(
             }
         };
 
-        $scope.isRepositPending = false;
-        $scope.pendingRepositee = null;
 
         $scope.beginReposit = function( iDom ) {
             $scope.pendingRepositee = parseInt(iDom);
@@ -54,12 +68,7 @@ cmod.controller(
             $scope.endReposit();
         };
 
-        $scope.pictureEntries = ngData_pictureEntries;
-        var entries = $scope.pictureEntries;
-        var qEntries = entries.length;
 
-        for( var i=0; i < qEntries; i++ )
-            entries[i]['arrayIndex'] = i;
 
         // exIDom: the DOM index of the element to move
         // toIDom: the DOM index to which the element is moving
@@ -121,6 +130,39 @@ cmod.controller(
             }
 
         }; // end: moveEntry()
+
+        $scope.saveChanges = function() {
+
+            // Before committing to an update, check whether
+            // any modifications exist.
+            var changedEntries = [];
+            for( var i=0; i<qEntries; i++ ) {
+                var o1 = entries[i];
+                var o2 = $scope.originalEntries[i];
+                var s1 = JSON.stringify(o1.fields);
+                var s2 = JSON.stringify(o2.fields);
+                if( s1 != s2 ) {
+                    changedEntries.push( o1 );
+                }
+            }
+
+            if( changedEntries.length == 0 ) {
+                $scope.flashMessage('There are no changes.');
+            } else {
+                var entriesJSON = JSON.stringify( changedEntries );
+                //TODO: send to backend
+            }
+        };
+
+        $scope.flashMessage = function( msg ) {
+            var board = $('.message-board');
+            var hideMessage = function() {
+                board.removeClass('showing');
+            };
+            board.find('.message').html( msg );
+            board.addClass('showing');
+            setTimeout( hideMessage, 2500 );
+        }
 
     }] // end: controller function
 ); // end: PictureListController

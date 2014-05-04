@@ -516,7 +516,7 @@ ul, ol {
 
 .reposit-cancel-wrapper {
     position: fixed;
-    left: -120px;
+    left: -160px;
     top: 30%;
     padding: 25px 20px 25px 15px;
     z-index: 1;
@@ -525,16 +525,62 @@ ul, ol {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border: 1px solid grey;
+    border-left: none;
     .transition( all, 0.2s, ease-out );
 }
 
 .reposit-enabled.reposit-pending {
     .reposit-cancel-wrapper {
-        left: -2px;
+        left: 0;
     }
 }
 
 
 .reposit-cancel-button {
-    max-width: 4em;
+}
+
+.save-wrapper {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: darkgreen;
+    border: 1px solid grey;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    border-top-left-radius: 45px;
+    padding: 25px 15px 15px 25px;
+}
+
+.taw-entry-list {
+    margin-bottom: 100px;
+}
+
+.message-board {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    
+    .transition( all, 0.4s, ease-in );
+    &.showing {
+        bottom: 0;
+    }
+
+    .message {
+        background-color: black;
+        color: white;
+        border: 1px solid @setsuhi-murasaki;
+        border-bottom: none;
+        border-radius: 0;
+        border-top-left-radius: 45px;
+        border-top-right-radius: 45px;
+        padding: 8px 30px;
+        display: block;
+        margin: auto;
+        width: 250px;
+        text-align: center;
+    }
 }
