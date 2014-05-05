@@ -10,8 +10,8 @@ function deepCopy( obj ) {
 
 //=================================================================
 
-var signature = $("#signature");
-signature.dblclick( function(event) {
+var signature = $(".signature");
+signature.on('dblclick doubletap', function(event, touch) {
     signature.addClass('secret-activated');
     window.location.href = '/workroom/';
     return false;

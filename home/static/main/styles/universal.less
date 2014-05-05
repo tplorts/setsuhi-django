@@ -153,6 +153,18 @@ ul, ol {
 }
 
 
+.signature {
+    background: inherit;
+    height: 50px;
+    padding: 8px;
+    display: inline-block;
+
+    .transition( all, 0.8s, linear );
+    &.secret-activated {
+        .transform( rotateX(180deg) rotateY(180deg) );
+    }
+}
+
 
 // I don't know why bootstrap didn't make these
 // full width in the first place.
@@ -239,8 +251,8 @@ ul, ol {
     }
 
     .ml-mobile-widget {
-        position: absolute;
-        right: 74px;
+        display: inline-block;
+        margin-right: 15px;
         font-size: 12px;
         margin-top: 5px;
 

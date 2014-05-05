@@ -29,7 +29,11 @@
           {% endmlpart %}
           {% endmultilingual %}
         </a>
-        <div class="ml-widget ml-mobile-widget">
+        <div class="signature">
+          <img class="fit-image"
+               src="{% s3_url 'static/media/images/signature/white-t.png' %}" />
+        </div>
+        <div class="ml-widget ml-mobile-widget pull-right">
           <a class="ml-language" lang="ja">
             <div>
               <div>
@@ -65,7 +69,7 @@
 
   <div id="left-dock" class="hidden-xs">
 
-    <div id="signature">
+    <div class="signature">
       <img class="full-width-image"
            src="{% s3_url 'static/media/images/signature/white-t.png' %}" />
     </div>
