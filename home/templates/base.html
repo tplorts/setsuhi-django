@@ -67,58 +67,38 @@
 
     
     {% block default_prescripts %}
-      <script type="text/javascript">
-        isProduction = {{ isProduction|yesno:"true,false" }};
+      <script>
+        var isProduction = {{ isProduction|yesno:"true,false" }};
       </script>
 
-      <script type="text/javascript"
-              src="{% static 'third/scripts/jquery-1.11.0.min.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'third/scripts/bootstrap.min.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'third/scripts/jquery.cookie.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'third/scripts/jquery.slides.min.js' %}">
-      </script>
+      <script src="{% static 'third/scripts/jquery-1.11.0.min.js' %}"></script>
+      <script src="{% static 'third/scripts/bootstrap.min.js' %}"></script>
+      <script src="{% static 'third/scripts/jquery.cookie.js' %}"></script>
+      <script src="{% static 'third/scripts/jquery.slides.min.js' %}"></script>
+      <script src="{% static 'galleria/galleria-1.3.5.min.js' %}"></script>
 
       {%comment%}
-      <script type="text/javascript"
-              src="{% static 'third/scripts/summernote.min.js' %}">
-      </script>
-      {%endcomment%}
-
-      <script type="text/javascript"
-              src="{% static 'galleria/galleria-1.3.5.min.js' %}">
-      </script>
-
-      {%comment%}
-      <script type="text/javascript"
-              src="{%static 'third/scripts/modernizr-2.7.1.min.js'%}">
-      </script>
-      <script type="text/javascript"
-              src="{%static 'chosen_v1.1.0/chosen.jquery.min.js'%}">
-      </script>
+      <script src="{%static 'third/scripts/modernizr-2.7.1.min.js'%}"></script>
+      <script src="{%static 'chosen_v1.1.0/chosen.jquery.min.js'%}"></script>
+      <script src="{% static 'third/scripts/summernote.min.js' %}"></script>
       {%endcomment%}
 
       {% if use_less_stylesheets %}
-      <script>
-        less = {
-            env: "development",
-            async: false,
-            fileAsync: false,
-            poll: 1000,
-            functions: {},
-            dumpLineNumbers: "comments",
-            relativeUrls: false,
-            rootpath: ":/0.0.0.0:5000/"
-        };
-      </script>
-      <script src="{%static 'third/scripts/less-1.7.0.min.js'%}">
-      </script>
+        <script>
+          var less = {
+              env: "development",
+              async: false,
+              fileAsync: false,
+              poll: 1000,
+              functions: {},
+              dumpLineNumbers: "comments",
+              relativeUrls: false,
+              rootpath: ":/0.0.0.0:5000/"
+          };
+        </script>
+        <script src="{%static 'third/scripts/less-1.7.0.min.js'%}"></script>
       {% endif %}
+
     {% endblock default_prescripts %}
 
     {% block prescripts %}{% endblock %}
@@ -142,12 +122,8 @@
     {% endblock thirdparty_postscripts %}
 
     {% block default_postscripts %}
-      <script type="text/javascript"
-              src="{% static 'main/scripts/multilingual.js' %}">
-      </script>
-      <script type="text/javascript"
-              src="{% static 'main/scripts/main.js' %}">
-      </script>
+      <script src="{% static 'main/scripts/multilingual.js' %}"></script>
+      <script src="{% static 'main/scripts/main.js' %}"></script>
     {% endblock default_postscripts %}
 
     
