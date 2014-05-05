@@ -144,7 +144,16 @@
       <div taw-entry-drop-zone
            data-i-dom="[[ pictureEntries.length ]]"
            data-on-drop="moveEntry(exIDom, toIDom)">
-      </div>
+        <span class="reposit-button-wrapper
+                     [[ isRepositEnabled ? 'show':'hide' ]]">
+          <button class="reposit-button center-block"
+                  ng-disabled=" !isRepositPending "
+                  ng-click="applyReposit( [[pendingRepositee]], [[pictureEntries.length]] )">
+            Put here
+          </button>
+        </span>
+      </div> <!-- /taw-entry-drop-zone -->
+
     </div> <!-- /.taw-entry-list -->
   </div> <!-- /.container -->
 </div> <!-- /PictureListController -->
