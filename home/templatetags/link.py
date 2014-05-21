@@ -11,6 +11,11 @@ en_url = "https://www.facebook.com/en.setsuhi.ryona"
 sakaiki_url = "http://sakaiki.modalbeats.com/"
 jiang_url = "http://jiang-xiaoqing.xii.jp/"
 adidas_article = "http://news.adidas.com/GLOBAL/Latest-News/adidas-presents-the-Japanese-federation-kit-for-2014-FIFA-World-Cup-Brazil-/s/006665d3-f880-4b36-b1a1-ee07f37a3805#.UvhZ4j03Srs.link"
+aya_url = "http://ayatakazawa.com/"
+take_url = "http://takegorou.com/"
+yamamoto_bass_url = "http://ameblo.jp/hiroyukiyamamoto/"
+tomo_drums_url = "http://tomohide-kinugasa.com/"
+sara_rector_url = "http://sky.geocities.jp/sara_sp_rector/"
 
 
 # If the display name is in Roman characters, I want the
@@ -35,6 +40,11 @@ english_addresses = {
     "縁 (&ldquo;en&rdquo;)": en_url,
     "article about the jersey": adidas_article,
     "JZ Brat": "http://www.jzbrat.com/",
+    "Aya Takazawa": aya_url,
+    "Takegorou Kobayashi": take_url,
+    "Hiroyuki Yamamoto": yamamoto_bass_url,
+    "Tomohide Hinugasa": tomo_drums_url,
+    "Sara Rector": sara_rector_url,
 };
 japanese_addresses = {
     "大木啓至": yokkun_url,
@@ -50,6 +60,11 @@ japanese_addresses = {
     "縁": en_url,
     "〜en〜縁": en_url,
     "縁~en~": en_url,
+    "高澤綾": aya_url,
+    "小林岳五郎": take_url,
+    "山本裕之": yamamoto_bass_url,
+    "衣笠智英": tomo_drums_url,
+    "サラ・レクター": sara_rector_url,
 };
 
 
