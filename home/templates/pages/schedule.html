@@ -1,5 +1,5 @@
 {% extends "page-base.html" %}
-{% load staticfiles multilingual link email_obfuscator %}
+{% load staticfiles multilingual link email_obfuscator smallcaps %}
 
 
 {%block super_class%} has-background-image {%endblock%}
@@ -8,7 +8,7 @@
 {% block main_content %}
 <div class="container full-width no-padding">
   <div class="tyle-header">
-    <h2>Upcoming Events</h2>
+    <h2>{{ "Upcoming Events"|smallcaps }}</h2>
   </div>
   <div id="upcoming-events" class="tyle-section event-section">
     <div class="tyle">
@@ -122,7 +122,7 @@
   <!------------------------------------------->
 
   <div class="tyle-header">
-    <h2>Recent Events</h2>
+    <h2>{{ "Recent Events"|smallcaps }}</h2>
   </div>
   <div id="recent-events" class="tyle-section event-section">
     <div class="tyle">

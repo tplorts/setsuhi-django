@@ -1,5 +1,5 @@
 {% extends "page-base.html" %}
-{% load staticfiles multilingual photocarousel galleria link s3 %}
+{% load staticfiles multilingual photocarousel galleria link s3 smallcaps %}
 
 
 {# This alone activates the background image and credit #}
@@ -9,9 +9,7 @@
 {% block main_content %}
 <div class="container full-width no-padding">
 
-  <div class="tyle-header">
-    <h1>Upcoming</h1>
-  </div>
+  <h1 class="tyle-header">{{ "Upcoming"|smallcaps }}</h1>
 
   <div class="tyle-section">
     <div class="tyle">
@@ -98,9 +96,7 @@
     </div><!--/.tyle for live-->
   </div><!--/.tyle-section for upcoming-->
 
-  <div class="tyle-header">
-    <h1>Recent</h1>
-  </div>
+  <h1 class="tyle-header">{{ "Recent"|smallcaps }}</h1>
 
   <div class="tyle-section">
 
@@ -173,7 +169,7 @@
         </div>
         <div class="col-sm-5 col-md-8">
           <div class="tyle-text">
-            <h3>{% ml en="&ldquo;ENJIN&rdquo;" ja="「円陣」" %}</h3>
+            <h3>{% ml en="Enjin"|smallcaps ja="円陣" %}</h3>
             {% multilingual %}
               {% mlpart "en" %}
                 <p>

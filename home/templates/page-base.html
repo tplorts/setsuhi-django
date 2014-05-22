@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load staticfiles multilingual link s3 %}
+{% load smallcaps staticfiles multilingual link s3 %}
 
 {% block super_content %}
 
@@ -80,11 +80,11 @@
         書道家 白石雪妃　
       </div>
       <div class="setsuhi-name" lang="en">
-        <div class="serif text-upper">
-          Setsuhi<br>
-          Shiraishi
+        <div class="serif">
+          {{"Setsuhi"|smallcaps}}<br>
+          {{"Shiraishi"|smallcaps}}
         </div>
-        <div class="serif italic text-muted">
+        <div class="serif italic text-muted setsuhi-title">
           Japanese<br>
           Calligraphy<br>
           Artist

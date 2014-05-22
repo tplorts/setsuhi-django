@@ -1,5 +1,5 @@
 {% extends "page-base.html" %}
-{% load staticfiles multilingual link okiphoto %}
+{% load staticfiles multilingual link okiphoto smallcaps %}
 
 
 {%block super_class%} has-background-image {%endblock%}
@@ -9,7 +9,7 @@
 <div class="container full-width no-padding">
 
   <div class="page-title">
-    <h1>{%ml en='About Setsuhi Shiraishi' ja='白石雪妃について'%}</h1>
+    <h1>{%ml en='About Setsuhi Shiraishi'|smallcaps ja='白石雪妃について'%}</h1>
   </div>
 
 
@@ -104,7 +104,7 @@
 
 
   <div class="tyle-header">
-    <h3>{% ml en="Concept" ja="概念"%}</h3>
+    <h3>{% ml en="Concept"|smallcaps ja="概念"%}</h3>
   </div>
 
   <div class="tyle" id="concept" lang="ja">
@@ -137,7 +137,7 @@
 
 
   <div class="tyle-header">
-    <h3>Activities</h3>
+    <h3>{{ "Activities"|smallcaps }}</h3>
   </div>
 
   <div class="tyle" id="activities">

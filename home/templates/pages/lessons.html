@@ -1,5 +1,5 @@
 {% extends "page-base.html" %}
-{% load staticfiles multilingual link %}
+{% load staticfiles multilingual link smallcaps %}
 
 
 {%block super_class%} has-background-image {%endblock%}
@@ -9,11 +9,14 @@
 <div class="container full-width no-padding">
 
   <div class="page-title">
-    <h1>{%ml en='Lessons' ja='教室'%}</h1>
+    <h1>{%ml en='Lessons'|smallcaps ja='教室'%}</h1>
   </div>
   
   <div class="tyle-header">
-    <h3 lang="ja">new <span class="ib">単発コースの<span class="ib">ご案内</span></span></h3>
+    <h3 lang="ja">
+      {{ "New"|smallcaps }}
+      <span class="ib">単発コースの<span class="ib">ご案内</span></span>
+    </h3>
   </div>
 
   <div id="new-lessons" class="tyle" lang="ja">
