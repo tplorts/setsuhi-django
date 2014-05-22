@@ -78,3 +78,67 @@ class SakuhinEntry( models.Model ):
 
     class Meta:
         unique_together = ("sakuhin", "group",)
+
+
+
+################################################################
+
+
+
+class EventCategory( models.Model ):
+    name = models.CharField( max_length=40 )
+
+    # Aside from the enfored requirements, what fields are
+    # generally needed for this type of event?
+    fields_recommended = models.CharField( max_length=200, blank=True )
+    
+    # Anything is not relevant to this type
+    fields_not_applicable = models.CharField( max_length=200, blank=True )
+
+
+
+class EventPrice( models.Model ):
+    # The 'door' price is to be used as the default
+    # if there are no other price categories.
+    door = models.DecimalField( max_digits=12, decimal_places=4 )
+    ahead = models.DecimalField( max_digits=12, decimal_places=4, null=True )
+    student = models.DecimalField( max_digits=12, decimal_places=4, null=True )
+    senior = models.DecimalField( max_digits=12, decimal_places=4, null=True )
+    child = models.DecimalField( max_digits=12, decimal_places=4, null=True )
+
+
+
+class Event( models.Model ):
+    # Verbal descriptions
+    title = models.CharField( max_length=200 )
+    brief = models.CharField( max_length=300, blank=True )
+    lengthy = models.TextField( blank=True )
+    
+    # Temporal information
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    set_times = models.CharField( max_length=300, blank=True )
+
+    # Location
+    place = models.CharField( max_length=200 )
+    place_website = models.URLField( blank=True )
+    address = models.CharField( max_length=300, blank=True )
+    directions = models.TextField( blank=True )
+
+    # Type (category) live, workshop, etc.
+    category = models.ForeignKey( EventCategory )
+
+    # Price
+    price = models.ForeignKey( EventPrice, null=True )
+
+    # Other people
+    members = models.TextField( blank=True )
+    
+    # Contact info for reservations etc.
+    email = models.EmailField( max_length=254, blank=True )
+    telephone = models.CharField( max_length=20, blank=True )
+    reservation_url = models.URLField( blank=True )
+
+    # Picture, just one for now
+    picture = models.URLField( blank=True )
+
