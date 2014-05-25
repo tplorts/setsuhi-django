@@ -1,0 +1,26 @@
+{% extends "admin/change_form.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+<script src="{% static 'third/scripts/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'third/scripts/jquery.browser.min.js' %}"></script>
+{{ block.super }}
+{% endblock %}
+
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  .lingual-input {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .language-label {
+    display: inline-block;
+    padding: 0 5px;
+  }
+  .chosen-select {
+    min-width: 250px;
+  }
+</style>
+{% endblock %}

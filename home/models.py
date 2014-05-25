@@ -86,7 +86,7 @@ class SakuhinEntry( models.Model ):
 
 
 class EventCategory( models.Model ):
-    name = models.CharField( max_length=40 )
+    name = models.CharField( max_length=100 )
 
     # Aside from the enfored requirements, what fields are
     # generally needed for this type of event?
@@ -95,6 +95,19 @@ class EventCategory( models.Model ):
     # Anything is not relevant to this type
     fields_not_applicable = models.CharField( max_length=200, blank=True )
 
+    def __unicode__( self ):
+        try:
+            names = json.loads( self.name )
+            if 'ja' in names:
+                return names['ja']
+            elif 'en' in names:
+                return names['en']
+            elif len(names) > 0:
+                return names.items()[0]
+            else:
+                return "without name"
+        except ValueError:
+            return self.name
 
 
 class EventPrice( models.Model ):

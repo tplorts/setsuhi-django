@@ -24,6 +24,8 @@ ML_COOKIE_NAME = "ml-language-selection"
 ML_CONTEXT_KEY = "ml_active_language"
 ML_DEFAULT_LANGUAGE = "ja"
 
+languages = ['ja', 'en']
+
 
 # Automatically detect whether this is running on my development
 # computer, otherwise assuming that the environment is production.
@@ -64,6 +66,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'home',
     'email_obfuscator',
+    'chosen',
 )
 
 MIDDLEWARE_CLASSES = (
