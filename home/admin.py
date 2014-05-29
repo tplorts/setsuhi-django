@@ -52,7 +52,7 @@ class MultilingualField( forms.MultiValueField ):
     widget = MultilingualWidget()
 
     def __init__( self, *args, **kwargs ):
-        fields = (forms.CharField(max_length=maxperl),)*len(settings.languages)
+        fields = (forms.CharField(max_length=maxperl, required=False),)*len(settings.languages)
         super(MultilingualField, self).__init__(fields, *args, **kwargs)
 
     def compress( self, data_list ):
@@ -80,8 +80,8 @@ fieldChoices = [(f, efname(f)) for f in eventFields]
 
 class CategoryForm( forms.ModelForm ):
     name = MultilingualField()
-    fields_recommended = chzn.ChosenMultipleChoiceField(choices=fieldChoices)
-    fields_not_applicable = chzn.ChosenMultipleChoiceField(choices=fieldChoices)
+    fields_recommended = chzn.ChosenMultipleChoiceField(choices=fieldChoices, required=False)
+    fields_not_applicable = chzn.ChosenMultipleChoiceField(choices=fieldChoices, required=False)
     class Meta:
         model = models.EventCategory
         fields = '__all__'
