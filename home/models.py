@@ -95,6 +95,9 @@ class EventCategory( models.Model ):
     # Anything is not relevant to this type
     fields_not_applicable = models.CharField( max_length=200, blank=True )
 
+    class Meta:
+        verbose_name_plural = 'Event categories'
+
     def __unicode__( self ):
         try:
             names = json.loads( self.name )
@@ -108,17 +111,6 @@ class EventCategory( models.Model ):
                 return "without name"
         except ValueError:
             return self.name
-
-
-class EventPrice( models.Model ):
-    # The 'door' price is to be used as the default
-    # if there are no other price categories.
-    door = models.DecimalField( max_digits=12, decimal_places=4 )
-    ahead = models.DecimalField( max_digits=12, decimal_places=4, null=True )
-    student = models.DecimalField( max_digits=12, decimal_places=4, null=True )
-    senior = models.DecimalField( max_digits=12, decimal_places=4, null=True )
-    child = models.DecimalField( max_digits=12, decimal_places=4, null=True )
-
 
 
 class Event( models.Model ):
@@ -141,8 +133,7 @@ class Event( models.Model ):
     # Type (category) live, workshop, etc.
     category = models.ForeignKey( EventCategory )
 
-    # Price
-    price = models.ForeignKey( EventPrice, null=True )
+    # Prices are linked via the foreign key in EventPrice
 
     # Other people
     members = models.TextField( blank=True )
@@ -155,3 +146,8 @@ class Event( models.Model ):
     # Picture, just one for now
     picture = models.URLField( blank=True )
 
+
+class EventPrice( models.Model ):
+    amount = models.DecimalField( max_digits=12, decimal_places=4 )
+    category = models.CharField( max_length=100, blank=True )
+    event = models.ForeignKey( Event )

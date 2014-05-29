@@ -70,7 +70,7 @@ class MultilingualField( forms.MultiValueField ):
 eventFields = (
     'title','brief','lengthy','start_time','end_time',
     'set_times','place','place_website','address',
-    'directions','category','price','members','email',
+    'directions','category','members','email',
     'telephone','reservation_url','picture',
 )
 dummyEvent = models.Event()
@@ -89,6 +89,16 @@ class CategoryForm( forms.ModelForm ):
 class EventCategoryAdmin( admin.ModelAdmin ):
     form = CategoryForm
 
+
+class EventPriceInline( admin.TabularInline ):
+    model = models.EventPrice
+
+class EventAdmin( admin.ModelAdmin ):
+    inlines = [
+        EventPriceInline,
+    ]
+
+
 admin.site.register( models.EventCategory, EventCategoryAdmin )
 admin.site.register( models.EventPrice )
-admin.site.register( models.Event )
+admin.site.register( models.Event, EventAdmin )
