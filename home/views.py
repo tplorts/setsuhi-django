@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from __future__ import unicode_literals, division
 from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django import forms
@@ -58,7 +58,11 @@ def render_page(request, page_name, context={}):
 
 
 def front(q):
-    return render_page(q, 'front')
+    vWidth = 280
+    vHeight = round( 9/16 * vWidth )
+    c = {'vwidth': vWidth,
+         'vheight': vHeight,}
+    return render_page(q, 'front', c)
 
 def about(q):
     return render_page(q, 'about')

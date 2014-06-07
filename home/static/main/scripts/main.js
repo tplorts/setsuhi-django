@@ -268,3 +268,33 @@ updateNavigationSpill = function() {
 };
 
 $(window).on('ready load resize orientationChanged', updateNavigationSpill);
+
+
+
+//================================================================
+// Keep the embedded video on the front page (TODO and everywhere)
+// at a nice proportional width.
+var vimeoTheca = $('.vimeo-theca');
+if( vimeoTheca.length > 0 ) {
+    var vimeos = vimeoTheca.find('iframe');
+    var aspectWide = 16/9;
+    var leftDock = $('#left-dock');
+    var rightDock = $('#right-dock');
+    
+    $(window).on('ready load resize orientationChanged', function() {
+        var w = $(window).width();
+        var ldw = leftDock.width();
+        var rdw = rightDock.width();
+        var videoWidth;
+        if( w < 768 ) {
+            videoWidth = w - 30;
+        } else {
+            videoWidth = w - 100 - ldw - rdw;
+        }
+        var videoHeight = videoWidth / aspectWide;
+        vimeos.attr({
+            'width': videoWidth,
+            'height': videoHeight
+        });
+    });
+}

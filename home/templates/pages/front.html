@@ -9,9 +9,11 @@
 {% block main_content %}
 <div class="container full-width no-padding">
 
-  <div class="video-theca text-center">
-    <iframe src="//player.vimeo.com/video/92628972" width="500" height="281" frameborder="0" 
-            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <div class="video-theca text-center vimeo-theca">
+    <iframe src="//player.vimeo.com/video/92628972" frameborder="0"
+            width="{{ vwidth }}" height="{{ vheight }}"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
   </div>
 
     <div class="tyle">
