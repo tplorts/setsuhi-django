@@ -14,38 +14,6 @@
     <div class="tyle">
       <div class="event">
         <div class="event-title">
-          個展：書画と{%link "縁~en~"%}アクセサリー
-        </div>
-        <div class="event-date">
-          2014.4.30⇀5.30 10:00┈17:00 (土日祝休館)
-        </div>
-        <div class="event-description">
-          プラス株式会社ショールーム<br>
-          www.plus.co.jp/showroom/
-        </div>
-      </div>
-    </div>
-    <div class="tyle">
-      <div class="event">
-        <div class="event-title">
-          Jazz Meets 書道 〜美女トリオと仲間達〜
-        </div>
-        <div class="event-date">
-          2014.5.27 open 18:00, 1 st 19:30, 2 nd 21:00
-        </div>
-        <div class="event-description">
-          銀座 No Bird、no-bird.com、03-6280-6006<br>
-          高澤綾 ❲trumpet❳ ✕ 白石雪妃❲書❳<br>
-          Sara Rector❲vocal❳<br>
-          小林岳五郎❲piano❳<br>
-          山本裕之❲bass❳<br>
-          4,000円 (2ステージ合計、入替なし)
-        </div>
-      </div>
-    </div>
-    <div class="tyle">
-      <div class="event">
-        <div class="event-title">
           フランスツアー
         </div>
         <div class="event-date">
@@ -125,6 +93,103 @@
     <h2>{{ "Recent Events"|smallcaps }}</h2>
   </div>
   <div id="recent-events" class="tyle-section event-section">
+    <div class="tyle">
+      <h3>{% ml ja="ライブ" en="Live Performance" %}</h3>
+      <h4>{% ml ja="Jazz Meets 書道 ～美女トリオと仲間たち～" en="Jazz Meets Calligraphy: Gorgeous Girls Trio &amp; Company" %}</h4>
+      <div class="row">
+        <div class="col-md-8 col-lg-6">
+          {% multilingual %}
+          {% mlpart "ja" %}
+          <p class="date-and-place">
+            5月27日（火）
+            ＠<a href="http://www.no-bird.com/">銀座No Bird</a>
+          </p>
+          <p class="street-address">
+            〒104-0061 東京都中央区銀座7-3-7 ブランエスパ銀座B1F
+            <br>
+            <a href="http://goo.gl/maps/V3vpK"
+               target="_blank"
+               class="btn btn-default short-button">
+              in Google Maps 
+            </a>
+          </p>
+          <p class="reservation-info">
+            ご予約はこちら
+            <a href="http://www.no-bird.com/schedule_1405.html">銀座No Birdのスケジュール</a>
+            (<span class="telephone-number">03-6280-6006</span>)
+          </p>
+          <p class="featuring">
+            <span class="ib">白石雪妃(書家)</span>
+            <span class="ib">{% link '高澤綾' %}(tp)</span>
+            <span class="ib">{% link '小林岳五郎' %}(pf)</span>
+            <span class="ib">{% link '山本裕之' %}(b)</span>
+            <span class="ib">{% link '衣笠智英' %}(ds)</span>
+            <span class="ib">{% link 'サラ・レクター' %}(vo)</span>
+          </p>
+          <p class="price-info">
+            music charge ￥4,000 (2ステージ合計、税込)
+          </p>
+          <p class="times">
+            open 18:00, 1st 19:30, 2nd 21:00 (入替なし)
+          </p>
+          {% endmlpart %}
+          {% mlpart "en" %}
+          <p class="date-and-place">
+            May 27<sup>th</sup> (Tuesday)
+            ＠<a href="http://www.no-bird.com/">Ginza No Bird</a>
+          </p>
+          <p class="street-address">
+            〒104-0061 Tōkyō-to, Chūō-ku, Ginza, 7 Chome−3−5 Blanespa Ginza B1F
+            <br>
+            <a href="http://goo.gl/maps/V3vpK"
+               target="_blank"
+               class="btn btn-default short-button">
+              in Google Maps 
+            </a>
+          </p>
+          <p class="reservation-info">
+            For reservations, please see:
+            <a href="http://www.no-bird.com/schedule_1405.html">Ginza No Bird's schedule</a>
+            (<span class="telephone-number">03-6280-6006</span>)
+          </p>
+          <p class="featuring">
+            <span class="ib">Setsuhi Shiraishi (brush)</span>
+            <span class="ib">{% link 'Aya Takazawa' %} (tp)</span>
+            <span class="ib">{% link 'Takegorou Kobayashi' %} (pf)</span>
+            <span class="ib">{% link 'Hiroyuki Yamamoto' %} (b)</span>
+            <span class="ib">{% link 'Tomohide Hinugasa' %} (ds)</span>
+            <span class="ib">{% link 'Sara Rector' %} (vo)</span>
+          </p>
+          <p class="price-info">
+            music charge ￥4,000 (2 sets, tax included)
+          </p>
+          <p class="times">
+            open 18:00, 1st 19:30, 2nd 21:00 (no break)
+          </p>
+          {% endmlpart %}
+          {% endmultilingual %}
+        </div><!--/.col for details-->
+        <div class="col-md-4 col-lg-6">
+          <img class="fit-image center-block"
+               src="{% static 'media/images/ggtrio.jpg' %}" />
+        </div><!--/.col for image-->
+      </div><!--/.row-->
+    </div><!--/.tyle for live-->
+    <div class="tyle">
+      <div class="event">
+        <div class="event-title">
+          個展：書画と{%link "縁~en~"%}アクセサリー
+        </div>
+        <div class="event-date">
+          2014.4.30⇀5.30 10:00┈17:00 (土日祝休館)
+        </div>
+        <div class="event-description">
+          プラス株式会社ショールーム<br>
+          www.plus.co.jp/showroom/
+        </div>
+      </div>
+    </div>
+
     <div class="tyle">
       <div class="event">
         <div class="event-title">

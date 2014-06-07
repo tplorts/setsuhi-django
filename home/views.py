@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django import forms
 from django.core.mail import EmailMessage
+#from django.contrib.auth import permission_required
 import json
 from setsuhi import settings
 import models
@@ -77,6 +78,7 @@ def lessons(q):
     return render_page(q, 'lessons')
 
 
+#@permission_required('home.work')
 def workroom(q):
     engroup = models.SakuhinGroup.objects.get( name='縁' )
     entries = models.SakuhinEntry.objects.filter( group=engroup )
