@@ -285,8 +285,8 @@ if( vimeoTheca.length > 0 ) {
     $(window).on('ready load resize orientationChanged', function() {
         var dw = leftDock.width() + rightDock.width();
         var w = $(window).width() - dw;
-        var videoWidth = Math.pow(w, 0.97);
-        var videoHeight = videoWidth / aspectWide;
+        var videoWidth = Math.round( Math.pow(w, 0.97) );
+        var videoHeight = Math.round( videoWidth / aspectWide );
         vimeos.attr({
             'width': videoWidth,
             'height': videoHeight
