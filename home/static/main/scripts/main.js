@@ -280,17 +280,12 @@ if( vimeoTheca.length > 0 ) {
     var aspectWide = 16/9;
     var leftDock = $('#left-dock');
     var rightDock = $('#right-dock');
-    
+    var breakpoint = 700;
+
     $(window).on('ready load resize orientationChanged', function() {
-        var w = $(window).width();
-        var ldw = leftDock.width();
-        var rdw = rightDock.width();
-        var videoWidth;
-        if( w < 768 ) {
-            videoWidth = w - 30;
-        } else {
-            videoWidth = w - 100 - ldw - rdw;
-        }
+        var dw = leftDock.width() + rightDock.width();
+        var w = $(window).width() - dw;
+        var videoWidth = Math.pow(w, 0.97);
         var videoHeight = videoWidth / aspectWide;
         vimeos.attr({
             'width': videoWidth,
