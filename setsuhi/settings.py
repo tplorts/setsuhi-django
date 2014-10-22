@@ -31,28 +31,16 @@ languages = ['ja', 'en']
 # computer, otherwise assuming that the environment is production.
 isProduction = False
 try:
-    open('.devmachine')
+    open('.dev')
 except IOError:
     isProduction = True
 
 
-# Wad of Stuff
-SERIALIZATION_MODULES = {
-    'json': 'wadofstuff.django.serializers.json'
-}
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n##7^$uc#_9=!92!r3aiv0p)aaelo%%1&w5xtp4f#))r6m=1=v'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not isProduction
 TEMPLATE_DEBUG = not isProduction
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -83,15 +71,6 @@ ROOT_URLCONF = 'setsuhi.urls'
 WSGI_APPLICATION = 'setsuhi.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -124,7 +103,9 @@ EMAIL_PORT = 587
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES = {
+    'default': dj_database_url.config(),
+}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

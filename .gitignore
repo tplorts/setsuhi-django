@@ -67,7 +67,7 @@ external
 
 
 # To detect whether on my development computer
-.devmachine
+.dev
 
 # Miscellaneous notes that shouldn't be stored
 # within the repository
