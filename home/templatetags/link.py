@@ -27,7 +27,7 @@ english_addresses = {
     "Yoshiyuki Ōki": yokkun_url,
     "yoshiyuki ōki": yokkun_url,
     "Jay Anderson": "http://www.jayandersonbass.com/",
-    "Frank Kinbrough": "http://home.earthlink.net/~fkimbrough/",
+    "Frank Kimbrough": "http://home.earthlink.net/~fkimbrough/",
     "Maria Schneider": "http://www.mariaschneider.com/",
     "Adam Unsworth": "http://adamunsworth.net/",
     "London Improvisers Orchestra": "http://www.londonimprovisersorchestra.co.uk/",

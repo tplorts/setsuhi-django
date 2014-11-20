@@ -23,7 +23,7 @@ nav_list = (
     ("schedule", "Events",   "予定", ""),
     ("lessons",  "Lessons",  "教室", ""),
     ("contact",  "Contact",  "連絡", ""),
-    ("about",    "About",    "紹介", ""),
+    ("cv",       "C.V.",     "履歴", ""),
     ("blog",     "Blog",     "ブログ", "target=\"_blank\""),
 )
 
@@ -64,8 +64,8 @@ def front(q):
          'vheight': vHeight,}
     return render_page(q, 'front', c)
 
-def about(q):
-    return render_page(q, 'about')
+def curriculum_vitae(q):
+    return render_page(q, 'cv')
 
 def pictures(q):
     g = models.SakuhinGroup.objects.filter(is_shown=True).order_by("rank")

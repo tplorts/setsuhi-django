@@ -21,7 +21,8 @@ urlpatterns = patterns(
     url(r'^wom[ae]n(s?)(-?)experience$', woman),
 
     url(r'^$', views.front, name='front'),
-    url(r'^about/', views.about, name='about'),
+    url(r'^cv/', views.curriculum_vitae, name='cv'),
+    url(r'^about/', RedirectView.as_view(pattern_name='cv')),
     url(r'^pictures/$', views.pictures, name='pictures'),
     url(r'^videos/$', views.videos, name='videos'),
     url(r'^schedule/', views.schedule, name='schedule'),

@@ -16,53 +16,111 @@
     </iframe>
   </div>
 
-    <div class="tyle">
-      <div class="row">
-        <div class="col-sm-7 col-md-4">
-          <div class="tyle-slideshow">
-            {% s3_slides "enjin-slides" "static/media/images/enjin" %}
-          </div>
-        </div>
-        <div class="col-sm-5 col-md-8">
-          <div class="tyle-text">
-            <h3>{% ml en="Enjin"|smallcaps ja="円陣" %}</h3>
-            {% multilingual %}
-              {% mlpart "en" %}
-                <p>
-                  Setsuhi recently had the honor of calligraphing the
-                  emblem for the theme of Japan's National
-                  Football Team for the 2014 FIFA World Cup in Brazil!
-                  The emblem is the word <span lang="ja">円陣</span>
-                  (&ldquo;enjin&rdquo;), meaning &ldquo;huddle&rdquo;.
-                  In these photographs which were shared by an Adidas
-                  employee: the jersey with the emblem printed on its 
-                  left sleeve; employees at the Adidas Group
-                  form an enjin; and the enjin emblem can be seen in
-                  various places around the Adidas Group's office.
-                  For more on the concept behind 
-                  <span lang="ja">&ldquo;円陣&rdquo;</span>
-                  please check out Adidas's 
-                  {% link "article about the jersey" %}.
-                </p>
-              {% endmlpart %}
-              {% mlpart "ja" %}
-                <p>
-                  2014　ＦＩＦＡ　サッカーワールドカップ
-                  日本代表　新ユニフォームのコンセプト
-                  「円陣」を揮毫させていただきました！
-                  この社員の方からシェアしていただきた
-                  写真では、アダィダスグループの社員の方々が
-                  円陣を組んで一致団結した「円陣式」や
-                  色々なアダィダスのオフィスに「円陣」が
-                  付けてある所が見えます。
-                  
-                </p>
-              {% endmlpart %}
-            {% endmultilingual %}
-          </div> <!-- end .tyle-text -->
-        </div> <!-- end .col -->
-      </div> <!-- end .row -->
-    </div> <!-- end .tyle -->
+  <div class="tyle" style="margin-top: 150px;">
+    {% multilingual %}
+    {% mlpart "ja" %}
+    <p>
+      幼少より書に興味を持つ。22歳で師範取得。書の線と空間の美しさを追求する。<br>
+      伝統的な書の世界を伝えつつ独特のスタイルを持ち、音楽芸術や美術とのコラボレーションなど、<br>
+      書道を総合芸術として昇華させる世界観は高く評価されている。<br>
+      海外でも積極的に活動し、生演奏との融合から生まれるライブパフォーマンスは世界中で多くのファンを魅了している。
+    </p>
+    <p>
+      2014年ミャンマー連邦共和国・国軍司令官の公式訪問において椿山荘・錦水にて揮毫。<br>
+      2014ＦＩＦＡワールドカップサッカー日本代表新ユニフォームのコンセプト「円陣」揮毫。<br>
+      2014年、10ヶ所に及ぶフランスライブツアーで好評を得た。
+    </p>
+    <p>
+      ダイナースクラブ銀座ラウンジ、ホテル日航東京にて個展、<br>
+      マンダリンオリエンタル東京（Fissler圧力鍋発売60周年イベント）、<br>
+      大英博物館で揮毫、{% link "London Improvisers Orchestra" %}と共演。<br>
+      パリでアートフェア・個展、NYで個展・Jazz clubライブ出演、ワークショップを開催。<br>
+      {% link "マリアシュナイダー" %}オーケストラの{% link "Jay Anderson" %}, {% link "Frank Kimbrough" %}, ジャズホルニストの{% link "Adam Unsworth" %}と共演。<br>
+      映画「かぐや姫の物語」の演奏担当した古筝奏者：{% link "姜小青" %}CDジャケット制作。<br>
+      自身が手掛ける書とアクセサリーデザイナー「{% link "RYONA" %}」のコラボブランド～en～縁は、渋谷ヒカリエやアベノハルカス近鉄本店などを経て、現在静岡伊勢丹にて常設されている。<br>
+      四谷三丁目{% link "喫茶茶会記" %}書道サロン主宰、表参道書道教室講師。
+    </p>
+    {% endmlpart %}
+    {% mlpart "en" %}
+    <p>
+      Having been interested in calligraphy during her childhood,
+      Setsuhi became a calligraphy master at 22 years old.
+      She is pursuing her own unique style of calligraphy while
+      expressing the world of traditional calligraphy.
+      The world she creates by subliming calligraphy into a composite art
+      through collaboration with musical and fine arts is highly regarded.
+      She has also been active outside of Japan,
+      attracting many fans from around the world through her
+      live collaborative performances with music.
+    </p>
+    <p>
+      Setsuhi drew the calligraphy design of the &ldquo;Enjin&rdquo; (ring) concept for the 2014 FIFA World Cup Japanese team jersey.
+      She gave a calligraphic performance for the Commander-in-Chief of Defence Services of the Republic of the Union of Myanmar when he was in Japan for an official visit in 2014.
+      Also in 2014, Setsuhi carried out a successful ten-part live performance tour throughout France.      
+    </p>
+    <p>
+      Setsuhi has given calligraphy performances at various places
+      including the private salon Diners Club Ginza Lounge in Tokyo,
+      the Mandarin Oriental Hotel Tokyo
+      (at the 60th anniversary event of the launch of Fissler’s pressure cookers),
+      and the British Museum in London.
+      She also held a joint performance with the {% link "London Improvisers Orchestra" %},
+      participated in an art fair in Paris,
+      and held personal exhibitions in both Paris and New York.
+      Also in New York, Setsuhi conducted a calligraphy workshop and
+      performed in both a jazz club and an art gallery with {% link "Jay Anderson" %} and
+      {% link "Frank Kimbrough" %} of the {% link "Maria Schneider" %} Orchestra as
+      well as jazz horn player {% link "Adam Unsworth" %}.
+    </p>
+    <p>
+      In addition, Setsuhi calligraphed the title on a CD cover
+      for {% link "Jiang Xiao-Qing" %}, a world-famous player of the
+      traditional Chinese &ldquo;guzheng&rdquo; string instrument.
+    </p>
+    <p>
+      Setsuhi collaborates with accessory designer {% link "RYONA" %} to create
+      {% link "縁 (&ldquo;en&rdquo;)" %}, their unique brand of calligraphic accessories.
+      The {% link "縁 (&ldquo;en&rdquo;)" %} brand is sold at limited-time
+      stores at the Shibuya Hikarie in Tokyo and the
+      Abeno Harukas Kintetsu Main Store in Osaka,
+      and is now permanently sold at the Shizuoka Isetan
+      Department Store in Shizuoka, Japan.
+    </p>
+    <p>
+      Setsuhi holds her own calligraphy salon at the art space and cafe, {% link "Sakaiki" %},
+      and holds regular calligraphy lessons in Omotesando.
+    </p>
+    {% endmlpart %}
+    {% endmultilingual %}
+
+
+    <h3>{% ml en="Concept"|smallcaps ja="概念"%}</h3>
+    {% ml en="(English translation coming soon)" ja=""%}
+    <p>
+      瞬間的に心をとらえるセンス、空間、線質を追及し続ける。
+    </p>
+    <p>
+      書にも無限の表現があるが、文字の周囲を演出することでさらに無限に広がる。<br>
+      大切にしているのはおもてなしとしつらえの心。<br>
+      的確に確実に準備をし、自分の表現を加えて心地よく演出をする。<br>
+      感謝の気持ちを忘れずに楽しいひとときを共有したい。
+    </p>
+    <p>
+      そしてもうひとつ大事ににしていることは遊ぶこと。<br>
+      「遊ぶ」とは、教養の中で自由にアレンジして楽しむこと。<br>
+      教養があればあるほど幅が広がり楽しむことができる。<br>
+      書道のほかに自分の好きなこと「カラー、ファッション、音色、絵、芸術鑑賞、料理」<br>
+      など普段の生活の中で取り入れ勉強し、自分ならではの表現に繋げている。
+    </p>
+    <p>
+      書道は日本の伝統文化であるが、時代とともに形を変えて確立しようとしている。<br>
+      現代の生活にも馴染むこと<br>
+      身近に墨書を置くことでハイセンスな空間を作ることができること<br>
+      同じ言葉でも、書き方によって想いが伝わること<br>
+      私のスタイルを実際に見て体験してほしいと願います。
+    </p>
+
+  </div><!-- /.tyle -->
 
 
 
